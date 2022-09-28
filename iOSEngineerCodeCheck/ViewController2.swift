@@ -10,16 +10,16 @@ import UIKit
 
 class ViewController2: UIViewController {
 
-    @IBOutlet weak var ImgView: UIImageView!
+    @IBOutlet weak var imgView: UIImageView!
 
-    @IBOutlet weak var TtlLbl: UILabel!
+    @IBOutlet weak var ttlLbl: UILabel!
 
-    @IBOutlet weak var LangLbl: UILabel!
+    @IBOutlet weak var langLbl: UILabel!
 
-    @IBOutlet weak var StrsLbl: UILabel!
-    @IBOutlet weak var WchsLbl: UILabel!
-    @IBOutlet weak var FrksLbl: UILabel!
-    @IBOutlet weak var IsssLbl: UILabel!
+    @IBOutlet weak var strsLbl: UILabel!
+    @IBOutlet weak var wchsLbl: UILabel!
+    @IBOutlet weak var frksLbl: UILabel!
+    @IBOutlet weak var isssLbl: UILabel!
 
     var vc1: ViewController!
 
@@ -28,11 +28,11 @@ class ViewController2: UIViewController {
 
         let repo = vc1.repo[vc1.idx]
 
-        LangLbl.text = "Written in \(repo["language"] as? String ?? "")"
-        StrsLbl.text = "\(repo["stargazers_count"] as? Int ?? 0) stars"
-        WchsLbl.text = "\(repo["wachers_count"] as? Int ?? 0) watchers"
-        FrksLbl.text = "\(repo["forks_count"] as? Int ?? 0) forks"
-        IsssLbl.text = "\(repo["open_issues_count"] as? Int ?? 0) open issues"
+        langLbl.text = "Written in \(repo["language"] as? String ?? "")"
+        strsLbl.text = "\(repo["stargazers_count"] as? Int ?? 0) stars"
+        wchsLbl.text = "\(repo["wachers_count"] as? Int ?? 0) watchers"
+        frksLbl.text = "\(repo["forks_count"] as? Int ?? 0) forks"
+        isssLbl.text = "\(repo["open_issues_count"] as? Int ?? 0) open issues"
         getImage()
 
     }
@@ -41,14 +41,14 @@ class ViewController2: UIViewController {
 
         let repo = vc1.repo[vc1.idx]
 
-        TtlLbl.text = repo["full_name"] as? String
+        ttlLbl.text = repo["full_name"] as? String
 
         if let owner = repo["owner"] as? [String: Any] {
             if let imgURL = owner["avatar_url"] as? String {
                 URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, _, _) in
                     let img = UIImage(data: data!)!
                     DispatchQueue.main.async {
-                        self.ImgView.image = img
+                        self.imgView.image = img
                     }
                 }.resume()
             }
