@@ -4,14 +4,14 @@ import PackageDescription
 let package = Package(
     name: "AppFeature",
     platforms: [
-        .iOS(.v14),
+        .iOS(.v14)
     ],
     products: [
-        .library(name: "AppFeature", targets: ["AppFeature"]),
+        .library(name: "AppFeature", targets: ["AppFeature"])
     ],
     dependencies: [
         // Local Packages
-        .package(path: "../Core"),
+        .package(path: "../Core")
     ],
     targets: [
         .binaryTarget(
@@ -32,6 +32,6 @@ let package = Package(
             plugins: ["SwiftLintXcode"]),
         .testTarget(
             name: "AppFeatureTests",
-            dependencies: ["AppFeature"]),
+            dependencies: ["AppFeature"])
     ]
 )

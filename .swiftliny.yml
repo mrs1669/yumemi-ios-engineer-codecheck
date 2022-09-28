@@ -11,9 +11,23 @@ disabled_rules:
 
 # デフォで無効とされたルールを有効とする
 opt_in_rules:
-- conditional_returns_on_newline
-- closure_end_indentation
-- closure_spacing
+  - empty_count
+  - file_header
+  - explicit_init
+  - closure_spacing
+  - overridden_super_call
+  - redundant_nil_coalescing
+  - private_outlet
+  - nimble_operator
+  - attributes
+  - operator_usage_whitespace
+  - closure_end_indentation
+  - first_where
+  - sorted_imports
+  - object_literal
+  - number_separator
+  - prohibited_super_call
+  - fatal_error_message
 
 
 # ルールをカスタム
