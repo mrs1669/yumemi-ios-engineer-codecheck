@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController2: UIViewController {
+class RepositoryDetailViewController: UIViewController {
 
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var repositoryFullnameLabel: UILabel!
