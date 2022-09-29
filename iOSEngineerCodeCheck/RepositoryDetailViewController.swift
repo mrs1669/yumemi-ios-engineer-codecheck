@@ -21,20 +21,20 @@ class RepositoryDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let items = repositorySearchTableViewController.items[repositorySearchTableViewController.idx]
-        guard let language = items.language else { return }
+        let repositories = repositorySearchTableViewController.items[repositorySearchTableViewController.idx]
+        guard let language = repositories.language else { return }
         languageLabel.text = "Written in \(language)"
-        starsCountLabel.text = "\(items.stargazersCount) stars"
-        watchersCountLabel.text = "\(items.watchersCount) watchers"
-        forksCountLabel.text = "\(items.forksCount) forks"
-        openIssueCountLabel.text = "\(items.openIssuesCount) open issues"
+        starsCountLabel.text = "\(repositories.stargazersCount) stars"
+        watchersCountLabel.text = "\(repositories.watchersCount) watchers"
+        forksCountLabel.text = "\(repositories.forksCount) forks"
+        openIssueCountLabel.text = "\(repositories.openIssuesCount) open issues"
         getImage()
     }
 
     func getImage() {
-        let repo = repositorySearchTableViewController.items[repositorySearchTableViewController.idx]
-        repositoryFullnameLabel.text = repo.fullName
-        guard let avatarUrl = URL(string: repo.owner.avatarUrl) else { return }
+        let repositories = repositorySearchTableViewController.items[repositorySearchTableViewController.idx]
+        repositoryFullnameLabel.text = repositories.fullName
+        guard let avatarUrl = URL(string: repositories.owner.avatarUrl) else { return }
         URLSession.shared.dataTask(with: avatarUrl) { [weak self] (data, _, _) in
             guard let data = data else { return }
             guard let avatarImage = UIImage(data: data) else { return }
