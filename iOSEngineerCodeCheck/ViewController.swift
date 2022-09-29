@@ -13,6 +13,7 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var schBr: UISearchBar!
 
     var repo: [[String: Any]]=[]
+    private var items: [Item] = []
 
     var task: URLSessionTask?
     var word: String!
@@ -42,14 +43,18 @@ class ViewController: UITableViewController, UISearchBarDelegate {
 
         if word.count != 0 {
             url = "https://api.github.com/search/repositories?q=\(word!)"
-            task = URLSession.shared.dataTask(with: URL(string: url)!) { (data, _, _) in
-                if let obj = try! JSONSerialization.jsonObject(with: data!) as? [String: Any] {
-                    if let items = obj["items"] as? [[String: Any]] {
-                        self.repo = items
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                        }
+            task = URLSession.shared.dataTask(with: URL(string: url)!) { [weak self] (data, _, _) in
+                guard let data = data else { return }
+                do {
+                    let repositories = try JSONDecoder().decode(SearchRepository.self, from: data)
+                    self?.items = repositories.items
+
+                    DispatchQueue.main.async {
+                        self?.tableView.reloadData()
                     }
+
+                } catch let error {
+                    print(error)
                 }
             }
             // これ呼ばなきゃリストが更新されません
@@ -68,16 +73,15 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repo.count
+        return items.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = UITableViewCell()
-        let rp = repo[indexPath.row]
-        cell.textLabel?.text = rp["full_name"] as? String ?? ""
-        cell.detailTextLabel?.text = rp["language"] as? String ?? ""
-        cell.tag = indexPath.row
+        let rp = items[indexPath.row]
+        cell.textLabel?.text = rp.fullName
+        cell.detailTextLabel?.text = rp.language
         return cell
 
     }
