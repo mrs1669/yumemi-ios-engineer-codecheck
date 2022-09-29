@@ -12,22 +12,22 @@ class ViewController2: UIViewController {
 
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var repositoryFullnameLabel: UILabel!
-    @IBOutlet private weak var langLbl: UILabel!
-    @IBOutlet private weak var strsLbl: UILabel!
-    @IBOutlet private weak var wchsLbl: UILabel!
-    @IBOutlet private weak var frksLbl: UILabel!
-    @IBOutlet private weak var isssLbl: UILabel!
+    @IBOutlet private weak var languageLabel: UILabel!
+    @IBOutlet private weak var starsCountLabel: UILabel!
+    @IBOutlet private weak var watchersCountLabel: UILabel!
+    @IBOutlet private weak var forksCountLabel: UILabel!
+    @IBOutlet private weak var openIssueCountLabel: UILabel!
     var vc1: ViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let items = vc1.items[vc1.idx]
         guard let language = items.language else { return }
-        langLbl.text = "Written in \(language)"
-        strsLbl.text = "\(items.stargazersCount) stars"
-        wchsLbl.text = "\(items.watchersCount) watchers"
-        frksLbl.text = "\(items.forksCount) forks"
-        isssLbl.text = "\(items.openIssuesCount) open issues"
+        languageLabel.text = "Written in \(language)"
+        starsCountLabel.text = "\(items.stargazersCount) stars"
+        watchersCountLabel.text = "\(items.watchersCount) watchers"
+        forksCountLabel.text = "\(items.forksCount) forks"
+        openIssueCountLabel.text = "\(items.openIssuesCount) open issues"
         getImage()
     }
 

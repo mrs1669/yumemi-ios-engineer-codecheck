@@ -140,13 +140,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="J6o-vL-S1z"/>
                     <connections>
-                        <outlet property="FrksLbl" destination="ZMv-4f-X2V" id="i84-sH-c5t"/>
-                        <outlet property="IsssLbl" destination="dzg-K8-h2L" id="L0v-sy-cD4"/>
-                        <outlet property="LangLbl" destination="s3M-QO-Kom" id="x3L-gZ-aZZ"/>
-                        <outlet property="StrsLbl" destination="0WZ-UA-R8O" id="gYb-gI-iMf"/>
-                        <outlet property="WchsLbl" destination="lQC-lo-IqN" id="Drg-Jv-iUh"/>
                         <outlet property="avatarImageView" destination="Iim-eb-8Ad" id="erc-pU-VpX"/>
+                        <outlet property="forksCountLabel" destination="ZMv-4f-X2V" id="UJl-pn-Tcq"/>
+                        <outlet property="languageLabel" destination="s3M-QO-Kom" id="whF-Z2-WLC"/>
+                        <outlet property="openIssueCountLabel" destination="dzg-K8-h2L" id="b2k-kI-iBM"/>
                         <outlet property="repositoryFullnameLabel" destination="4q1-pG-WSB" id="DBh-ll-2Uk"/>
+                        <outlet property="starsCountLabel" destination="0WZ-UA-R8O" id="Ig4-HG-nkn"/>
+                        <outlet property="watchersCountLabel" destination="lQC-lo-IqN" id="8uc-bv-67Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rj0-Ld-RTn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
