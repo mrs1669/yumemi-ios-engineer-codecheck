@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController2: UIViewController {
 
-    @IBOutlet private weak var imgView: UIImageView!
+    @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var ttlLbl: UILabel!
     @IBOutlet private weak var langLbl: UILabel!
     @IBOutlet private weak var strsLbl: UILabel!
@@ -39,7 +39,7 @@ class ViewController2: UIViewController {
             guard let data = data else { return }
             guard let avatarImage = UIImage(data: data) else { return }
             DispatchQueue.main.async {
-                self?.imgView.image = avatarImage
+                self?.avatarImageView.image = avatarImage
             }
         }.resume()
     }
