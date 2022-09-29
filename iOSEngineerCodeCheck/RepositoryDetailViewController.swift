@@ -17,11 +17,11 @@ class RepositoryDetailViewController: UIViewController {
     @IBOutlet private weak var watchersCountLabel: UILabel!
     @IBOutlet private weak var forksCountLabel: UILabel!
     @IBOutlet private weak var openIssueCountLabel: UILabel!
-    var vc1: ViewController!
+    var repositorySearchViewController: ViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let items = vc1.items[vc1.idx]
+        let items = repositorySearchViewController.items[repositorySearchViewController.idx]
         guard let language = items.language else { return }
         languageLabel.text = "Written in \(language)"
         starsCountLabel.text = "\(items.stargazersCount) stars"
@@ -32,7 +32,7 @@ class RepositoryDetailViewController: UIViewController {
     }
 
     func getImage() {
-        let repo = vc1.items[vc1.idx]
+        let repo = repositorySearchViewController.items[repositorySearchViewController.idx]
         repositoryFullnameLabel.text = repo.fullName
         guard let avatarUrl = URL(string: repo.owner.avatarUrl) else { return }
         URLSession.shared.dataTask(with: avatarUrl) { [weak self] (data, _, _) in

@@ -61,7 +61,7 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Detail"{
             guard let dtl = segue.destination as? RepositoryDetailViewController else { return }
-            dtl.vc1 = self
+            dtl.repositorySearchViewController = self
         }
     }
 
