@@ -16,8 +16,7 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     var items: [Item] = []
 
     var task: URLSessionTask?
-    var word: String!
-    var url: String!
+    var keyword: String!
     var idx: Int!
 
     override func viewDidLoad() {
@@ -39,11 +38,11 @@ class ViewController: UITableViewController, UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 
-        word = searchBar.text!
-
-        if !word.isEmpty {
-            url = "https://api.github.com/search/repositories?q=\(word!)"
-            task = URLSession.shared.dataTask(with: URL(string: url)!) { [weak self] (data, _, _) in
+        keyword = searchBar.text!
+        if !keyword.isEmpty {
+            let encodeKeywordString = keyword.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)
+            let searchUrlString = "https://api.github.com/search/repositories?q=\(encodeKeywordString!)"
+            task = URLSession.shared.dataTask(with: URL(string: searchUrlString)!) { [weak self] (data, _, _) in
                 guard let data = data else { return }
                 do {
                     let repositories = try JSONDecoder().decode(SearchRepository.self, from: data)
