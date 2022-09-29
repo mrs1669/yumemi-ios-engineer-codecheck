@@ -79,9 +79,9 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = UITableViewCell()
-        let rp = items[indexPath.row]
-        cell.textLabel?.text = rp.fullName
-        cell.detailTextLabel?.text = rp.language
+        let repository = items[indexPath.row]
+        cell.textLabel?.text = repository.fullName
+        cell.detailTextLabel?.text = repository.language
         return cell
 
     }
