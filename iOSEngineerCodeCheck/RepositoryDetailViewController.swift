@@ -22,8 +22,11 @@ class RepositoryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let repositories = repositorySearchTableViewController.items[repositorySearchTableViewController.idx]
-        guard let language = repositories.language else { return }
-        languageLabel.text = "Written in \(language)"
+        if let language = repositories.language {
+            languageLabel.text = "Written in \(language)"
+        } else {
+            languageLabel.text = "言語が含まれていません"
+        }
         starsCountLabel.text = "\(repositories.stargazersCount) stars"
         watchersCountLabel.text = "\(repositories.watchersCount) watchers"
         forksCountLabel.text = "\(repositories.forksCount) forks"
