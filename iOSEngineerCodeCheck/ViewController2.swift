@@ -11,7 +11,7 @@ import UIKit
 class ViewController2: UIViewController {
 
     @IBOutlet private weak var avatarImageView: UIImageView!
-    @IBOutlet private weak var ttlLbl: UILabel!
+    @IBOutlet private weak var repositoryFullnameLabel: UILabel!
     @IBOutlet private weak var langLbl: UILabel!
     @IBOutlet private weak var strsLbl: UILabel!
     @IBOutlet private weak var wchsLbl: UILabel!
@@ -33,7 +33,7 @@ class ViewController2: UIViewController {
 
     func getImage() {
         let repo = vc1.items[vc1.idx]
-        ttlLbl.text = repo.fullName
+        repositoryFullnameLabel.text = repo.fullName
         guard let avatarUrl = URL(string: repo.owner.avatarUrl) else { return }
         URLSession.shared.dataTask(with: avatarUrl) { [weak self] (data, _, _) in
             guard let data = data else { return }

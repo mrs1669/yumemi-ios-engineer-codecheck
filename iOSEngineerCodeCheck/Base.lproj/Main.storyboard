@@ -144,9 +144,9 @@
                         <outlet property="IsssLbl" destination="dzg-K8-h2L" id="L0v-sy-cD4"/>
                         <outlet property="LangLbl" destination="s3M-QO-Kom" id="x3L-gZ-aZZ"/>
                         <outlet property="StrsLbl" destination="0WZ-UA-R8O" id="gYb-gI-iMf"/>
-                        <outlet property="TtlLbl" destination="4q1-pG-WSB" id="UQ0-5D-rWe"/>
                         <outlet property="WchsLbl" destination="lQC-lo-IqN" id="Drg-Jv-iUh"/>
                         <outlet property="avatarImageView" destination="Iim-eb-8Ad" id="erc-pU-VpX"/>
+                        <outlet property="repositoryFullnameLabel" destination="4q1-pG-WSB" id="DBh-ll-2Uk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rj0-Ld-RTn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
