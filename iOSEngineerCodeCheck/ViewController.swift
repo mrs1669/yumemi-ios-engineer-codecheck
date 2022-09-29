@@ -12,7 +12,7 @@ class ViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet weak var schBr: UISearchBar!
 
-    var repo: [[String: Any]]=[]
+    var repo: [[String: Any]] = []
     var items: [Item] = []
 
     var task: URLSessionTask?
@@ -41,7 +41,7 @@ class ViewController: UITableViewController, UISearchBarDelegate {
 
         word = searchBar.text!
 
-        if word.count != 0 {
+        if !word.isEmpty {
             url = "https://api.github.com/search/repositories?q=\(word!)"
             task = URLSession.shared.dataTask(with: URL(string: url)!) { [weak self] (data, _, _) in
                 guard let data = data else { return }

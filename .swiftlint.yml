@@ -1,6 +1,6 @@
 # SwiftLintの対象外とする
 excluded:
-BuildTools/
+  BuildTools/
 
 # 無効とするルール
 disabled_rules:

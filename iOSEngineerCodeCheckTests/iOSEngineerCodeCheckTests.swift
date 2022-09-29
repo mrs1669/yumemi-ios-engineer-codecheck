@@ -6,8 +6,8 @@
 //  Copyright © 2020 YUMEMI Inc. All rights reserved.
 //
 
-import XCTest
 @testable import iOSEngineerCodeCheck
+import XCTest
 
 class IOSEngineerCodeCheckTests: XCTestCase {
 
