@@ -26,34 +26,32 @@ class ViewController2: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let repo = vc1.repo[vc1.idx]
-
-        langLbl.text = "Written in \(repo["language"] as? String ?? "")"
-        strsLbl.text = "\(repo["stargazers_count"] as? Int ?? 0) stars"
-        wchsLbl.text = "\(repo["wachers_count"] as? Int ?? 0) watchers"
-        frksLbl.text = "\(repo["forks_count"] as? Int ?? 0) forks"
-        isssLbl.text = "\(repo["open_issues_count"] as? Int ?? 0) open issues"
+        //let repo = vc1.repo[vc1.idx]
+        let items = vc1.items[vc1.idx]
+        guard let language = items.language else { return }
+        langLbl.text = "Written in \(language)"
+        strsLbl.text = "\(items.stargazersCount) stars"
+        wchsLbl.text = "\(items.watchersCount) watchers"
+        frksLbl.text = "\(items.forksCount) forks"
+        isssLbl.text = "\(items.openIssuesCount) open issues"
         getImage()
 
     }
 
     func getImage() {
 
-        let repo = vc1.repo[vc1.idx]
+        let repo = vc1.items[vc1.idx]
 
-        ttlLbl.text = repo["full_name"] as? String
+        ttlLbl.text = repo.fullName
+        guard let avatarUrl = URL(string: repo.owner.avatarUrl) else { return }
+        URLSession.shared.dataTask(with: avatarUrl) { [weak self] (data, _, _) in
+            guard let data = data else { return }
+            guard let avatarImage = UIImage(data: data) else { return }
 
-        if let owner = repo["owner"] as? [String: Any] {
-            if let imgURL = owner["avatar_url"] as? String {
-                URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, _, _) in
-                    let img = UIImage(data: data!)!
-                    DispatchQueue.main.async {
-                        self.imgView.image = img
-                    }
-                }.resume()
+            DispatchQueue.main.async {
+                self?.imgView.image = avatarImage
             }
-        }
-
+        }.resume()
     }
 
 }
