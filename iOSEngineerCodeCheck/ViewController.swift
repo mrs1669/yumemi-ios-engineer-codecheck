@@ -12,16 +12,13 @@ class ViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet private weak var schBr: UISearchBar!
 
-    var repo: [[String: Any]] = []
     var items: [Item] = []
-
     var task: URLSessionTask?
     var keyword: String!
     var idx: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         schBr.text = "GitHubのリポジトリを検索できるよー"
         schBr.delegate = self
     }
@@ -59,16 +56,13 @@ class ViewController: UITableViewController, UISearchBarDelegate {
             // これ呼ばなきゃリストが更新されません
             task?.resume()
         }
-
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         if segue.identifier == "Detail"{
             guard let dtl = segue.destination as? ViewController2 else { return }
             dtl.vc1 = self
         }
-
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -76,7 +70,6 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         let cell = UITableViewCell()
         let repository = items[indexPath.row]
         cell.textLabel?.text = repository.fullName
