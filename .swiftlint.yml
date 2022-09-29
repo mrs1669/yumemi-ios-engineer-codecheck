@@ -4,9 +4,10 @@ excluded:
 
 # 無効とするルール
 disabled_rules:
-- file_length
-- function_body_length
-- type_body_length
+  - file_length
+  - function_body_length
+  - type_body_length
+  - unused_optional_binding
 
 
 # デフォで無効とされたルールを有効とする
