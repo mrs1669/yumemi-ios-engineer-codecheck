@@ -12,7 +12,7 @@
         <!--Root View Controller-->
         <scene sceneID="0Yw-Vc-k2Q">
             <objects>
-                <tableViewController id="MOh-CZ-3ki" customClass="ViewController" customModule="iOSEngineerCodeCheck" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="MOh-CZ-3ki" customClass="SearchRepositoryTableViewController" customModule="iOSEngineerCodeCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fpt-Ev-QNW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="-498" y="137"/>
         </scene>
-        <!--View Controller2-->
+        <!--Repository Detail View Controller-->
         <scene sceneID="JOC-74-7VT">
             <objects>
-                <viewController id="AHY-RL-7mG" customClass="ViewController2" customModule="iOSEngineerCodeCheck" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AHY-RL-7mG" customClass="RepositoryDetailViewController" customModule="iOSEngineerCodeCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4gp-25-lRZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,8 +77,8 @@
                                     <constraint firstAttribute="width" secondItem="Iim-eb-8Ad" secondAttribute="height" multiplier="1:1" id="CoT-OC-9DA"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4q1-pG-WSB">
-                                <rect key="frame" x="181" y="549" width="52" height="33.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repository Fullname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4q1-pG-WSB">
+                                <rect key="frame" x="84.5" y="549" width="245.5" height="33.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" systemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -140,13 +140,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="J6o-vL-S1z"/>
                     <connections>
-                        <outlet property="FrksLbl" destination="ZMv-4f-X2V" id="i84-sH-c5t"/>
-                        <outlet property="ImgView" destination="Iim-eb-8Ad" id="dmH-tP-ZuI"/>
-                        <outlet property="IsssLbl" destination="dzg-K8-h2L" id="L0v-sy-cD4"/>
-                        <outlet property="LangLbl" destination="s3M-QO-Kom" id="x3L-gZ-aZZ"/>
-                        <outlet property="StrsLbl" destination="0WZ-UA-R8O" id="gYb-gI-iMf"/>
-                        <outlet property="TtlLbl" destination="4q1-pG-WSB" id="UQ0-5D-rWe"/>
-                        <outlet property="WchsLbl" destination="lQC-lo-IqN" id="Drg-Jv-iUh"/>
+                        <outlet property="avatarImageView" destination="Iim-eb-8Ad" id="erc-pU-VpX"/>
+                        <outlet property="forksCountLabel" destination="ZMv-4f-X2V" id="UJl-pn-Tcq"/>
+                        <outlet property="languageLabel" destination="s3M-QO-Kom" id="whF-Z2-WLC"/>
+                        <outlet property="openIssueCountLabel" destination="dzg-K8-h2L" id="b2k-kI-iBM"/>
+                        <outlet property="repositoryFullnameLabel" destination="4q1-pG-WSB" id="DBh-ll-2Uk"/>
+                        <outlet property="starsCountLabel" destination="0WZ-UA-R8O" id="Ig4-HG-nkn"/>
+                        <outlet property="watchersCountLabel" destination="lQC-lo-IqN" id="8uc-bv-67Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rj0-Ld-RTn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
