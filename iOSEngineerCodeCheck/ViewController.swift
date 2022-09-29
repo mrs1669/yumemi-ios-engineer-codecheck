@@ -10,9 +10,9 @@ import UIKit
 
 class ViewController: UITableViewController, UISearchBarDelegate {
 
-    @IBOutlet weak var schBr: UISearchBar!
+    @IBOutlet private weak var schBr: UISearchBar!
 
-    var repo: [[String: Any]]=[]
+    var repo: [[String: Any]] = []
     var items: [Item] = []
 
     var task: URLSessionTask?
@@ -41,7 +41,7 @@ class ViewController: UITableViewController, UISearchBarDelegate {
 
         word = searchBar.text!
 
-        if word.count != 0 {
+        if !word.isEmpty {
             url = "https://api.github.com/search/repositories?q=\(word!)"
             task = URLSession.shared.dataTask(with: URL(string: url)!) { [weak self] (data, _, _) in
                 guard let data = data else { return }
@@ -79,9 +79,9 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         let cell = UITableViewCell()
-        let rp = items[indexPath.row]
-        cell.textLabel?.text = rp.fullName
-        cell.detailTextLabel?.text = rp.language
+        let repository = items[indexPath.row]
+        cell.textLabel?.text = repository.fullName
+        cell.detailTextLabel?.text = repository.language
         return cell
 
     }

@@ -10,16 +10,16 @@ import UIKit
 
 class ViewController2: UIViewController {
 
-    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet private weak var imgView: UIImageView!
 
-    @IBOutlet weak var ttlLbl: UILabel!
+    @IBOutlet private weak var ttlLbl: UILabel!
 
-    @IBOutlet weak var langLbl: UILabel!
+    @IBOutlet private weak var langLbl: UILabel!
 
-    @IBOutlet weak var strsLbl: UILabel!
-    @IBOutlet weak var wchsLbl: UILabel!
-    @IBOutlet weak var frksLbl: UILabel!
-    @IBOutlet weak var isssLbl: UILabel!
+    @IBOutlet private weak var strsLbl: UILabel!
+    @IBOutlet private weak var wchsLbl: UILabel!
+    @IBOutlet private weak var frksLbl: UILabel!
+    @IBOutlet private weak var isssLbl: UILabel!
 
     var vc1: ViewController!
 

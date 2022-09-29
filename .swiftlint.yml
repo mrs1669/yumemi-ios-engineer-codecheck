@@ -1,21 +1,20 @@
 # SwiftLintの対象外とする
 excluded:
-BuildTools/
+  BuildTools/
 
 # 無効とするルール
 disabled_rules:
-- file_length
-- function_body_length
-- type_body_length
+  - file_length
+  - function_body_length
+  - type_body_length
+  - unused_optional_binding
 
 
 # デフォで無効とされたルールを有効とする
 opt_in_rules:
   - empty_count
-  - file_header
   - explicit_init
   - closure_spacing
-  - overridden_super_call
   - redundant_nil_coalescing
   - private_outlet
   - nimble_operator
