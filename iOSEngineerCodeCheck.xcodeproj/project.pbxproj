@@ -106,8 +106,8 @@
 				E1D3AAB528E5517200A51E3F /* Entity */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
-				BFD945E2244DC5E80012785A /* SearchRepositoryTableViewController.swift */,
-				BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */,
+				E1C852F028E5B65800F8B15F /* SearchRepository */,
+				E1C852F128E5B68900F8B15F /* RepositoryDetail */,
 				BFD945E4244DC5E80012785A /* Main.storyboard */,
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
 				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
@@ -132,6 +132,22 @@
 				BFD94602244DC5EC0012785A /* Info.plist */,
 			);
 			path = iOSEngineerCodeCheckUITests;
+			sourceTree = "<group>";
+		};
+		E1C852F028E5B65800F8B15F /* SearchRepository */ = {
+			isa = PBXGroup;
+			children = (
+				BFD945E2244DC5E80012785A /* SearchRepositoryTableViewController.swift */,
+			);
+			path = SearchRepository;
+			sourceTree = "<group>";
+		};
+		E1C852F128E5B68900F8B15F /* RepositoryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */,
+			);
+			path = RepositoryDetail;
 			sourceTree = "<group>";
 		};
 		E1D3AAB528E5517200A51E3F /* Entity */ = {
