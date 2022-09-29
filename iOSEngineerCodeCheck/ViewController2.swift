@@ -9,51 +9,49 @@
 import UIKit
 
 class ViewController2: UIViewController {
-    
-    @IBOutlet weak var ImgView: UIImageView!
-    
-    @IBOutlet weak var TtlLbl: UILabel!
-    
-    @IBOutlet weak var LangLbl: UILabel!
-    
-    @IBOutlet weak var StrsLbl: UILabel!
-    @IBOutlet weak var WchsLbl: UILabel!
-    @IBOutlet weak var FrksLbl: UILabel!
-    @IBOutlet weak var IsssLbl: UILabel!
-    
+
+    @IBOutlet weak var imgView: UIImageView!
+
+    @IBOutlet weak var ttlLbl: UILabel!
+
+    @IBOutlet weak var langLbl: UILabel!
+
+    @IBOutlet weak var strsLbl: UILabel!
+    @IBOutlet weak var wchsLbl: UILabel!
+    @IBOutlet weak var frksLbl: UILabel!
+    @IBOutlet weak var isssLbl: UILabel!
+
     var vc1: ViewController!
-        
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let repo = vc1.repo[vc1.idx]
-        
-        LangLbl.text = "Written in \(repo["language"] as? String ?? "")"
-        StrsLbl.text = "\(repo["stargazers_count"] as? Int ?? 0) stars"
-        WchsLbl.text = "\(repo["wachers_count"] as? Int ?? 0) watchers"
-        FrksLbl.text = "\(repo["forks_count"] as? Int ?? 0) forks"
-        IsssLbl.text = "\(repo["open_issues_count"] as? Int ?? 0) open issues"
+
+        //let repo = vc1.repo[vc1.idx]
+        let items = vc1.items[vc1.idx]
+        guard let language = items.language else { return }
+        langLbl.text = "Written in \(language)"
+        strsLbl.text = "\(items.stargazersCount) stars"
+        wchsLbl.text = "\(items.watchersCount) watchers"
+        frksLbl.text = "\(items.forksCount) forks"
+        isssLbl.text = "\(items.openIssuesCount) open issues"
         getImage()
-        
+
     }
-    
-    func getImage(){
-        
-        let repo = vc1.repo[vc1.idx]
-        
-        TtlLbl.text = repo["full_name"] as? String
-        
-        if let owner = repo["owner"] as? [String: Any] {
-            if let imgURL = owner["avatar_url"] as? String {
-                URLSession.shared.dataTask(with: URL(string: imgURL)!) { (data, res, err) in
-                    let img = UIImage(data: data!)!
-                    DispatchQueue.main.async {
-                        self.ImgView.image = img
-                    }
-                }.resume()
+
+    func getImage() {
+
+        let repo = vc1.items[vc1.idx]
+
+        ttlLbl.text = repo.fullName
+        guard let avatarUrl = URL(string: repo.owner.avatarUrl) else { return }
+        URLSession.shared.dataTask(with: avatarUrl) { [weak self] (data, _, _) in
+            guard let data = data else { return }
+            guard let avatarImage = UIImage(data: data) else { return }
+
+            DispatchQueue.main.async {
+                self?.imgView.image = avatarImage
             }
-        }
-        
+        }.resume()
     }
-    
+
 }
