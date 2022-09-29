@@ -1,5 +1,5 @@
 //
-//  ViewController2.swift
+//  RepositoryDetailViewController
 //  iOSEngineerCodeCheck
 //
 //  Created by 史 翔新 on 2020/04/21.
