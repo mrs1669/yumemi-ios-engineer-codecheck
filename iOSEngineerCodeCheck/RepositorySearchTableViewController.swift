@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RepositorySearchTableViewController: UITableViewController, UISearchBarDelegate {
+class SearchRepositoryTableViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet private weak var schBr: UISearchBar!
     var items: [Item] = []
