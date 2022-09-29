@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet private weak var schBr: UISearchBar!
-
     var items: [Item] = []
     var task: URLSessionTask?
     var keyword: String!
@@ -34,7 +33,6 @@ class ViewController: UITableViewController, UISearchBarDelegate {
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-
         keyword = searchBar.text!
         if !keyword.isEmpty {
             let encodeKeywordString = keyword.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)
@@ -44,11 +42,9 @@ class ViewController: UITableViewController, UISearchBarDelegate {
                 do {
                     let repositories = try JSONDecoder().decode(SearchRepository.self, from: data)
                     self?.items = repositories.items
-
                     DispatchQueue.main.async {
                         self?.tableView.reloadData()
                     }
-
                 } catch let error {
                     print(error)
                 }
@@ -75,14 +71,12 @@ class ViewController: UITableViewController, UISearchBarDelegate {
         cell.textLabel?.text = repository.fullName
         cell.detailTextLabel?.text = repository.language
         return cell
-
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 画面遷移時に呼ばれる
         idx = indexPath.row
         performSegue(withIdentifier: "Detail", sender: self)
-
     }
 
 }
