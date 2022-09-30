@@ -17,27 +17,27 @@ class RepositoryDetailViewController: UIViewController {
     @IBOutlet private weak var watchersCountLabel: UILabel!
     @IBOutlet private weak var forksCountLabel: UILabel!
     @IBOutlet private weak var openIssueCountLabel: UILabel!
-    var repositorySearchTableViewController: SearchRepositoryTableViewController!
+    var item: Repository?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let repositories = repositorySearchTableViewController.items[repositorySearchTableViewController.idx]
-        if let language = repositories.language {
+        guard let repository = item else { return }
+        if let language = repository.language {
             languageLabel.text = "Written in \(language)"
         } else {
             languageLabel.text = "言語が含まれていません"
         }
-        starsCountLabel.text = "\(repositories.stargazersCount) stars"
-        watchersCountLabel.text = "\(repositories.watchersCount) watchers"
-        forksCountLabel.text = "\(repositories.forksCount) forks"
-        openIssueCountLabel.text = "\(repositories.openIssuesCount) open issues"
+        starsCountLabel.text = "\(repository.stargazersCount) stars"
+        watchersCountLabel.text = "\(repository.watchersCount) watchers"
+        forksCountLabel.text = "\(repository.forksCount) forks"
+        openIssueCountLabel.text = "\(repository.openIssuesCount) open issues"
         getImage()
     }
 
     func getImage() {
-        let repositories = repositorySearchTableViewController.items[repositorySearchTableViewController.idx]
-        repositoryFullnameLabel.text = repositories.fullName
-        guard let avatarUrl = URL(string: repositories.owner.avatarUrl) else { return }
+        guard let repository = item else { return }
+        repositoryFullnameLabel.text = repository.fullName
+        guard let avatarUrl = URL(string: repository.owner.avatarUrl) else { return }
         URLSession.shared.dataTask(with: avatarUrl) { [weak self] (data, _, _) in
             guard let data = data else { return }
             guard let avatarImage = UIImage(data: data) else { return }

@@ -1,7 +1,23 @@
-# 株式会社ゆめみ iOS エンジニアコードチェック課題
-
-## 課題取り組みのメモ
+# 課題取り組みのメモ
 本課題に取り組みに関するメモを[こちら](https://github.com/mrs1669/yumemi-ios-engineer-codecheck/wiki/コーディングテスト)に書いていますので，レビューしてくださる方はこちらをみていただけると嬉しいです！！
+
+# 開発概要
+## 実行環境 (基本，最新 [2022/9/28現在] 安定版)
+- PC: MacBook Pro 16 2019 (intel CPU)
+- OS: macOS Ventura 13.0 beta 8 (22A5352e) ※コーディングテスト開始前から最新のDeveloper Beta OSを利用してしまっていたので，そのままの環境で開発しました
+- IDE: Xcode Version 14.0.1 (14A400)
+- Swift: Swift 5.7
+- 開発ターゲット: iOS16.1 (20B5050f)
+- CI: Xcode Cloud
+
+## 利用ライブラリ
+- [SwiftLint](https://github.com/realm/SwiftLint)
+
+## 以下 課題概要
+
+---
+
+# 株式会社ゆめみ iOS エンジニアコードチェック課題
 
 ## 概要
 
