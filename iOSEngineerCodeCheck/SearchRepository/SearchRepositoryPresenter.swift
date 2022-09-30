@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol SearchRepositoryPresenterOutputProtocol: AnyObject {
+    func updateRepositories(_ repositories: [Item])
+}

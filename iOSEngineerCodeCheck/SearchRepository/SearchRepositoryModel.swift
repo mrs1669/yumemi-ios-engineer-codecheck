@@ -16,7 +16,7 @@ protocol SearchRepositoryModelProtocol {
 final class SearchRepositoryModel: SearchRepositoryModelProtocol {
     private var requestUrlString: String!
     private var task: URLSessionTask?
-    
+
     // MARK: Fetch Repository
     func fetchRepositories(keyword: String, completion: @escaping (Result<[Item], Error>) -> Void) {
         guard let encodeKeywordString = keyword.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return }

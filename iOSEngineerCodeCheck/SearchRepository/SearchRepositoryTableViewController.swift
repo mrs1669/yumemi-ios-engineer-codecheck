@@ -80,3 +80,9 @@ class SearchRepositoryTableViewController: UITableViewController, UISearchBarDel
     }
 
 }
+
+extension SearchRepositoryTableViewController: SearchRepositoryPresenterOutputProtocol {
+    func updateRepositories(_ repositories: [Item]) {
+        tableView.reloadData()
+    }
+}
