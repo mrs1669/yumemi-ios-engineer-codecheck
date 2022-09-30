@@ -10,7 +10,7 @@ import UIKit
 
 class SearchRepositoryTableViewController: UITableViewController, UISearchBarDelegate {
 
-    @IBOutlet private weak var schBr: UISearchBar!
+    @IBOutlet private weak var repositorySearchBar: UISearchBar!
     var task: URLSessionTask?
     var keyword: String!
     var index: Int!
@@ -22,8 +22,8 @@ class SearchRepositoryTableViewController: UITableViewController, UISearchBarDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        schBr.text = "GitHubのリポジトリを検索できるよー"
-        schBr.delegate = self
+        repositorySearchBar.text = "GitHubのリポジトリを検索できるよー"
+        repositorySearchBar.delegate = self
         presenter = SearchRepositoryPresenter(view: self, model: SearchRepositoryModel())
         print("Hello")
         inject(presenter: presenter)
