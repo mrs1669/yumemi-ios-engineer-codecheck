@@ -62,15 +62,15 @@
             </objects>
             <point key="canvasLocation" x="-411" y="134"/>
         </scene>
-        <!--Main-->
+        <!--RepositoryDetailViewController-->
         <scene sceneID="ps9-gw-pkH">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="IUz-KI-Agw" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="RepositoryDetailViewController" id="IUz-KI-Agw" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="8Co-qe-zPe"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tum-2P-bnq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="118" y="134"/>
+            <point key="canvasLocation" x="269" y="134"/>
         </scene>
     </scenes>
     <resources>
