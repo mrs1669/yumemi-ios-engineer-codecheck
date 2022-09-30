@@ -9,8 +9,8 @@
 import Foundation
 
 protocol SearchRepositoryModelProtocol {
-    func fetchRepositories(keyword: String, completion: @escaping (Result<[Item], Error>) -> Void)
-    func connectCancel()
+    func fetchRepositories(keyword: String, completion: @escaping (Result<[Repository], Error>) -> Void)
+    func taskCancel()
 }
 
 final class SearchRepositoryModel: SearchRepositoryModelProtocol {
@@ -18,7 +18,7 @@ final class SearchRepositoryModel: SearchRepositoryModelProtocol {
     private var task: URLSessionTask?
 
     // MARK: Fetch Repository
-    func fetchRepositories(keyword: String, completion: @escaping (Result<[Item], Error>) -> Void) {
+    func fetchRepositories(keyword: String, completion: @escaping (Result<[Repository], Error>) -> Void) {
         guard let encodeKeywordString = keyword.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return }
         requestUrlString = "https://api.github.com/search/repositories?q=\(encodeKeywordString)"
         task = URLSession.shared.dataTask(with: URL(string: requestUrlString)!) { [weak self] (data, _, _) in
@@ -34,7 +34,7 @@ final class SearchRepositoryModel: SearchRepositoryModelProtocol {
         task?.resume()
     }
 
-    func connectCancel() {
+    func taskCancel() {
         task?.cancel()
     }
 }

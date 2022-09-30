@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SearchRepositoryTableViewController.swift
 //  iOSEngineerCodeCheck
 //
 //  Created by 史 翔新 on 2020/04/20.
@@ -10,8 +10,7 @@ import UIKit
 
 class SearchRepositoryTableViewController: UITableViewController, UISearchBarDelegate {
 
-    @IBOutlet private weak var schBr: UISearchBar!
-    var items: [Item] = []
+    @IBOutlet private weak var repositorySearchBar: UISearchBar!
     var task: URLSessionTask?
     var keyword: String!
     var index: Int!
@@ -23,11 +22,9 @@ class SearchRepositoryTableViewController: UITableViewController, UISearchBarDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        schBr.text = "GitHubのリポジトリを検索できるよー"
-        schBr.delegate = self
-
+        repositorySearchBar.text = "GitHubのリポジトリを検索できるよー"
+        repositorySearchBar.delegate = self
         presenter = SearchRepositoryPresenter(view: self, model: SearchRepositoryModel())
-        print("Hello")
         inject(presenter: presenter)
     }
 
@@ -37,13 +34,14 @@ class SearchRepositoryTableViewController: UITableViewController, UISearchBarDel
         return true
     }
 
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        task?.cancel()
-    }
-
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let keyword = searchBar.text else { return }
         presenter.viewDidLoad(keyword: keyword)
+    }
+
+    // MARK: Called at change SearchBar text
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        presenter.taskCancel()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -65,15 +63,15 @@ class SearchRepositoryTableViewController: UITableViewController, UISearchBarDel
         return cell
     }
 
+    // MARK: Called at segue
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 画面遷移時に呼ばれる
         index = indexPath.row
         performSegue(withIdentifier: "Detail", sender: self)
     }
 }
 
 extension SearchRepositoryTableViewController: SearchRepositoryPresenterOutputProtocol {
-    func updateRepositories(_ repositories: [Item]) {
+    func updateRepositories(_ repositories: [Repository]) {
         tableView.reloadData()
     }
 }

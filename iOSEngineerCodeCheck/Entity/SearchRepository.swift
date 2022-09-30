@@ -9,10 +9,10 @@
 import Foundation
 
 struct SearchRepository: Codable {
-    let items: [Item]
+    let items: [Repository]
 }
 
-struct Item: Codable {
+struct Repository: Codable {
     let repositoryId: Int
     let fullName: String
     let language: String?
