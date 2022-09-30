@@ -110,12 +110,12 @@
 			isa = PBXGroup;
 			children = (
 				E1D3AAB528E5517200A51E3F /* Entity */,
-				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
-				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
 				E1C852F028E5B65800F8B15F /* SearchRepository */,
 				E1C852F128E5B68900F8B15F /* RepositoryDetail */,
-				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
+				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
+				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
 				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
+				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
 				BFD945EC244DC5EB0012785A /* Info.plist */,
 			);
 			path = iOSEngineerCodeCheck;
