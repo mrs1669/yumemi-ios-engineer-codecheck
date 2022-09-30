@@ -12,6 +12,7 @@ protocol SearchRepositoryPresenterInputProtocol {
     var repositories: [Repository] { get }
     func repository(forRow row: Int) -> Repository?
     func viewDidLoad(keyword: String)
+    func taskCancel()
 }
 
 protocol SearchRepositoryPresenterOutputProtocol: AnyObject {
@@ -47,5 +48,9 @@ final class SearchRepositoryPresenter: SearchRepositoryPresenterInputProtocol {
                 }
             }
         }
+    }
+
+    func taskCancel() {
+        model.taskCancel()
     }
 }

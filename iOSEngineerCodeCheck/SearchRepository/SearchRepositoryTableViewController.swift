@@ -35,13 +35,14 @@ class SearchRepositoryTableViewController: UITableViewController, UISearchBarDel
         return true
     }
 
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        task?.cancel()
-    }
-
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let keyword = searchBar.text else { return }
         presenter.viewDidLoad(keyword: keyword)
+    }
+
+    // MARK: Called at change SearchBar text
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        presenter.taskCancel()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

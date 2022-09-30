@@ -10,7 +10,7 @@ import Foundation
 
 protocol SearchRepositoryModelProtocol {
     func fetchRepositories(keyword: String, completion: @escaping (Result<[Repository], Error>) -> Void)
-    func connectCancel()
+    func taskCancel()
 }
 
 final class SearchRepositoryModel: SearchRepositoryModelProtocol {
@@ -34,7 +34,7 @@ final class SearchRepositoryModel: SearchRepositoryModelProtocol {
         task?.resume()
     }
 
-    func connectCancel() {
+    func taskCancel() {
         task?.cancel()
     }
 }
