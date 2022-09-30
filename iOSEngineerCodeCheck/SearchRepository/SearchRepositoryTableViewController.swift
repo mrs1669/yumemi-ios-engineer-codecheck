@@ -14,12 +14,21 @@ class SearchRepositoryTableViewController: UITableViewController, UISearchBarDel
     var items: [Item] = []
     var task: URLSessionTask?
     var keyword: String!
-    var idx: Int!
+    var index: Int!
+
+    private var presenter: SearchRepositoryPresenterInputProtocol!
+    func inject(presenter: SearchRepositoryPresenterInputProtocol) {
+        self.presenter = presenter
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         schBr.text = "GitHubのリポジトリを検索できるよー"
         schBr.delegate = self
+
+        presenter = SearchRepositoryPresenter(view: self, model: SearchRepositoryModel())
+        print("Hello")
+        inject(presenter: presenter)
     }
 
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
@@ -33,41 +42,24 @@ class SearchRepositoryTableViewController: UITableViewController, UISearchBarDel
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        keyword = searchBar.text!
-        if !keyword.isEmpty {
-            let encodeKeywordString = keyword.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)
-            let searchUrlString = "https://api.github.com/search/repositories?q=\(encodeKeywordString!)"
-            task = URLSession.shared.dataTask(with: URL(string: searchUrlString)!) { [weak self] (data, _, _) in
-                guard let data = data else { return }
-                do {
-                    let repositories = try JSONDecoder().decode(SearchRepository.self, from: data)
-                    self?.items = repositories.items
-                    DispatchQueue.main.async {
-                        self?.tableView.reloadData()
-                    }
-                } catch let error {
-                    print(error)
-                }
-            }
-            // これ呼ばなきゃリストが更新されません
-            task?.resume()
-        }
+        guard let keyword = searchBar.text else { return }
+        presenter.viewDidLoad(keyword: keyword)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Detail"{
-            guard let dtl = segue.destination as? RepositoryDetailViewController else { return }
-            dtl.repositorySearchTableViewController = self
+            guard let repositoryDetailViewController = segue.destination as? RepositoryDetailViewController else { return }
+            repositoryDetailViewController.item = presenter.repositories[index]
         }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return presenter.repositories.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        let repository = items[indexPath.row]
+        let repository = presenter.repositories[indexPath.row]
         cell.textLabel?.text = repository.fullName
         cell.detailTextLabel?.text = repository.language
         return cell
@@ -75,10 +67,9 @@ class SearchRepositoryTableViewController: UITableViewController, UISearchBarDel
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 画面遷移時に呼ばれる
-        idx = indexPath.row
+        index = indexPath.row
         performSegue(withIdentifier: "Detail", sender: self)
     }
-
 }
 
 extension SearchRepositoryTableViewController: SearchRepositoryPresenterOutputProtocol {
