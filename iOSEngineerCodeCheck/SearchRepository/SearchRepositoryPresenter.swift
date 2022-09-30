@@ -9,17 +9,17 @@
 import Foundation
 
 protocol SearchRepositoryPresenterInputProtocol {
-    var repositories: [Item] { get }
-    func repository(forRow row: Int) -> Item?
+    var repositories: [Repository] { get }
+    func repository(forRow row: Int) -> Repository?
     func viewDidLoad(keyword: String)
 }
 
 protocol SearchRepositoryPresenterOutputProtocol: AnyObject {
-    func updateRepositories(_ repositories: [Item])
+    func updateRepositories(_ repositories: [Repository])
 }
 
 final class SearchRepositoryPresenter: SearchRepositoryPresenterInputProtocol {
-    private(set) var repositories: [Item] = []
+    private(set) var repositories: [Repository] = []
     private weak var view: SearchRepositoryPresenterOutputProtocol!
     private var model: SearchRepositoryModelProtocol
 
@@ -28,7 +28,7 @@ final class SearchRepositoryPresenter: SearchRepositoryPresenterInputProtocol {
         self.model = model
     }
 
-    func repository(forRow row: Int) -> Item? {
+    func repository(forRow row: Int) -> Repository? {
         guard row < repositories.count else { return nil }
         return repositories[row]
     }

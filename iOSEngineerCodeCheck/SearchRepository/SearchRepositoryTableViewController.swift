@@ -11,7 +11,7 @@ import UIKit
 class SearchRepositoryTableViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet private weak var schBr: UISearchBar!
-    var items: [Item] = []
+    var items: [Repository] = []
     var task: URLSessionTask?
     var keyword: String!
     var index: Int!
@@ -73,7 +73,7 @@ class SearchRepositoryTableViewController: UITableViewController, UISearchBarDel
 }
 
 extension SearchRepositoryTableViewController: SearchRepositoryPresenterOutputProtocol {
-    func updateRepositories(_ repositories: [Item]) {
+    func updateRepositories(_ repositories: [Repository]) {
         tableView.reloadData()
     }
 }
