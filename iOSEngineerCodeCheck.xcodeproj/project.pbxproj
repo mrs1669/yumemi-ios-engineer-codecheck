@@ -18,6 +18,7 @@
 		BFD94601244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */; };
 		E1C852F328E6905A00F8B15F /* SearchRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C852F228E6905A00F8B15F /* SearchRepositoryModel.swift */; };
 		E1C852F528E6969800F8B15F /* SearchRepositoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */; };
+		E1C852F728E6C94F00F8B15F /* SearchRepositoryTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1C852F628E6C94F00F8B15F /* SearchRepositoryTableViewController.storyboard */; };
 		E1D3AAB728E5526F00A51E3F /* SearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D3AAB628E5526F00A51E3F /* SearchRepository.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		BFD94602244DC5EC0012785A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1C852F228E6905A00F8B15F /* SearchRepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryModel.swift; sourceTree = "<group>"; };
 		E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryPresenter.swift; sourceTree = "<group>"; };
+		E1C852F628E6C94F00F8B15F /* SearchRepositoryTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchRepositoryTableViewController.storyboard; sourceTree = "<group>"; };
 		E1D3AAB628E5526F00A51E3F /* SearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +146,7 @@
 				E1C852F228E6905A00F8B15F /* SearchRepositoryModel.swift */,
 				E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */,
 				BFD945E2244DC5E80012785A /* SearchRepositoryTableViewController.swift */,
+				E1C852F628E6C94F00F8B15F /* SearchRepositoryTableViewController.storyboard */,
 			);
 			path = SearchRepository;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			files = (
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
+				E1C852F728E6C94F00F8B15F /* SearchRepositoryTableViewController.storyboard in Resources */,
 				BFD945E6244DC5E80012785A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
