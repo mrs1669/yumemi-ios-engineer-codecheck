@@ -63,8 +63,8 @@ class SearchRepositoryTableViewController: UITableViewController, UISearchBarDel
         return cell
     }
 
+    // MARK: Called at segue
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 画面遷移時に呼ばれる
         index = indexPath.row
         performSegue(withIdentifier: "Detail", sender: self)
     }
