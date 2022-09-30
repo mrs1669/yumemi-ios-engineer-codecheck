@@ -25,7 +25,6 @@ class SearchRepositoryTableViewController: UITableViewController, UISearchBarDel
         repositorySearchBar.text = "GitHubのリポジトリを検索できるよー"
         repositorySearchBar.delegate = self
         presenter = SearchRepositoryPresenter(view: self, model: SearchRepositoryModel())
-        print("Hello")
         inject(presenter: presenter)
     }
 
