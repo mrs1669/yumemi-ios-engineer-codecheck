@@ -22,6 +22,7 @@ class SearchRepositoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = SearchRepositoryPresenter(view: self, model: SearchRepositoryModel())
+        configureTableView()
         configureSearchBar()
         inject(presenter: presenter)
     }
@@ -49,6 +50,10 @@ class SearchRepositoryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         index = indexPath.row
         presenter.didSelectRow(at: indexPath)
+    }
+
+    private func configureTableView () {
+        tableView.keyboardDismissMode = .onDrag
     }
 }
 
