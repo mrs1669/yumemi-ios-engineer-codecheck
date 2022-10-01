@@ -11,7 +11,6 @@ import UIKit
 class SearchRepositoryTableViewController: UITableViewController {
 
     @IBOutlet private weak var repositorySearchBar: UISearchBar!
-    var task: URLSessionTask?
     var keyword: String!
     var index: Int!
 
