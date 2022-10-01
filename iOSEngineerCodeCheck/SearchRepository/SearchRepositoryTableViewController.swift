@@ -58,11 +58,6 @@ class SearchRepositoryTableViewController: UITableViewController {
 }
 
 extension SearchRepositoryTableViewController: UISearchBarDelegate {
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        // ↓こうすれば初期のテキストを消せる
-        searchBar.text = ""
-        return true
-    }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let keyword = searchBar.text else { return }
@@ -76,7 +71,7 @@ extension SearchRepositoryTableViewController: UISearchBarDelegate {
     }
 
     private func configureSearchBar() {
-        repositorySearchBar.text = "GitHubのリポジトリを検索できるよー"
+        repositorySearchBar.placeholder = "GitHubのリポジトリを検索できるよー"
         repositorySearchBar.delegate = self
     }
 }
