@@ -21,6 +21,11 @@ class RepositoryDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureLabel()
+        getImage()
+    }
+
+    private func configureLabel() {
         guard let repository = item else { return }
         if let language = repository.language {
             languageLabel.text = "Written in \(language)"
@@ -31,7 +36,6 @@ class RepositoryDetailViewController: UIViewController {
         watchersCountLabel.text = "\(repository.watchersCount) watchers"
         forksCountLabel.text = "\(repository.forksCount) forks"
         openIssueCountLabel.text = "\(repository.openIssuesCount) open issues"
-        getImage()
     }
 
     func getImage() {
