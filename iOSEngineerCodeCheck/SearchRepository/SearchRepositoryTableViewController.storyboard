@@ -9,6 +9,51 @@
     </dependencies>
     <scenes>
         <!--Root View Controller-->
+        <scene sceneID="D1t-VN-hBW">
+            <objects>
+                <tableViewController id="CP7-nd-1S9" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="4Cy-6b-VHX">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="OHk-GG-4Uc">
+                                <rect key="frame" x="0.0" y="50" width="390" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OHk-GG-4Uc" id="ZFd-xd-JhA">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CP7-nd-1S9" id="0SF-XR-cMZ"/>
+                            <outlet property="delegate" destination="CP7-nd-1S9" id="7Qo-73-TIg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="WJD-Wq-IJU"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="skX-Qm-Qpq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1076" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MmG-x3-KA5">
+            <objects>
+                <navigationController id="2lV-IZ-49b" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ed2-hB-ydp">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CP7-nd-1S9" kind="relationship" relationship="rootViewController" id="cXD-2a-7iY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rKv-M6-rEZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1983" y="139"/>
+        </scene>
+        <!--Root View Controller-->
         <scene sceneID="ExW-NI-HNX">
             <objects>
                 <tableViewController id="5DM-kr-nGm" customClass="SearchRepositoryTableViewController" customModule="iOSEngineerCodeCheck" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,7 +105,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w2m-ze-426" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-411" y="134"/>
+            <point key="canvasLocation" x="-343" y="139"/>
         </scene>
         <!--RepositoryDetailViewController-->
         <scene sceneID="ps9-gw-pkH">
@@ -70,7 +115,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tum-2P-bnq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="269" y="134"/>
+            <point key="canvasLocation" x="295" y="139"/>
         </scene>
     </scenes>
     <resources>
