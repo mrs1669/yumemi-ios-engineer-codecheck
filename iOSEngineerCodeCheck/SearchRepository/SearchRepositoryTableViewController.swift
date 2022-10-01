@@ -36,7 +36,7 @@ class SearchRepositoryTableViewController: UITableViewController, UISearchBarDel
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let keyword = searchBar.text else { return }
-        presenter.viewDidLoad(keyword: keyword)
+        presenter.didTapSearchBar(keyword: keyword)
     }
 
     // MARK: Called at change SearchBar text

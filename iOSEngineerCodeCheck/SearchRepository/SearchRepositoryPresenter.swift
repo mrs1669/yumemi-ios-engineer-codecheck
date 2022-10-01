@@ -11,7 +11,7 @@ import Foundation
 protocol SearchRepositoryPresenterInputProtocol {
     var repositories: [Repository] { get }
     func repository(forRow row: Int) -> Repository?
-    func viewDidLoad(keyword: String)
+    func didTapSearchBar(keyword: String)
     func taskCancel()
 }
 
@@ -34,7 +34,7 @@ final class SearchRepositoryPresenter: SearchRepositoryPresenterInputProtocol {
         return repositories[row]
     }
 
-    func viewDidLoad(keyword: String) {
+    func didTapSearchBar(keyword: String) {
         if !keyword.isEmpty {
             model.fetchRepositories(keyword: keyword) { [weak self] result in
                 switch result {
