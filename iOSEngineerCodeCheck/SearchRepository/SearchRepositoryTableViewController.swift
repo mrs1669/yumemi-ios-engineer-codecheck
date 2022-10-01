@@ -62,6 +62,7 @@ extension SearchRepositoryTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let keyword = searchBar.text else { return }
         presenter.didTapSearchBar(keyword: keyword)
+        searchBar.resignFirstResponder()
     }
 
     // MARK: Called at change SearchBar text
