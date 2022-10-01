@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--リポジトリ検索-->
         <scene sceneID="D1t-VN-hBW">
             <objects>
                 <tableViewController id="CP7-nd-1S9" customClass="SearchRepositoryTableViewController" customModule="iOSEngineerCodeCheck" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,7 +52,7 @@
                             <outlet property="delegate" destination="CP7-nd-1S9" id="7Qo-73-TIg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="WJD-Wq-IJU"/>
+                    <navigationItem key="navigationItem" title="リポジトリ検索" id="WJD-Wq-IJU"/>
                     <connections>
                         <outlet property="repositorySearchBar" destination="RWH-cm-WEv" id="psR-WX-f7K"/>
                         <segue destination="IUz-KI-Agw" kind="show" identifier="Detail" id="UZw-l3-vga"/>
