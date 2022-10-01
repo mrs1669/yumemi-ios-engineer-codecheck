@@ -22,9 +22,8 @@ class SearchRepositoryTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        repositorySearchBar.text = "GitHubのリポジトリを検索できるよー"
-        repositorySearchBar.delegate = self
         presenter = SearchRepositoryPresenter(view: self, model: SearchRepositoryModel())
+        configureSearchBar()
         inject(presenter: presenter)
     }
 
@@ -69,6 +68,11 @@ extension SearchRepositoryTableViewController: UISearchBarDelegate {
     // MARK: Called at change SearchBar text
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         presenter.taskCancel()
+    }
+
+    private func configureSearchBar() {
+        repositorySearchBar.text = "GitHubのリポジトリを検索できるよー"
+        repositorySearchBar.delegate = self
     }
 }
 
