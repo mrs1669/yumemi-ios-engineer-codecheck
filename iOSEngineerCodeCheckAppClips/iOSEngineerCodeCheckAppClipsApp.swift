@@ -9,7 +9,7 @@
 import SwiftUI
 
 @main
-struct iOSEngineerCodeCheckAppClipsApp: App {
+struct IOSEngineerCodeCheckAppClipsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

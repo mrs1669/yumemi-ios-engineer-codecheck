@@ -9,7 +9,7 @@
 @testable import iOSEngineerCodeCheckAppClips
 import XCTest
 
-final class iOSEngineerCodeCheckAppClipsTests: XCTestCase {
+final class IOSEngineerCodeCheckAppClipsTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
