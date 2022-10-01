@@ -11,12 +11,14 @@ import Foundation
 protocol SearchRepositoryPresenterInputProtocol {
     var repositories: [Repository] { get }
     func repository(forRow row: Int) -> Repository?
+    func didSelectRow(at indexPath: IndexPath)
     func didTapSearchBar(keyword: String)
     func taskCancel()
 }
 
 protocol SearchRepositoryPresenterOutputProtocol: AnyObject {
     func updateRepositories(_ repositories: [Repository])
+    func segueToRepositoryDetailView(index: Int)
 }
 
 final class SearchRepositoryPresenter: SearchRepositoryPresenterInputProtocol {
@@ -48,6 +50,11 @@ final class SearchRepositoryPresenter: SearchRepositoryPresenterInputProtocol {
                 }
             }
         }
+    }
+
+    func didSelectRow(at indexPath: IndexPath) {
+        guard let repository = repository(forRow: indexPath.row) else { return }
+        view.segueToRepositoryDetailView(index: indexPath.row)
     }
 
     func taskCancel() {

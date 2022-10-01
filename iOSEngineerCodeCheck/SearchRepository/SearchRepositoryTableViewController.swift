@@ -49,7 +49,7 @@ class SearchRepositoryTableViewController: UITableViewController {
     // MARK: Called at segue
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         index = indexPath.row
-        performSegue(withIdentifier: "Detail", sender: self)
+        presenter.didSelectRow(at: indexPath)
     }
 }
 
@@ -79,5 +79,9 @@ extension SearchRepositoryTableViewController: UISearchBarDelegate {
 extension SearchRepositoryTableViewController: SearchRepositoryPresenterOutputProtocol {
     func updateRepositories(_ repositories: [Repository]) {
         tableView.reloadData()
+    }
+
+    func segueToRepositoryDetailView(index: Int) {
+        performSegue(withIdentifier: "Detail", sender: self)
     }
 }
