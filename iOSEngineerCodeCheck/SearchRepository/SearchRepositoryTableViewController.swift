@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchRepositoryTableViewController: UITableViewController, UISearchBarDelegate {
+class SearchRepositoryTableViewController: UITableViewController {
 
     @IBOutlet private weak var repositorySearchBar: UISearchBar!
     var task: URLSessionTask?
@@ -26,22 +26,6 @@ class SearchRepositoryTableViewController: UITableViewController, UISearchBarDel
         repositorySearchBar.delegate = self
         presenter = SearchRepositoryPresenter(view: self, model: SearchRepositoryModel())
         inject(presenter: presenter)
-    }
-
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        // ↓こうすれば初期のテキストを消せる
-        searchBar.text = ""
-        return true
-    }
-
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let keyword = searchBar.text else { return }
-        presenter.didTapSearchBar(keyword: keyword)
-    }
-
-    // MARK: Called at change SearchBar text
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        presenter.taskCancel()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -67,6 +51,24 @@ class SearchRepositoryTableViewController: UITableViewController, UISearchBarDel
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         index = indexPath.row
         performSegue(withIdentifier: "Detail", sender: self)
+    }
+}
+
+extension SearchRepositoryTableViewController: UISearchBarDelegate {
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        // ↓こうすれば初期のテキストを消せる
+        searchBar.text = ""
+        return true
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let keyword = searchBar.text else { return }
+        presenter.didTapSearchBar(keyword: keyword)
+    }
+
+    // MARK: Called at change SearchBar text
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        presenter.taskCancel()
     }
 }
 
