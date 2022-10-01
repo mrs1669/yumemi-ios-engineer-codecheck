@@ -24,7 +24,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repository Fullname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzY-ow-NLf">
-                                <rect key="frame" x="72.333333333333329" y="503.00000000000006" width="245.33333333333337" height="33.666666666666686"/>
+                                <rect key="frame" x="60" y="503.00000000000006" width="270" height="33.666666666666686"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" systemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -75,8 +75,10 @@
                         <constraints>
                             <constraint firstItem="wzY-ow-NLf" firstAttribute="top" secondItem="r7E-A2-JWo" secondAttribute="bottom" constant="28" id="3VY-tW-jSF"/>
                             <constraint firstItem="Ako-nB-eBV" firstAttribute="centerX" secondItem="wzY-ow-NLf" secondAttribute="centerX" id="8cZ-Mh-7TH"/>
+                            <constraint firstItem="7AQ-AF-gwj" firstAttribute="trailing" secondItem="wzY-ow-NLf" secondAttribute="trailing" constant="60" id="8in-7X-ggd"/>
                             <constraint firstItem="r7E-A2-JWo" firstAttribute="centerY" secondItem="7AQ-AF-gwj" secondAttribute="centerY" multiplier="0.7" id="ChM-Pd-1Ex"/>
                             <constraint firstItem="7AQ-AF-gwj" firstAttribute="trailing" secondItem="r7E-A2-JWo" secondAttribute="trailing" constant="20" id="FyL-kF-eYu"/>
+                            <constraint firstItem="wzY-ow-NLf" firstAttribute="leading" secondItem="7AQ-AF-gwj" secondAttribute="leading" constant="60" id="hhA-uI-DHa"/>
                             <constraint firstItem="Ako-nB-eBV" firstAttribute="width" secondItem="r7E-A2-JWo" secondAttribute="width" id="iYZ-P7-zbK"/>
                             <constraint firstItem="wzY-ow-NLf" firstAttribute="centerX" secondItem="r7E-A2-JWo" secondAttribute="centerX" id="ivc-hm-YxL"/>
                             <constraint firstItem="Ako-nB-eBV" firstAttribute="top" secondItem="wzY-ow-NLf" secondAttribute="bottom" constant="28" id="rgS-fd-wy7"/>
