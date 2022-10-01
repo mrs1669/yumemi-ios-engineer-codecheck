@@ -8,10 +8,9 @@
 
 import UIKit
 
-class SearchRepositoryTableViewController: UITableViewController, UISearchBarDelegate {
+class SearchRepositoryTableViewController: UITableViewController {
 
     @IBOutlet private weak var repositorySearchBar: UISearchBar!
-    var task: URLSessionTask?
     var keyword: String!
     var index: Int!
 
@@ -22,26 +21,9 @@ class SearchRepositoryTableViewController: UITableViewController, UISearchBarDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        repositorySearchBar.text = "GitHubのリポジトリを検索できるよー"
-        repositorySearchBar.delegate = self
         presenter = SearchRepositoryPresenter(view: self, model: SearchRepositoryModel())
+        configureSearchBar()
         inject(presenter: presenter)
-    }
-
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        // ↓こうすれば初期のテキストを消せる
-        searchBar.text = ""
-        return true
-    }
-
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let keyword = searchBar.text else { return }
-        presenter.viewDidLoad(keyword: keyword)
-    }
-
-    // MARK: Called at change SearchBar text
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        presenter.taskCancel()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -66,12 +48,39 @@ class SearchRepositoryTableViewController: UITableViewController, UISearchBarDel
     // MARK: Called at segue
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         index = indexPath.row
-        performSegue(withIdentifier: "Detail", sender: self)
+        presenter.didSelectRow(at: indexPath)
+    }
+}
+
+extension SearchRepositoryTableViewController: UISearchBarDelegate {
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        // ↓こうすれば初期のテキストを消せる
+        searchBar.text = ""
+        return true
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let keyword = searchBar.text else { return }
+        presenter.didTapSearchBar(keyword: keyword)
+    }
+
+    // MARK: Called at change SearchBar text
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        presenter.taskCancel()
+    }
+
+    private func configureSearchBar() {
+        repositorySearchBar.text = "GitHubのリポジトリを検索できるよー"
+        repositorySearchBar.delegate = self
     }
 }
 
 extension SearchRepositoryTableViewController: SearchRepositoryPresenterOutputProtocol {
     func updateRepositories(_ repositories: [Repository]) {
         tableView.reloadData()
+    }
+
+    func segueToRepositoryDetailView(index: Int) {
+        performSegue(withIdentifier: "Detail", sender: self)
     }
 }
