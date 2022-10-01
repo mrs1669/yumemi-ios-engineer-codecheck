@@ -22,6 +22,7 @@ class SearchRepositoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = SearchRepositoryPresenter(view: self, model: SearchRepositoryModel())
+        configureTableView()
         configureSearchBar()
         inject(presenter: presenter)
     }
@@ -50,6 +51,10 @@ class SearchRepositoryTableViewController: UITableViewController {
         index = indexPath.row
         presenter.didSelectRow(at: indexPath)
     }
+
+    private func configureTableView () {
+        tableView.keyboardDismissMode = .onDrag
+    }
 }
 
 extension SearchRepositoryTableViewController: UISearchBarDelegate {
@@ -62,6 +67,7 @@ extension SearchRepositoryTableViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let keyword = searchBar.text else { return }
         presenter.didTapSearchBar(keyword: keyword)
+        searchBar.resignFirstResponder()
     }
 
     // MARK: Called at change SearchBar text
