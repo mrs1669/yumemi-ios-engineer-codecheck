@@ -40,6 +40,7 @@ class RepositoryDetailViewController: UIViewController {
 
     func getImage() {
         guard let repository = item else { return }
+        repositoryFullnameLabel.adjustsFontSizeToFitWidth
         repositoryFullnameLabel.text = repository.fullName
         guard let avatarUrl = URL(string: repository.owner.avatarUrl) else { return }
         URLSession.shared.dataTask(with: avatarUrl) { [weak self] (data, _, _) in
