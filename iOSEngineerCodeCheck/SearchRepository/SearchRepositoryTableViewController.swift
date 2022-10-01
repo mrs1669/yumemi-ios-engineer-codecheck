@@ -76,7 +76,7 @@ extension SearchRepositoryTableViewController: UISearchBarDelegate {
     }
 
     private func configureSearchBar() {
-        repositorySearchBar.text = "GitHubのリポジトリを検索できるよー"
+        repositorySearchBar.placeholder = "GitHubのリポジトリを検索できるよー"
         repositorySearchBar.delegate = self
     }
 }
