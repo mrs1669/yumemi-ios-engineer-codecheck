@@ -22,6 +22,7 @@ protocol SearchRepositoryPresenterOutputProtocol: AnyObject {
 }
 
 final class SearchRepositoryPresenter: SearchRepositoryPresenterInputProtocol {
+
     private(set) var repositories: [Repository] = []
     private weak var view: SearchRepositoryPresenterOutputProtocol!
     private var model: SearchRepositoryModelProtocol
@@ -53,7 +54,6 @@ final class SearchRepositoryPresenter: SearchRepositoryPresenterInputProtocol {
     }
 
     func didSelectRow(at indexPath: IndexPath) {
-        guard let repository = repository(forRow: indexPath.row) else { return }
         view.segueToRepositoryDetailView(index: indexPath.row)
     }
 

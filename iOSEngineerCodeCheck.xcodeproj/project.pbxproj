@@ -28,6 +28,10 @@
 		E1E8D8C628E87F1D000E5E98 /* iOSEngineerCodeCheckAppClipsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8D8C528E87F1D000E5E98 /* iOSEngineerCodeCheckAppClipsUITests.swift */; };
 		E1E8D8C828E87F1D000E5E98 /* iOSEngineerCodeCheckAppClipsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8D8C728E87F1D000E5E98 /* iOSEngineerCodeCheckAppClipsUITestsLaunchTests.swift */; };
 		E1E8D8CB28E87F1D000E5E98 /* iOSEngineerCodeCheckAppClips.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = E1E8D8A628E87F1A000E5E98 /* iOSEngineerCodeCheckAppClips.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E1E8D8D828E95CB8000E5E98 /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = E1E8D8D728E95CB8000E5E98 /* Rswift */; };
+		E1E8D8E328E97152000E5E98 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8D8E228E97152000E5E98 /* R.generated.swift */; };
+		E1E8D8E628E991C9000E5E98 /* SearchRepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8D8E528E991C9000E5E98 /* SearchRepositoryTableViewCell.swift */; };
+		E1E8D8E828E992C2000E5E98 /* SearchRepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1E8D8E728E992C2000E5E98 /* SearchRepositoryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +118,9 @@
 		E1E8D8C128E87F1C000E5E98 /* iOSEngineerCodeCheckAppClipsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSEngineerCodeCheckAppClipsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E8D8C528E87F1D000E5E98 /* iOSEngineerCodeCheckAppClipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEngineerCodeCheckAppClipsUITests.swift; sourceTree = "<group>"; };
 		E1E8D8C728E87F1D000E5E98 /* iOSEngineerCodeCheckAppClipsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEngineerCodeCheckAppClipsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E1E8D8E228E97152000E5E98 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = generated/R.generated.swift; sourceTree = SOURCE_ROOT; };
+		E1E8D8E528E991C9000E5E98 /* SearchRepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryTableViewCell.swift; sourceTree = "<group>"; };
+		E1E8D8E728E992C2000E5E98 /* SearchRepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchRepositoryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E8D8D828E95CB8000E5E98 /* Rswift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +204,7 @@
 				E1C852F128E5B68900F8B15F /* RepositoryDetail */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
+				E1E8D8E228E97152000E5E98 /* R.generated.swift */,
 				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
 				BFD945EC244DC5EB0012785A /* Info.plist */,
@@ -228,6 +237,7 @@
 				E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */,
 				BFD945E2244DC5E80012785A /* SearchRepositoryTableViewController.swift */,
 				E1C852F628E6C94F00F8B15F /* SearchRepositoryTableViewController.storyboard */,
+				E1E8D8E428E9915D000E5E98 /* Cell */,
 			);
 			path = SearchRepository;
 			sourceTree = "<group>";
@@ -287,6 +297,15 @@
 			path = iOSEngineerCodeCheckAppClipsUITests;
 			sourceTree = "<group>";
 		};
+		E1E8D8E428E9915D000E5E98 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E1E8D8E528E991C9000E5E98 /* SearchRepositoryTableViewCell.swift */,
+				E1E8D8E728E992C2000E5E98 /* SearchRepositoryTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -294,10 +313,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFD94605244DC5EC0012785A /* Build configuration list for PBXNativeTarget "iOSEngineerCodeCheck" */;
 			buildPhases = (
+				E14B704328E46C47008B7318 /* ShellScript */,
 				BFD945D7244DC5E80012785A /* Sources */,
 				BFD945D8244DC5E80012785A /* Frameworks */,
 				BFD945D9244DC5E80012785A /* Resources */,
-				E14B704328E46C47008B7318 /* ShellScript */,
 				E1E8D8CC28E87F1D000E5E98 /* Embed App Clips */,
 			);
 			buildRules = (
@@ -306,6 +325,9 @@
 				E1E8D8CA28E87F1D000E5E98 /* PBXTargetDependency */,
 			);
 			name = iOSEngineerCodeCheck;
+			packageProductDependencies = (
+				E1E8D8D728E95CB8000E5E98 /* Rswift */,
+			);
 			productName = iOSEngineerCodeCheck;
 			productReference = BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */;
 			productType = "com.apple.product-type.application";
@@ -442,6 +464,9 @@
 				Base,
 			);
 			mainGroup = BFD945D2244DC5E80012785A;
+			packageReferences = (
+				E1E8D8D628E95CB8000E5E98 /* XCRemoteSwiftPackageReference "R.swift" */,
+			);
 			productRefGroup = BFD945DC244DC5E80012785A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -461,6 +486,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E8D8E828E992C2000E5E98 /* SearchRepositoryTableViewCell.xib in Resources */,
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
 				E1C852F728E6C94F00F8B15F /* SearchRepositoryTableViewController.storyboard in Resources */,
@@ -517,14 +543,16 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
 			);
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				$SRCROOT/generated/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect --format\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect --format\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\nif which rswift >/dev/null; then\n  rswift generate \"$SRCROOT/generated/R.generated.swift\"\nelse\n  echo \"warning: rswift not installed\"\nfi\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -536,8 +564,10 @@
 				BFD945E3244DC5E80012785A /* SearchRepositoryTableViewController.swift in Sources */,
 				E1C852F328E6905A00F8B15F /* SearchRepositoryModel.swift in Sources */,
 				E1C852F528E6969800F8B15F /* SearchRepositoryPresenter.swift in Sources */,
+				E1E8D8E328E97152000E5E98 /* R.generated.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */,
 				E1D3AAB728E5526F00A51E3F /* SearchRepository.swift in Sources */,
+				E1E8D8E628E991C9000E5E98 /* SearchRepositoryTableViewCell.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 			);
@@ -1080,6 +1110,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E1E8D8D628E95CB8000E5E98 /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E1E8D8D728E95CB8000E5E98 /* Rswift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1E8D8D628E95CB8000E5E98 /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = Rswift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFD945D3244DC5E80012785A /* Project object */;
 }

@@ -14,6 +14,7 @@ protocol SearchRepositoryModelProtocol {
 }
 
 final class SearchRepositoryModel: SearchRepositoryModelProtocol {
+
     private var requestUrlString: String!
     private var task: URLSessionTask?
 
