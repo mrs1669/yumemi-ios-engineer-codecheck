@@ -15,6 +15,7 @@ class SearchRepositoryTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        languageLabel.text = ""
     }
 
 }
