@@ -6,4 +6,12 @@
 //  Copyright © 2022 YUMEMI Inc. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class SearchRepositoryTableViewCell: UITableViewCell {
+
+    static func nib() -> UINib {
+        return UINib(nibName: R.nib.searchRepositoryTableViewCell.name, bundle: nil)
+    }
+
+}
