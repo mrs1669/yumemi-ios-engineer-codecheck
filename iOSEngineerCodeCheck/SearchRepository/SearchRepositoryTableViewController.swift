@@ -13,7 +13,6 @@ class SearchRepositoryTableViewController: UITableViewController {
     @IBOutlet private weak var repositorySearchBar: UISearchBar!
     var keyword: String!
     var index: Int!
-
     private var presenter: SearchRepositoryPresenterInputProtocol!
     func inject(presenter: SearchRepositoryPresenterInputProtocol) {
         self.presenter = presenter
