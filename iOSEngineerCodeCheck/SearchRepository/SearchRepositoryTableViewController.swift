@@ -38,7 +38,7 @@ class SearchRepositoryTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchRepositoryTableViewCell") as? SearchRepositoryTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchRepositoryTableViewCell.reuseIdentifier) as? SearchRepositoryTableViewCell else { return UITableViewCell() }
         let repository = presenter.repositories[indexPath.row]
         cell.textLabel?.text = repository.fullName
         cell.detailTextLabel?.text = repository.language
@@ -53,7 +53,7 @@ class SearchRepositoryTableViewController: UITableViewController {
 
     private func configureTableView () {
         tableView.keyboardDismissMode = .onDrag
-        tableView.register(UINib(resource: R.nib.searchRepositoryTableViewCell), forCellReuseIdentifier: "SearchRepositoryTableViewCell")
+        tableView.register(UINib(resource: R.nib.searchRepositoryTableViewCell), forCellReuseIdentifier: SearchRepositoryTableViewCell.reuseIdentifier)
     }
 }
 

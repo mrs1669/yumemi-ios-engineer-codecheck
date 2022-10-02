@@ -10,4 +10,6 @@ import UIKit
 
 class SearchRepositoryTableViewCell: UITableViewCell {
 
+    static let reuseIdentifier = "SearchRepositoryTableViewCell"
+
 }
