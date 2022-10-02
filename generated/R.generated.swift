@@ -178,6 +178,26 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    /// Nib `SearchRepositoryTableViewCell`.
+    static let searchRepositoryTableViewCell = _R.nib._SearchRepositoryTableViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "SearchRepositoryTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.searchRepositoryTableViewCell) instead")
+    static func searchRepositoryTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.searchRepositoryTableViewCell)
+    }
+    #endif
+
+    static func searchRepositoryTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SearchRepositoryTableViewCell? {
+      return R.nib.searchRepositoryTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SearchRepositoryTableViewCell
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `Repository`.
@@ -205,6 +225,23 @@ struct _R: Rswift.Validatable {
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib {
+    struct _SearchRepositoryTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "SearchRepositoryTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SearchRepositoryTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SearchRepositoryTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {

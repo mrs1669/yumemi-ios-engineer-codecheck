@@ -30,6 +30,8 @@
 		E1E8D8CB28E87F1D000E5E98 /* iOSEngineerCodeCheckAppClips.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = E1E8D8A628E87F1A000E5E98 /* iOSEngineerCodeCheckAppClips.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E1E8D8D828E95CB8000E5E98 /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = E1E8D8D728E95CB8000E5E98 /* Rswift */; };
 		E1E8D8E328E97152000E5E98 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8D8E228E97152000E5E98 /* R.generated.swift */; };
+		E1E8D8E628E991C9000E5E98 /* SearchRepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8D8E528E991C9000E5E98 /* SearchRepositoryTableViewCell.swift */; };
+		E1E8D8E828E992C2000E5E98 /* SearchRepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1E8D8E728E992C2000E5E98 /* SearchRepositoryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +119,8 @@
 		E1E8D8C528E87F1D000E5E98 /* iOSEngineerCodeCheckAppClipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEngineerCodeCheckAppClipsUITests.swift; sourceTree = "<group>"; };
 		E1E8D8C728E87F1D000E5E98 /* iOSEngineerCodeCheckAppClipsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEngineerCodeCheckAppClipsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E1E8D8E228E97152000E5E98 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = generated/R.generated.swift; sourceTree = SOURCE_ROOT; };
+		E1E8D8E528E991C9000E5E98 /* SearchRepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryTableViewCell.swift; sourceTree = "<group>"; };
+		E1E8D8E728E992C2000E5E98 /* SearchRepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchRepositoryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +237,7 @@
 				E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */,
 				BFD945E2244DC5E80012785A /* SearchRepositoryTableViewController.swift */,
 				E1C852F628E6C94F00F8B15F /* SearchRepositoryTableViewController.storyboard */,
+				E1E8D8E428E9915D000E5E98 /* Cell */,
 			);
 			path = SearchRepository;
 			sourceTree = "<group>";
@@ -290,6 +295,15 @@
 				E1E8D8C728E87F1D000E5E98 /* iOSEngineerCodeCheckAppClipsUITestsLaunchTests.swift */,
 			);
 			path = iOSEngineerCodeCheckAppClipsUITests;
+			sourceTree = "<group>";
+		};
+		E1E8D8E428E9915D000E5E98 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E1E8D8E528E991C9000E5E98 /* SearchRepositoryTableViewCell.swift */,
+				E1E8D8E728E992C2000E5E98 /* SearchRepositoryTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -472,6 +486,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E8D8E828E992C2000E5E98 /* SearchRepositoryTableViewCell.xib in Resources */,
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
 				E1C852F728E6C94F00F8B15F /* SearchRepositoryTableViewController.storyboard in Resources */,
@@ -552,6 +567,7 @@
 				E1E8D8E328E97152000E5E98 /* R.generated.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */,
 				E1D3AAB728E5526F00A51E3F /* SearchRepository.swift in Sources */,
+				E1E8D8E628E991C9000E5E98 /* SearchRepositoryTableViewCell.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 			);
