@@ -38,7 +38,7 @@ class SearchRepositoryTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchRepositoryTableViewCell") as? SearchRepositoryTableViewCell else { return UITableViewCell() }
         let repository = presenter.repositories[indexPath.row]
         cell.textLabel?.text = repository.fullName
         cell.detailTextLabel?.text = repository.language
