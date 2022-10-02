@@ -11,6 +11,9 @@
 # Icon must end with two \r
 Icon
 
+# R.swift
+*.generated.swift
+
 
 # Thumbnails
 ._*
