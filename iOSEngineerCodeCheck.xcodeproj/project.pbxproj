@@ -296,10 +296,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFD94605244DC5EC0012785A /* Build configuration list for PBXNativeTarget "iOSEngineerCodeCheck" */;
 			buildPhases = (
+				E14B704328E46C47008B7318 /* ShellScript */,
 				BFD945D7244DC5E80012785A /* Sources */,
 				BFD945D8244DC5E80012785A /* Frameworks */,
 				BFD945D9244DC5E80012785A /* Resources */,
-				E14B704328E46C47008B7318 /* ShellScript */,
 				E1E8D8CC28E87F1D000E5E98 /* Embed App Clips */,
 			);
 			buildRules = (
