@@ -28,6 +28,7 @@
 		E1E8D8C628E87F1D000E5E98 /* iOSEngineerCodeCheckAppClipsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8D8C528E87F1D000E5E98 /* iOSEngineerCodeCheckAppClipsUITests.swift */; };
 		E1E8D8C828E87F1D000E5E98 /* iOSEngineerCodeCheckAppClipsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8D8C728E87F1D000E5E98 /* iOSEngineerCodeCheckAppClipsUITestsLaunchTests.swift */; };
 		E1E8D8CB28E87F1D000E5E98 /* iOSEngineerCodeCheckAppClips.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = E1E8D8A628E87F1A000E5E98 /* iOSEngineerCodeCheckAppClips.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E1E8D8D828E95CB8000E5E98 /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = E1E8D8D728E95CB8000E5E98 /* Rswift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E8D8D828E95CB8000E5E98 /* Rswift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +308,9 @@
 				E1E8D8CA28E87F1D000E5E98 /* PBXTargetDependency */,
 			);
 			name = iOSEngineerCodeCheck;
+			packageProductDependencies = (
+				E1E8D8D728E95CB8000E5E98 /* Rswift */,
+			);
 			productName = iOSEngineerCodeCheck;
 			productReference = BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */;
 			productType = "com.apple.product-type.application";
@@ -442,6 +447,9 @@
 				Base,
 			);
 			mainGroup = BFD945D2244DC5E80012785A;
+			packageReferences = (
+				E1E8D8D628E95CB8000E5E98 /* XCRemoteSwiftPackageReference "R.swift" */,
+			);
 			productRefGroup = BFD945DC244DC5E80012785A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1082,6 +1090,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E1E8D8D628E95CB8000E5E98 /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E1E8D8D728E95CB8000E5E98 /* Rswift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1E8D8D628E95CB8000E5E98 /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = Rswift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFD945D3244DC5E80012785A /* Project object */;
 }
