@@ -517,14 +517,16 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
 			);
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				$SRCROOT/generated/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect --format\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect --format\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\nif which rswift >/dev/null; then\n  rswift generate \"$SRCROOT/generated/R.generated.swift\"\nelse\n  echo \"warning: rswift not installed\"\nfi\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
