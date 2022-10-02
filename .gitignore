@@ -12,7 +12,7 @@
 Icon
 
 # R.swift
-*.generated.swift
+# *.generated.swift
 
 
 # Thumbnails
