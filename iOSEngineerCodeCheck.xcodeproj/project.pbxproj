@@ -29,6 +29,7 @@
 		E1E8D8C828E87F1D000E5E98 /* iOSEngineerCodeCheckAppClipsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8D8C728E87F1D000E5E98 /* iOSEngineerCodeCheckAppClipsUITestsLaunchTests.swift */; };
 		E1E8D8CB28E87F1D000E5E98 /* iOSEngineerCodeCheckAppClips.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = E1E8D8A628E87F1A000E5E98 /* iOSEngineerCodeCheckAppClips.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E1E8D8D828E95CB8000E5E98 /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = E1E8D8D728E95CB8000E5E98 /* Rswift */; };
+		E1E8D8E328E97152000E5E98 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E8D8E228E97152000E5E98 /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		E1E8D8C128E87F1C000E5E98 /* iOSEngineerCodeCheckAppClipsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSEngineerCodeCheckAppClipsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E8D8C528E87F1D000E5E98 /* iOSEngineerCodeCheckAppClipsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEngineerCodeCheckAppClipsUITests.swift; sourceTree = "<group>"; };
 		E1E8D8C728E87F1D000E5E98 /* iOSEngineerCodeCheckAppClipsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEngineerCodeCheckAppClipsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E1E8D8E228E97152000E5E98 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = generated/R.generated.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 				E1C852F128E5B68900F8B15F /* RepositoryDetail */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
+				E1E8D8E228E97152000E5E98 /* R.generated.swift */,
 				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
 				BFD945EC244DC5EB0012785A /* Info.plist */,
@@ -546,6 +549,7 @@
 				BFD945E3244DC5E80012785A /* SearchRepositoryTableViewController.swift in Sources */,
 				E1C852F328E6905A00F8B15F /* SearchRepositoryModel.swift in Sources */,
 				E1C852F528E6969800F8B15F /* SearchRepositoryPresenter.swift in Sources */,
+				E1E8D8E328E97152000E5E98 /* R.generated.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */,
 				E1D3AAB728E5526F00A51E3F /* SearchRepository.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
