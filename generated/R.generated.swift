@@ -258,32 +258,18 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
-    try nib.validate()
-    #endif
-    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
 
   #if os(iOS) || os(tvOS)
-  struct nib: Rswift.Validatable {
-    static func validate() throws {
-      try _SearchRepositoryTableViewCell.validate()
-    }
-
-    struct _SearchRepositoryTableViewCell: Rswift.NibResourceType, Rswift.Validatable {
+  struct nib {
+    struct _SearchRepositoryTableViewCell: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "SearchRepositoryTableViewCell"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SearchRepositoryTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SearchRepositoryTableViewCell
-      }
-
-      static func validate() throws {
-        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "appletv") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'appletv' is used in nib 'SearchRepositoryTableViewCell', but couldn't be loaded.") } }
-        if #available(iOS 11.0, tvOS 11.0, *) {
-          if UIKit.UIColor(named: "Background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Background' is used in nib 'SearchRepositoryTableViewCell', but couldn't be loaded.") }
-        }
       }
 
       fileprivate init() {}
