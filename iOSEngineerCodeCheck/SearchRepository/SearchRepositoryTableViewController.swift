@@ -96,6 +96,6 @@ extension SearchRepositoryTableViewController: SearchRepositoryPresenterOutputPr
     }
 
     func segueToRepositoryDetailView(index: Int) {
-        performSegue(withIdentifier: "Detail", sender: self)
+        performSegue(withIdentifier: R.segue.searchRepositoryTableViewController.detail, sender: self)
     }
 }
