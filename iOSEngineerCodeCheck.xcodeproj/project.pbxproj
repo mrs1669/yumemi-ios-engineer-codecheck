@@ -16,6 +16,7 @@
 		BFD945F6244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945F5244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift */; };
 		BFD94601244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */; };
 		E114793828EA8E2E00AE3B20 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E114793728EA8E2E00AE3B20 /* ColorAssets.xcassets */; };
+		E114793E28EB79E600AE3B20 /* LicenseList in Frameworks */ = {isa = PBXBuildFile; productRef = E114793D28EB79E600AE3B20 /* LicenseList */; };
 		E145865528E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E145865428E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard */; };
 		E1C852F328E6905A00F8B15F /* SearchRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C852F228E6905A00F8B15F /* SearchRepositoryModel.swift */; };
 		E1C852F528E6969800F8B15F /* SearchRepositoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */; };
@@ -130,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E114793E28EB79E600AE3B20 /* LicenseList in Frameworks */,
 				E1E8D8D828E95CB8000E5E98 /* Rswift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +332,7 @@
 			name = iOSEngineerCodeCheck;
 			packageProductDependencies = (
 				E1E8D8D728E95CB8000E5E98 /* Rswift */,
+				E114793D28EB79E600AE3B20 /* LicenseList */,
 			);
 			productName = iOSEngineerCodeCheck;
 			productReference = BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */;
@@ -469,6 +472,7 @@
 			mainGroup = BFD945D2244DC5E80012785A;
 			packageReferences = (
 				E1E8D8D628E95CB8000E5E98 /* XCRemoteSwiftPackageReference "R.swift" */,
+				E114793C28EB79E600AE3B20 /* XCRemoteSwiftPackageReference "LicenseList" */,
 			);
 			productRefGroup = BFD945DC244DC5E80012785A /* Products */;
 			projectDirPath = "";
@@ -556,7 +560,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect --format\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\nif which rswift >/dev/null; then\n  rswift generate \"$SRCROOT/generated/R.generated.swift\"\nelse\n  echo \"warning: rswift not installed\"\nfi\n\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect --format\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\nif which rswift >/dev/null; then\n  rswift generate \"$SRCROOT/generated/R.generated.swift\"\nelse\n  echo \"warning: rswift not installed\"\nfi\n\nSOURCE_PACKAGES_PATH=`echo ${BUILD_DIR%Build/*}SourcePackages`\n\n# Build SourcePackagesParser\nxcrun --sdk macosx swift build -c release \\\n  --package-path ${SOURCE_PACKAGES_PATH}/checkouts/LicenseList \\\n  --product spp\n\n# Run SourcePackagesParser\n${SOURCE_PACKAGES_PATH}/checkouts/LicenseList/.build/release/spp ${SRCROOT} ${SOURCE_PACKAGES_PATH}\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1116,6 +1120,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E114793C28EB79E600AE3B20 /* XCRemoteSwiftPackageReference "LicenseList" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cybozu/LicenseList.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.6;
+			};
+		};
 		E1E8D8D628E95CB8000E5E98 /* XCRemoteSwiftPackageReference "R.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
@@ -1127,6 +1139,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E114793D28EB79E600AE3B20 /* LicenseList */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E114793C28EB79E600AE3B20 /* XCRemoteSwiftPackageReference "LicenseList" */;
+			productName = LicenseList;
+		};
 		E1E8D8D728E95CB8000E5E98 /* Rswift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E1E8D8D628E95CB8000E5E98 /* XCRemoteSwiftPackageReference "R.swift" */;
