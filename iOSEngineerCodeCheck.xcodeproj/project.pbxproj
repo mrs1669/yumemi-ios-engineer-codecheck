@@ -15,6 +15,7 @@
 		BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */; };
 		BFD945F6244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945F5244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift */; };
 		BFD94601244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */; };
+		E114793828EA8E2E00AE3B20 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E114793728EA8E2E00AE3B20 /* ColorAssets.xcassets */; };
 		E145865528E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E145865428E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard */; };
 		E1C852F328E6905A00F8B15F /* SearchRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C852F228E6905A00F8B15F /* SearchRepositoryModel.swift */; };
 		E1C852F528E6969800F8B15F /* SearchRepositoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */; };
@@ -101,6 +102,7 @@
 		BFD945FC244DC5EB0012785A /* iOSEngineerCodeCheckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSEngineerCodeCheckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEngineerCodeCheckUITests.swift; sourceTree = "<group>"; };
 		BFD94602244DC5EC0012785A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E114793728EA8E2E00AE3B20 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		E145865428E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositoryDetailViewController.storyboard; sourceTree = "<group>"; };
 		E1C852F228E6905A00F8B15F /* SearchRepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryModel.swift; sourceTree = "<group>"; };
 		E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryPresenter.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				E1E8D8E228E97152000E5E98 /* R.generated.swift */,
 				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
+				E114793728EA8E2E00AE3B20 /* ColorAssets.xcassets */,
 				BFD945EC244DC5EB0012785A /* Info.plist */,
 			);
 			path = iOSEngineerCodeCheck;
@@ -490,6 +493,7 @@
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
 				E1C852F728E6C94F00F8B15F /* SearchRepositoryTableViewController.storyboard in Resources */,
+				E114793828EA8E2E00AE3B20 /* ColorAssets.xcassets in Resources */,
 				E145865528E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
