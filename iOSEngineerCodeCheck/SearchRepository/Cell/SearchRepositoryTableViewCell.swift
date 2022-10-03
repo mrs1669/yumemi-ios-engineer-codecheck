@@ -34,7 +34,7 @@ class SearchRepositoryTableViewCell: UITableViewCell {
 
     func configureCell(repository: Repository) {
         ownerNameLabel.text = repository.owner.ownerName
-        repositoryNameLabel.text = repository.fullName
+        repositoryNameLabel.text = repository.repositoryName
         languageLabel.text = repository.language
     }
 
