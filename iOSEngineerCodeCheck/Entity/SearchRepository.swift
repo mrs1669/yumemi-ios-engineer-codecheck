@@ -35,9 +35,11 @@ struct Repository: Codable {
 }
 
 struct Owner: Codable {
+    let ownerName: String
     let avatarUrl: String
 
     private enum CodingKeys: String, CodingKey {
+        case ownerName = "login"
         case avatarUrl = "avatar_url"
     }
 }
