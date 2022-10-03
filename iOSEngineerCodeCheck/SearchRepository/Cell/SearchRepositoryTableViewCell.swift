@@ -20,6 +20,7 @@ class SearchRepositoryTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureFloatingView()
+        configureAvararImageView()
     }
 
     private func configureFloatingView() {
@@ -31,6 +32,11 @@ class SearchRepositoryTableViewCell: UITableViewCell {
         floatingView.layer.shadowRadius = 8
         floatingView.layer.shouldRasterize = true
         floatingView.layer.rasterizationScale = UIScreen.main.scale
+    }
+
+    private func configureAvararImageView() {
+        avatarImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        avatarImageView.layer.cornerRadius = 20
     }
 
     func configureCell(repository: Repository) {
