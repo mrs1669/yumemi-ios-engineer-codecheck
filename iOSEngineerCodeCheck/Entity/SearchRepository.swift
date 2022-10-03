@@ -38,7 +38,7 @@ struct Repository: Codable {
 
 struct Owner: Codable {
     let ownerName: String
-    let avatarUrl: String
+    let avatarUrl: URL
 
     private enum CodingKeys: String, CodingKey {
         case ownerName = "login"
