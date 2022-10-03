@@ -206,6 +206,7 @@
 				E1D3AAB528E5517200A51E3F /* Entity */,
 				E1C852F028E5B65800F8B15F /* SearchRepository */,
 				E1C852F128E5B68900F8B15F /* RepositoryDetail */,
+				E114793F28EB8B1000AE3B20 /* Licence */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
 				E1E8D8E228E97152000E5E98 /* R.generated.swift */,
@@ -233,6 +234,13 @@
 				BFD94602244DC5EC0012785A /* Info.plist */,
 			);
 			path = iOSEngineerCodeCheckUITests;
+			sourceTree = "<group>";
+		};
+		E114793F28EB8B1000AE3B20 /* Licence */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Licence;
 			sourceTree = "<group>";
 		};
 		E1C852F028E5B65800F8B15F /* SearchRepository */ = {
