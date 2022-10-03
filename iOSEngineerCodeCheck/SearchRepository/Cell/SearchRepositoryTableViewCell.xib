@@ -41,6 +41,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="floatingView" destination="hNi-d8-K7E" id="c2A-Tp-2iI"/>
                 <outlet property="languageLabel" destination="bPG-Z7-4au" id="Y2W-Wu-ab3"/>
             </connections>
             <point key="canvasLocation" x="-559.23076923076917" y="166.35071090047393"/>

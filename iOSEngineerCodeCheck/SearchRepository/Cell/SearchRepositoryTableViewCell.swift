@@ -10,6 +10,7 @@ import UIKit
 
 class SearchRepositoryTableViewCell: UITableViewCell {
 
+    @IBOutlet private weak var floatingView: UIView!
     @IBOutlet private weak var languageLabel: UILabel!
     static let reuseIdentifier = "SearchRepositoryTableViewCell"
 
