@@ -73,6 +73,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="avatarImageView" destination="9VR-I5-KUi" id="xqG-bv-Sqi"/>
                 <outlet property="floatingView" destination="hNi-d8-K7E" id="c2A-Tp-2iI"/>
                 <outlet property="languageLabel" destination="Pwd-wf-bfd" id="etV-Ud-4Kb"/>
                 <outlet property="ownerNameLabel" destination="w3W-ms-tfL" id="IBw-wa-49r"/>

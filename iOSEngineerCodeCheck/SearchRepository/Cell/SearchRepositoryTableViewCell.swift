@@ -11,6 +11,7 @@ import UIKit
 class SearchRepositoryTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var floatingView: UIView!
+    @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var ownerNameLabel: UILabel!
     @IBOutlet private weak var repositoryNameLabel: UILabel!
     @IBOutlet private weak var languageLabel: UILabel!
@@ -36,6 +37,14 @@ class SearchRepositoryTableViewCell: UITableViewCell {
         ownerNameLabel.text = repository.owner.ownerName
         repositoryNameLabel.text = repository.repositoryName
         languageLabel.text = repository.language
+        let avatarUrl = repository.owner.avatarUrl
+        URLSession.shared.dataTask(with: avatarUrl) { [weak self] (data, _, _) in
+            guard let data = data else { return }
+            guard let avatarImage = UIImage(data: data) else { return }
+            DispatchQueue.main.async {
+                self?.avatarImageView.image = avatarImage
+            }
+        }.resume()
     }
 
 }
