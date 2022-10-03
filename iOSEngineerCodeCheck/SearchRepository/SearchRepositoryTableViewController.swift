@@ -6,6 +6,7 @@
 //  Copyright © 2020 YUMEMI Inc. All rights reserved.
 //
 
+import LicenseList
 import UIKit
 
 class SearchRepositoryTableViewController: UITableViewController {
@@ -63,9 +64,10 @@ class SearchRepositoryTableViewController: UITableViewController {
     }
 
     @objc private func licenceVavigationBarButtonPressed(_ sender: UIBarButtonItem) {
-        if let licenceViewController = R.storyboard.licenceViewController.instantiateInitialViewController() {
-            self.present(licenceViewController, animated: true)
-        }
+        guard let licenceFileURL = Bundle.main.url(forResource: "license-list", withExtension: "plist") else { return }
+        let licenceViewController = LicenseListViewController(fileURL: licenceFileURL)
+        licenceViewController.title = "LICENSE"
+        self.navigationController?.pushViewController(licenceViewController, animated: true)
     }
 }
 
