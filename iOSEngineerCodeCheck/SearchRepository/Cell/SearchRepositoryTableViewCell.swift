@@ -12,6 +12,7 @@ class SearchRepositoryTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var floatingView: UIView!
     @IBOutlet private weak var ownerNameLabel: UILabel!
+    @IBOutlet private weak var repositoryNameLabel: UILabel!
     @IBOutlet private weak var languageLabel: UILabel!
     static let reuseIdentifier = "SearchRepositoryTableViewCell"
 
@@ -33,6 +34,7 @@ class SearchRepositoryTableViewCell: UITableViewCell {
 
     func configureCell(repository: Repository) {
         ownerNameLabel.text = repository.owner.ownerName
+        repositoryNameLabel.text = repository.fullName
         languageLabel.text = repository.language
     }
 
