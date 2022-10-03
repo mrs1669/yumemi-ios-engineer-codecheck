@@ -63,7 +63,9 @@ class SearchRepositoryTableViewController: UITableViewController {
     }
 
     @objc private func addButtonPressed(_ sender: UIBarButtonItem) {
-        print("追加ボタンが押されました")
+        if let licenceViewController = R.storyboard.licenceViewController.instantiateInitialViewController() {
+            self.present(licenceViewController, animated: true)
+        }
     }
 }
 
