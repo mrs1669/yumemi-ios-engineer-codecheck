@@ -334,6 +334,7 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "MainTheme", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'MainTheme' is used in storyboard 'SearchRepositoryTableViewController', but couldn't be loaded.") }
         }
       }
 
