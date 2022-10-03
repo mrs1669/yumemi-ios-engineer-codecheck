@@ -6,6 +6,7 @@
 //  Copyright © 2020 YUMEMI Inc. All rights reserved.
 //
 
+import LicenseList
 import UIKit
 
 class SearchRepositoryTableViewController: UITableViewController {
@@ -23,6 +24,7 @@ class SearchRepositoryTableViewController: UITableViewController {
         presenter = SearchRepositoryPresenter(view: self, model: SearchRepositoryModel())
         configureTableView()
         configureSearchBar()
+        configureNavigationItem()
         inject(presenter: presenter)
     }
 
@@ -55,6 +57,17 @@ class SearchRepositoryTableViewController: UITableViewController {
         tableView.keyboardDismissMode = .onDrag
         tableView.register(UINib(resource: R.nib.searchRepositoryTableViewCell), forCellReuseIdentifier: SearchRepositoryTableViewCell.reuseIdentifier)
         tableView.rowHeight = 100
+    }
+
+    private func configureNavigationItem () {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(licenceVavigationBarButtonPressed(_:)))
+    }
+
+    @objc private func licenceVavigationBarButtonPressed(_ sender: UIBarButtonItem) {
+        guard let licenceFileURL = Bundle.main.url(forResource: "license-list", withExtension: "plist") else { return }
+        let licenceViewController = LicenseListViewController(fileURL: licenceFileURL)
+        licenceViewController.title = "LICENSE"
+        self.navigationController?.pushViewController(licenceViewController, animated: true)
     }
 }
 

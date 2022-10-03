@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "licenselist",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cybozu/LicenseList.git",
+      "state" : {
+        "revision" : "341148a9245f254bc173b4530f30da0b487e7a89",
+        "version" : "0.1.6"
+      }
+    },
+    {
       "identity" : "r.swift.library",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mac-cain13/R.swift.Library",
