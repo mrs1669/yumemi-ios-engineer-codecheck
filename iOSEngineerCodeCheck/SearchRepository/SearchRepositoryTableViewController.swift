@@ -23,6 +23,7 @@ class SearchRepositoryTableViewController: UITableViewController {
         presenter = SearchRepositoryPresenter(view: self, model: SearchRepositoryModel())
         configureTableView()
         configureSearchBar()
+        configureNavigationItem()
         inject(presenter: presenter)
     }
 
@@ -55,6 +56,14 @@ class SearchRepositoryTableViewController: UITableViewController {
         tableView.keyboardDismissMode = .onDrag
         tableView.register(UINib(resource: R.nib.searchRepositoryTableViewCell), forCellReuseIdentifier: SearchRepositoryTableViewCell.reuseIdentifier)
         tableView.rowHeight = 100
+    }
+
+    private func configureNavigationItem () {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(addButtonPressed(_:)))
+    }
+
+    @objc private func addButtonPressed(_ sender: UIBarButtonItem) {
+        print("追加ボタンが押されました")
     }
 }
 
