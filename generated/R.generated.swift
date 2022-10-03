@@ -147,6 +147,50 @@ struct R: Rswift.Validatable {
   }
   #endif
 
+  /// This `R.color` struct is generated, and contains static references to 2 colors.
+  struct color {
+    /// Color `Background`.
+    static let background = Rswift.ColorResource(bundle: R.hostingBundle, name: "Background")
+    /// Color `MainTheme`.
+    static let mainTheme = Rswift.ColorResource(bundle: R.hostingBundle, name: "MainTheme")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "Background", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "MainTheme", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func mainTheme(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.mainTheme, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "Background", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func background(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.background.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "MainTheme", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func mainTheme(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.mainTheme.name)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
   /// This `R.info` struct is generated, and contains static references to 1 properties.
   struct info {
     struct uiApplicationSceneManifest {
@@ -198,14 +242,6 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
-  struct reuseIdentifier {
-    /// Reuse identifier `Repository`.
-    static let repository: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "Repository")
-
-    fileprivate init() {}
-  }
-
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
@@ -222,18 +258,32 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
 
   #if os(iOS) || os(tvOS)
-  struct nib {
-    struct _SearchRepositoryTableViewCell: Rswift.NibResourceType {
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _SearchRepositoryTableViewCell.validate()
+    }
+
+    struct _SearchRepositoryTableViewCell: Rswift.NibResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "SearchRepositoryTableViewCell"
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SearchRepositoryTableViewCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SearchRepositoryTableViewCell
+      }
+
+      static func validate() throws {
+        if #available(iOS 13.0, *) { if UIKit.UIImage(systemName: "appletv") == nil { throw Rswift.ValidationError(description: "[R.swift] System image named 'appletv' is used in nib 'SearchRepositoryTableViewCell', but couldn't be loaded.") } }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "Background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'Background' is used in nib 'SearchRepositoryTableViewCell', but couldn't be loaded.") }
+        }
       }
 
       fileprivate init() {}

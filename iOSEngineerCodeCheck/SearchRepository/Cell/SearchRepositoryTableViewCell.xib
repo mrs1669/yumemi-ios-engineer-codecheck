@@ -4,31 +4,65 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mfK-3z-HAw" customClass="SearchRepositoryTableViewCell" customModule="iOSEngineerCodeCheck" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="mfK-3z-HAw" customClass="SearchRepositoryTableViewCell" customModule="iOSEngineerCodeCheck" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="391" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mfK-3z-HAw" id="Rh7-Cv-gRA">
-                <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="391" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNi-d8-K7E">
+                        <rect key="frame" x="10" y="10" width="371" height="80"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appletv" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9VR-I5-KUi">
+                                <rect key="frame" x="0.0" y="0.33333333333333393" width="80" height="78.333333333333329"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9VR-I5-KUi" secondAttribute="height" multiplier="1:1" id="lhQ-vg-LYK"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="H4X-au-0uh"/>
+                            <constraint firstAttribute="bottom" secondItem="9VR-I5-KUi" secondAttribute="bottom" id="MlB-l6-BlP"/>
+                            <constraint firstItem="9VR-I5-KUi" firstAttribute="top" secondItem="hNi-d8-K7E" secondAttribute="top" id="a3j-6d-8ES"/>
+                            <constraint firstItem="9VR-I5-KUi" firstAttribute="leading" secondItem="hNi-d8-K7E" secondAttribute="leading" id="mdy-SG-YhR"/>
+                        </constraints>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPG-Z7-4au">
-                        <rect key="frame" x="174" y="12" width="42" height="21"/>
+                        <rect key="frame" x="174" y="40" width="42" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" name="Background"/>
+                <constraints>
+                    <constraint firstItem="hNi-d8-K7E" firstAttribute="top" secondItem="Rh7-Cv-gRA" secondAttribute="top" constant="10" id="aFF-84-obu"/>
+                    <constraint firstAttribute="bottom" secondItem="hNi-d8-K7E" secondAttribute="bottom" constant="10" id="iRw-qn-YSW"/>
+                    <constraint firstItem="hNi-d8-K7E" firstAttribute="centerX" secondItem="Rh7-Cv-gRA" secondAttribute="centerX" id="jZo-am-kkc"/>
+                    <constraint firstAttribute="trailing" secondItem="hNi-d8-K7E" secondAttribute="trailing" constant="10" id="k71-aZ-iw8"/>
+                    <constraint firstItem="hNi-d8-K7E" firstAttribute="leading" secondItem="Rh7-Cv-gRA" secondAttribute="leading" constant="10" id="lMX-k1-VOT"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="floatingView" destination="hNi-d8-K7E" id="c2A-Tp-2iI"/>
                 <outlet property="languageLabel" destination="bPG-Z7-4au" id="Y2W-Wu-ab3"/>
             </connections>
-            <point key="canvasLocation" x="-560" y="146.44549763033174"/>
+            <point key="canvasLocation" x="-559.23076923076917" y="166.35071090047393"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="appletv" catalog="system" width="128" height="115"/>
+        <namedColor name="Background">
+            <color red="0.55294117647058827" green="0.77647058823529413" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
