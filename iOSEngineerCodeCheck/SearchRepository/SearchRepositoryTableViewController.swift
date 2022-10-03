@@ -59,10 +59,10 @@ class SearchRepositoryTableViewController: UITableViewController {
     }
 
     private func configureNavigationItem () {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(addButtonPressed(_:)))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(licenceVavigationBarButtonPressed(_:)))
     }
 
-    @objc private func addButtonPressed(_ sender: UIBarButtonItem) {
+    @objc private func licenceVavigationBarButtonPressed(_ sender: UIBarButtonItem) {
         if let licenceViewController = R.storyboard.licenceViewController.instantiateInitialViewController() {
             self.present(licenceViewController, animated: true)
         }
