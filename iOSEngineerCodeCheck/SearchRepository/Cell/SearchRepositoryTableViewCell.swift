@@ -23,11 +23,10 @@ class SearchRepositoryTableViewCell: UITableViewCell {
     private func configureFloatingView() {
         floatingView.backgroundColor = R.color.mainTheme()
         floatingView.layer.masksToBounds = false
-        floatingView.layer.masksToBounds = false
         floatingView.layer.cornerRadius  = 20
         floatingView.layer.shadowOffset = CGSize(width: 0, height: 5)
-        floatingView.layer.shadowOpacity = 0.3
-        floatingView.layer.shadowRadius = 10
+        floatingView.layer.shadowOpacity = 0.2
+        floatingView.layer.shadowRadius = 8
         floatingView.layer.shouldRasterize = true
         floatingView.layer.rasterizationScale = UIScreen.main.scale
     }
