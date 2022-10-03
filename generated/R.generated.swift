@@ -147,6 +147,31 @@ struct R: Rswift.Validatable {
   }
   #endif
 
+  /// This `R.color` struct is generated, and contains static references to 1 colors.
+  struct color {
+    /// Color `MainTheme`.
+    static let mainTheme = Rswift.ColorResource(bundle: R.hostingBundle, name: "MainTheme")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "MainTheme", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func mainTheme(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.mainTheme, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "MainTheme", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func mainTheme(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.mainTheme.name)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
   /// This `R.info` struct is generated, and contains static references to 1 properties.
   struct info {
     struct uiApplicationSceneManifest {
