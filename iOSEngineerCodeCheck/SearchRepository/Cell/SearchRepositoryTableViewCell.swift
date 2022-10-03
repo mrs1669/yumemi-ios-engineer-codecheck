@@ -31,4 +31,8 @@ class SearchRepositoryTableViewCell: UITableViewCell {
         floatingView.layer.rasterizationScale = UIScreen.main.scale
     }
 
+    func configureCell(repository: Repository) {
+        languageLabel.text = repository.language
+    }
+
 }
