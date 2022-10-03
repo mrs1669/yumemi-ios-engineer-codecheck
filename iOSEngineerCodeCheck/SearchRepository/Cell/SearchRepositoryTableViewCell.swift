@@ -17,6 +17,7 @@ class SearchRepositoryTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         languageLabel.text = ""
+        floatingView.backgroundColor = R.color.mainTheme()
     }
 
 }
