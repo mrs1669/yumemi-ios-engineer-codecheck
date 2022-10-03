@@ -33,7 +33,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repository Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VR3-UA-uAw">
-                                <rect key="frame" x="90" y="30" width="271" height="21"/>
+                                <rect key="frame" x="90" y="29.666666666666664" width="271" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pwd-wf-bfd">
+                                <rect key="frame" x="90" y="49" width="271" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -46,20 +52,16 @@
                             <constraint firstItem="VR3-UA-uAw" firstAttribute="centerY" secondItem="hNi-d8-K7E" secondAttribute="centerY" id="KPs-Jt-8zB"/>
                             <constraint firstAttribute="trailing" secondItem="VR3-UA-uAw" secondAttribute="trailing" constant="10" id="Lm1-1K-0i5"/>
                             <constraint firstAttribute="bottom" secondItem="9VR-I5-KUi" secondAttribute="bottom" id="MlB-l6-BlP"/>
+                            <constraint firstAttribute="bottom" secondItem="Pwd-wf-bfd" secondAttribute="bottom" constant="10" id="O68-ba-3ei"/>
+                            <constraint firstAttribute="trailing" secondItem="Pwd-wf-bfd" secondAttribute="trailing" constant="10" id="Q1k-3n-RXh"/>
                             <constraint firstItem="VR3-UA-uAw" firstAttribute="leading" secondItem="9VR-I5-KUi" secondAttribute="trailing" constant="10" id="RoT-gF-idz"/>
                             <constraint firstItem="9VR-I5-KUi" firstAttribute="top" secondItem="hNi-d8-K7E" secondAttribute="top" id="a3j-6d-8ES"/>
                             <constraint firstItem="w3W-ms-tfL" firstAttribute="top" secondItem="hNi-d8-K7E" secondAttribute="top" constant="5" id="drd-jy-DPE"/>
                             <constraint firstItem="9VR-I5-KUi" firstAttribute="leading" secondItem="hNi-d8-K7E" secondAttribute="leading" id="mdy-SG-YhR"/>
                             <constraint firstAttribute="trailing" secondItem="w3W-ms-tfL" secondAttribute="trailing" constant="10" id="zAF-7E-lYR"/>
+                            <constraint firstItem="Pwd-wf-bfd" firstAttribute="leading" secondItem="9VR-I5-KUi" secondAttribute="trailing" constant="10" id="zzW-7q-esb"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPG-Z7-4au">
-                        <rect key="frame" x="174" y="40" width="42" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" name="Background"/>
                 <constraints>
@@ -72,7 +74,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="floatingView" destination="hNi-d8-K7E" id="c2A-Tp-2iI"/>
-                <outlet property="languageLabel" destination="bPG-Z7-4au" id="Y2W-Wu-ab3"/>
+                <outlet property="languageLabel" destination="Pwd-wf-bfd" id="etV-Ud-4Kb"/>
                 <outlet property="ownerNameLabel" destination="w3W-ms-tfL" id="IBw-wa-49r"/>
                 <outlet property="repositoryNameLabel" destination="VR3-UA-uAw" id="whf-4r-Adx"/>
             </connections>
