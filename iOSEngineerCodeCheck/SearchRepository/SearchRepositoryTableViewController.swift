@@ -54,6 +54,7 @@ class SearchRepositoryTableViewController: UITableViewController {
     private func configureTableView () {
         tableView.keyboardDismissMode = .onDrag
         tableView.register(UINib(resource: R.nib.searchRepositoryTableViewCell), forCellReuseIdentifier: SearchRepositoryTableViewCell.reuseIdentifier)
+        tableView.rowHeight = 100
     }
 }
 
