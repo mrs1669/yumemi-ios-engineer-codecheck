@@ -19,6 +19,7 @@
 		E114793E28EB79E600AE3B20 /* LicenseList in Frameworks */ = {isa = PBXBuildFile; productRef = E114793D28EB79E600AE3B20 /* LicenseList */; };
 		E114794128EB8B8A00AE3B20 /* LicenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114794028EB8B8A00AE3B20 /* LicenceViewController.swift */; };
 		E114794328EB8BA000AE3B20 /* LicenceViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E114794228EB8BA000AE3B20 /* LicenceViewController.storyboard */; };
+		E114794528EB8E0200AE3B20 /* license-list.plist in Resources */ = {isa = PBXBuildFile; fileRef = E114794428EB8E0200AE3B20 /* license-list.plist */; };
 		E145865528E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E145865428E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard */; };
 		E1C852F328E6905A00F8B15F /* SearchRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C852F228E6905A00F8B15F /* SearchRepositoryModel.swift */; };
 		E1C852F528E6969800F8B15F /* SearchRepositoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */; };
@@ -108,6 +109,7 @@
 		E114793728EA8E2E00AE3B20 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		E114794028EB8B8A00AE3B20 /* LicenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenceViewController.swift; sourceTree = "<group>"; };
 		E114794228EB8BA000AE3B20 /* LicenceViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LicenceViewController.storyboard; sourceTree = "<group>"; };
+		E114794428EB8E0200AE3B20 /* license-list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "license-list.plist"; sourceTree = "<group>"; };
 		E145865428E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositoryDetailViewController.storyboard; sourceTree = "<group>"; };
 		E1C852F228E6905A00F8B15F /* SearchRepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryModel.swift; sourceTree = "<group>"; };
 		E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryPresenter.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 		BFD945D2244DC5E80012785A = {
 			isa = PBXGroup;
 			children = (
+				E114794428EB8E0200AE3B20 /* license-list.plist */,
 				BFD945DD244DC5E80012785A /* iOSEngineerCodeCheck */,
 				BFD945F4244DC5EB0012785A /* iOSEngineerCodeCheckTests */,
 				BFD945FF244DC5EB0012785A /* iOSEngineerCodeCheckUITests */,
@@ -507,6 +510,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E114794528EB8E0200AE3B20 /* license-list.plist in Resources */,
 				E1E8D8E828E992C2000E5E98 /* SearchRepositoryTableViewCell.xib in Resources */,
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
 				E114794328EB8BA000AE3B20 /* LicenceViewController.storyboard in Resources */,
