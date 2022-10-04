@@ -15,4 +15,9 @@ extension SearchRepositoryTableViewController: DZNEmptyDataSetSource {
         return NSAttributedString(string: R.string.localizable.repositoryNotFound(), attributes: attributes)
     }
 
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20), NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        return NSAttributedString(string: R.string.localizable.pleaseEnterTheNameOfTheRepositoryYouWishToSearch(), attributes: attributes)
+    }
+
 }
