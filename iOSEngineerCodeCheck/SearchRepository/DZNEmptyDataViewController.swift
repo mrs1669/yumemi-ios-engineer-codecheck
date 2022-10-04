@@ -10,6 +10,12 @@ import DZNEmptyDataSet
 
 extension SearchRepositoryTableViewController: DZNEmptyDataSetSource {
 
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return UIImage(systemName: "questionmark.folder")?
+            .withTintColor(R.color.mainTheme() ?? .white)
+            .resize(size: CGSize(width: 150, height: 150))
+    }
+
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let attributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 27), NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         return NSAttributedString(string: R.string.localizable.repositoryNotFound(), attributes: attributes)
