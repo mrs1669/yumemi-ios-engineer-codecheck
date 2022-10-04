@@ -25,6 +25,8 @@
 		E140C86228EC28160025328D /* DZNEmptyDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140C86128EC28160025328D /* DZNEmptyDataViewController.swift */; };
 		E140C86428EC2DC20025328D /* ImageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E140C86328EC2DC20025328D /* ImageAssets.xcassets */; };
 		E140C86728EC38D80025328D /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140C86628EC38D80025328D /* UIImage.swift */; };
+		E140C86928EC4FE70025328D /* SearchRepositoryPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140C86828EC4FE70025328D /* SearchRepositoryPresenterTest.swift */; };
+		E140C86B28EC62720025328D /* RepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140C86A28EC62720025328D /* RepositoryMock.swift */; };
 		E145865528E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E145865428E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard */; };
 		E1C852F328E6905A00F8B15F /* SearchRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C852F228E6905A00F8B15F /* SearchRepositoryModel.swift */; };
 		E1C852F528E6969800F8B15F /* SearchRepositoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */; };
@@ -128,6 +130,8 @@
 		E140C86128EC28160025328D /* DZNEmptyDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZNEmptyDataViewController.swift; sourceTree = "<group>"; };
 		E140C86328EC2DC20025328D /* ImageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageAssets.xcassets; sourceTree = "<group>"; };
 		E140C86628EC38D80025328D /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		E140C86828EC4FE70025328D /* SearchRepositoryPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryPresenterTest.swift; sourceTree = "<group>"; };
+		E140C86A28EC62720025328D /* RepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryMock.swift; sourceTree = "<group>"; };
 		E145865428E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositoryDetailViewController.storyboard; sourceTree = "<group>"; };
 		E1C852F228E6905A00F8B15F /* SearchRepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryModel.swift; sourceTree = "<group>"; };
 		E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryPresenter.swift; sourceTree = "<group>"; };
@@ -248,6 +252,8 @@
 			isa = PBXGroup;
 			children = (
 				BFD945F5244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift */,
+				E140C86828EC4FE70025328D /* SearchRepositoryPresenterTest.swift */,
+				E140C86A28EC62720025328D /* RepositoryMock.swift */,
 				BFD945F7244DC5EB0012785A /* Info.plist */,
 			);
 			path = iOSEngineerCodeCheckTests;
@@ -653,6 +659,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E140C86B28EC62720025328D /* RepositoryMock.swift in Sources */,
+				E140C86928EC4FE70025328D /* SearchRepositoryPresenterTest.swift in Sources */,
 				BFD945F6244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

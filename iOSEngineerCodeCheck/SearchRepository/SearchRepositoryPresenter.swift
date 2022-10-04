@@ -24,12 +24,16 @@ protocol SearchRepositoryPresenterOutputProtocol: AnyObject {
 final class SearchRepositoryPresenter: SearchRepositoryPresenterInputProtocol {
 
     private(set) var repositories: [Repository] = []
-    private weak var view: SearchRepositoryPresenterOutputProtocol!
-    private var model: SearchRepositoryModelProtocol
+    var view: SearchRepositoryPresenterOutputProtocol!
+    var model: SearchRepositoryModelProtocol
 
     init(view: SearchRepositoryPresenterOutputProtocol, model: SearchRepositoryModelProtocol) {
         self.view = view
         self.model = model
+    }
+
+    var numberOfRepositoris: Int {
+        return repositories.count
     }
 
     func repository(forRow row: Int) -> Repository? {
