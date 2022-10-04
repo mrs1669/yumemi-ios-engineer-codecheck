@@ -366,24 +366,24 @@ struct R: Rswift.Validatable {
     struct localizable {
       /// en translation: If you have already entered one, please change your Keyword!
       ///
-      /// Locales: en
-      static let ifYouHaveAlreadyEnteredOnePleaseChangeYourKeyword = Rswift.StringResource(key: "If you have already entered one, please change your Keyword!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, ja
+      static let ifYouHaveAlreadyEnteredOnePleaseChangeYourKeyword = Rswift.StringResource(key: "If you have already entered one, please change your Keyword!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
       /// en translation: Licence
       ///
       /// Locales: en, zh-Hans, ja, ko
       static let licence = Rswift.StringResource(key: "Licence", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "ja", "ko"], comment: nil)
       /// en translation: Please enter the name of the repository you wish to search
       ///
-      /// Locales: en
-      static let pleaseEnterTheNameOfTheRepositoryYouWishToSearch = Rswift.StringResource(key: "Please enter the name of the repository you wish to search", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, ja
+      static let pleaseEnterTheNameOfTheRepositoryYouWishToSearch = Rswift.StringResource(key: "Please enter the name of the repository you wish to search", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
       /// en translation: Repository Search
       ///
       /// Locales: en, zh-Hans, ja, ko
       static let repositorySearch = Rswift.StringResource(key: "Repository Search", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "ja", "ko"], comment: nil)
       /// en translation: Repository not found
       ///
-      /// Locales: en
-      static let repositoryNotFound = Rswift.StringResource(key: "Repository not found", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: en, ja
+      static let repositoryNotFound = Rswift.StringResource(key: "Repository not found", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
       /// en translation: You can search the repository by keyword!
       ///
       /// Locales: en, zh-Hans, ja, ko
@@ -391,7 +391,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: If you have already entered one, please change your Keyword!
       ///
-      /// Locales: en
+      /// Locales: en, ja
       static func ifYouHaveAlreadyEnteredOnePleaseChangeYourKeyword(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("If you have already entered one, please change your Keyword!", bundle: hostingBundle, comment: "")
@@ -421,7 +421,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Please enter the name of the repository you wish to search
       ///
-      /// Locales: en
+      /// Locales: en, ja
       static func pleaseEnterTheNameOfTheRepositoryYouWishToSearch(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("Please enter the name of the repository you wish to search", bundle: hostingBundle, comment: "")
@@ -451,7 +451,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Repository not found
       ///
-      /// Locales: en
+      /// Locales: en, ja
       static func repositoryNotFound(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("Repository not found", bundle: hostingBundle, comment: "")

@@ -12,7 +12,7 @@ extension SearchRepositoryTableViewController: DZNEmptyDataSetSource {
 
     func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
         let attributes = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 27), NSAttributedString.Key.foregroundColor: UIColor.lightGray]
-        return NSAttributedString(string: "No items found", attributes: attributes)
+        return NSAttributedString(string: R.string.localizable.repositoryNotFound(), attributes: attributes)
     }
 
 }
