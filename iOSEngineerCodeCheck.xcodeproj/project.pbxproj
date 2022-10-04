@@ -21,6 +21,7 @@
 		E114794A28EB9FFB00AE3B20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E114794C28EB9FFB00AE3B20 /* InfoPlist.strings */; };
 		E12CF0CD28EBF4570031C342 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E12CF0CF28EBF4570031C342 /* Localizable.strings */; };
 		E12CF0D428EBFA4F0031C342 /* Identifier.strings in Resources */ = {isa = PBXBuildFile; fileRef = E12CF0D328EBFA4F0031C342 /* Identifier.strings */; };
+		E140C86028EC26C40025328D /* DZNEmptyDataSet in Frameworks */ = {isa = PBXBuildFile; productRef = E140C85F28EC26C40025328D /* DZNEmptyDataSet */; };
 		E145865528E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E145865428E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard */; };
 		E1C852F328E6905A00F8B15F /* SearchRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C852F228E6905A00F8B15F /* SearchRepositoryModel.swift */; };
 		E1C852F528E6969800F8B15F /* SearchRepositoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */; };
@@ -150,6 +151,7 @@
 			files = (
 				E114793E28EB79E600AE3B20 /* LicenseList in Frameworks */,
 				E1E8D8D828E95CB8000E5E98 /* Rswift in Frameworks */,
+				E140C86028EC26C40025328D /* DZNEmptyDataSet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +372,7 @@
 			packageProductDependencies = (
 				E1E8D8D728E95CB8000E5E98 /* Rswift */,
 				E114793D28EB79E600AE3B20 /* LicenseList */,
+				E140C85F28EC26C40025328D /* DZNEmptyDataSet */,
 			);
 			productName = iOSEngineerCodeCheck;
 			productReference = BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */;
@@ -513,6 +516,7 @@
 			packageReferences = (
 				E1E8D8D628E95CB8000E5E98 /* XCRemoteSwiftPackageReference "R.swift" */,
 				E114793C28EB79E600AE3B20 /* XCRemoteSwiftPackageReference "LicenseList" */,
+				E140C85E28EC26C40025328D /* XCRemoteSwiftPackageReference "DZNEmptyDataSet" */,
 			);
 			productRefGroup = BFD945DC244DC5E80012785A /* Products */;
 			projectDirPath = "";
@@ -1199,6 +1203,14 @@
 				minimumVersion = 0.1.6;
 			};
 		};
+		E140C85E28EC26C40025328D /* XCRemoteSwiftPackageReference "DZNEmptyDataSet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dzenbot/DZNEmptyDataSet";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		E1E8D8D628E95CB8000E5E98 /* XCRemoteSwiftPackageReference "R.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
@@ -1214,6 +1226,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E114793C28EB79E600AE3B20 /* XCRemoteSwiftPackageReference "LicenseList" */;
 			productName = LicenseList;
+		};
+		E140C85F28EC26C40025328D /* DZNEmptyDataSet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E140C85E28EC26C40025328D /* XCRemoteSwiftPackageReference "DZNEmptyDataSet" */;
+			productName = DZNEmptyDataSet;
 		};
 		E1E8D8D728E95CB8000E5E98 /* Rswift */ = {
 			isa = XCSwiftPackageProductDependency;
