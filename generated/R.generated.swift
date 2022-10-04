@@ -147,10 +147,12 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 4 colors.
+  /// This `R.color` struct is generated, and contains static references to 5 colors.
   struct color {
     /// Color `Background`.
     static let background = Rswift.ColorResource(bundle: R.hostingBundle, name: "Background")
+    /// Color `ButtonText`.
+    static let buttonText = Rswift.ColorResource(bundle: R.hostingBundle, name: "ButtonText")
     /// Color `CellText`.
     static let cellText = Rswift.ColorResource(bundle: R.hostingBundle, name: "CellText")
     /// Color `Cell`.
@@ -164,6 +166,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "ButtonText", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func buttonText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.buttonText, compatibleWith: traitCollection)
     }
     #endif
 
@@ -199,6 +210,14 @@ struct R: Rswift.Validatable {
     @available(watchOSApplicationExtension 4.0, *)
     static func background(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.background.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "ButtonText", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func buttonText(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.buttonText.name)
     }
     #endif
 
@@ -374,7 +393,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 5 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 6 localization keys.
     struct localizable {
       /// en translation: Licence
       ///
@@ -392,6 +411,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en, zh-Hans, ja, ko
       static let repositoryNotFound = Rswift.StringResource(key: "Repository not found", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "ja", "ko"], comment: nil)
+      /// en translation: Visit This Repository!
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static let visitThisRepository = Rswift.StringResource(key: "Visit This Repository!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "ja", "ko"], comment: nil)
       /// en translation: You can search the repository by keyword!
       ///
       /// Locales: en, zh-Hans, ja, ko
@@ -455,6 +478,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Repository not found", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Visit This Repository!
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static func visitThisRepository(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Visit This Repository!", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Visit This Repository!"
+        }
+
+        return NSLocalizedString("Visit This Repository!", bundle: bundle, comment: "")
       }
 
       /// en translation: You can search the repository by keyword!
@@ -555,6 +593,7 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
           if UIKit.UIColor(named: "CellText", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CellText' is used in storyboard 'RepositoryDetailViewController', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "MainTheme", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'MainTheme' is used in storyboard 'RepositoryDetailViewController', but couldn't be loaded.") }
         }
       }
 

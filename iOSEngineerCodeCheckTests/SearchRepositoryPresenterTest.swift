@@ -36,7 +36,17 @@ class SearchRepositoryModelInputStub: SearchRepositoryModelProtocol {
         if let error = error {
             completion(.failure(error))
         } else {
-            repositories = [.init(repositoryId: 44_838_949, repositoryName: "swift", fullName: "apple/swift", language: "C++", stargazersCount: 56_424, watchersCount: 56_424, forksCount: 9_055, openIssuesCount: 381, owner: .init(ownerName: "apple", avatarUrl: URL(string: "https://avatars.githubusercontent.com/u/10639145?v=4")!))]
+            repositories = [.init(repositoryId: 44_838_949,
+                                  repositoryName: "swift",
+                                  fullName: "apple/swift",
+                                  language: "C++",
+                                  repositoryURL: URL(string: "https://github.com/apple/swift")!,
+                                  stargazersCount: 56_424,
+                                  watchersCount: 56_424,
+                                  forksCount: 9_055,
+                                  openIssuesCount: 381,
+                                  owner: .init(ownerName: "apple",
+                                               avatarUrl: URL(string: "https://avatars.githubusercontent.com/u/10639145?v=4")!))]
             completion(.success(repositories))
         }
     }
