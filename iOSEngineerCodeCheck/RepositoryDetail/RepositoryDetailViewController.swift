@@ -61,7 +61,9 @@ class RepositoryDetailViewController: UIViewController {
     }
 
     @objc func pushVisitRepositoryButton(sender: UIButton) {
-        print("pushed.")
+        if let repositoryURL = repository?.repositoryURL {
+            UIApplication.shared.open(repositoryURL)
+        }
     }
 
     func getImage() {
