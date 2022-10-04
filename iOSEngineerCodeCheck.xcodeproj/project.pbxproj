@@ -253,8 +253,8 @@
 			children = (
 				BFD945F5244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift */,
 				E140C86828EC4FE70025328D /* SearchRepositoryPresenterTest.swift */,
-				BFD945F7244DC5EB0012785A /* Info.plist */,
 				E140C86A28EC62720025328D /* RepositoryMock.swift */,
+				BFD945F7244DC5EB0012785A /* Info.plist */,
 			);
 			path = iOSEngineerCodeCheckTests;
 			sourceTree = "<group>";

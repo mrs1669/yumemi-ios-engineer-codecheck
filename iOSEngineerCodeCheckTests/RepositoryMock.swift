@@ -20,7 +20,7 @@ extension Repository {
                                     forksCount: 9_055,
                                     openIssuesCount: 381,
                                     owner: .init(ownerName: "apple",
-                                                 avatarUrl: URL(string: "https://google.com")!))
+                                                 avatarUrl: URL(string: "https://avatars.githubusercontent.com/u/10639145?v=4")!))
         return repository
     }
 }
