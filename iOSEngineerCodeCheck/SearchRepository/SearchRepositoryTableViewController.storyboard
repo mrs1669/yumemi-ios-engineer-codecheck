@@ -25,6 +25,8 @@
                         <connections>
                             <outlet property="dataSource" destination="CP7-nd-1S9" id="0SF-XR-cMZ"/>
                             <outlet property="delegate" destination="CP7-nd-1S9" id="7Qo-73-TIg"/>
+                            <outlet property="emptyDataSetDelegate" destination="CP7-nd-1S9" id="WGG-1X-GfN"/>
+                            <outlet property="emptyDataSetSource" destination="CP7-nd-1S9" id="T9C-Yu-v4f"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="リポジトリ検索" id="WJD-Wq-IJU"/>
