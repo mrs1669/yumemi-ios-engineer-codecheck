@@ -89,6 +89,7 @@ extension SearchRepositoryTableViewController: UISearchBarDelegate {
         repositorySearchBar.placeholder = R.string.localizable.youCanSearchTheRepositoryByKeyword()
         repositorySearchBar.barTintColor = R.color.mainTheme()
         repositorySearchBar.searchTextField.backgroundColor = .white
+        repositorySearchBar.searchTextField.textColor = .black
         repositorySearchBar.delegate = self
     }
 }
