@@ -288,8 +288,28 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 0 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 1 localization keys.
     struct localizable {
+      /// en translation: You can search the repository by keyword!
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static let youCanSearchTheRepositoryByKeyword = Rswift.StringResource(key: "You can search the repository by keyword!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "ja", "ko"], comment: nil)
+
+      /// en translation: You can search the repository by keyword!
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static func youCanSearchTheRepositoryByKeyword(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("You can search the repository by keyword!", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "You can search the repository by keyword!"
+        }
+
+        return NSLocalizedString("You can search the repository by keyword!", bundle: bundle, comment: "")
+      }
+
       fileprivate init() {}
     }
 

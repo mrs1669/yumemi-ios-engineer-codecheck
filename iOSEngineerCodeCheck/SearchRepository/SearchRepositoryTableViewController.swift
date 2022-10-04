@@ -85,7 +85,7 @@ extension SearchRepositoryTableViewController: UISearchBarDelegate {
     }
 
     private func configureSearchBar() {
-        repositorySearchBar.placeholder = "GitHubのリポジトリを検索できるよー"
+        repositorySearchBar.placeholder = R.string.localizable.youCanSearchTheRepositoryByKeyword()
         repositorySearchBar.barTintColor = R.color.mainTheme()
         repositorySearchBar.searchTextField.backgroundColor = .white
         repositorySearchBar.delegate = self
