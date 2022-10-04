@@ -113,12 +113,10 @@ struct R: Rswift.Validatable {
   #endif
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `LicenceViewController`.
-    static let licenceViewController = _R.storyboard.licenceViewController()
     /// Storyboard `RepositoryDetailViewController`.
     static let repositoryDetailViewController = _R.storyboard.repositoryDetailViewController()
     /// Storyboard `SearchRepositoryTableViewController`.
@@ -128,13 +126,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "LicenceViewController", bundle: ...)`
-    static func licenceViewController(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.licenceViewController)
     }
     #endif
 
@@ -344,9 +335,6 @@ struct _R: Rswift.Validatable {
       try launchScreen.validate()
       #endif
       #if os(iOS) || os(tvOS)
-      try licenceViewController.validate()
-      #endif
-      #if os(iOS) || os(tvOS)
       try repositoryDetailViewController.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -360,22 +348,6 @@ struct _R: Rswift.Validatable {
 
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
-
-      static func validate() throws {
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
-      }
-
-      fileprivate init() {}
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    struct licenceViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = LicenceViewController
-
-      let bundle = R.hostingBundle
-      let name = "LicenceViewController"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
