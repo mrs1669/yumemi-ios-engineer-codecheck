@@ -243,6 +243,18 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.id` struct is generated, and contains static references to accessibility identifiers.
+  struct id {
+    struct searchRepositoryTableViewCell {
+      /// Accessibility identifier `ownerName`.
+      static let ownerName: String = "ownerName"
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.image` struct is generated, and contains static references to 1 images.
   struct image {
     /// Image `AppIcon`.

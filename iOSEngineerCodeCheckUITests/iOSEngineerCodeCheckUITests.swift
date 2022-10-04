@@ -28,8 +28,14 @@ class IOSEngineerCodeCheckUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let searchField = app.searchFields.allElementsBoundByIndex.first
+        XCTAssert(searchField?.exists ?? false)
+        searchField?.tap()
+        searchField?.typeText("mrs1669")
+        app.buttons["Search"].tap()
+
+        // TODO: "mrs1669"と検索して表示されるcellのowner名が"mrs1669"となるか確かめる
+         XCTAssertEqual(app.staticTexts["ownerName"].label, "mrs1669")
     }
 
     func testLaunchPerformance() throws {
