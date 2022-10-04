@@ -256,8 +256,13 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.string` struct is generated, and contains static references to 3 localization tables.
+  /// This `R.string` struct is generated, and contains static references to 4 localization tables.
   struct string {
+    /// This `R.string.identifier` struct is generated, and contains static references to 0 localization keys.
+    struct identifier {
+      fileprivate init() {}
+    }
+
     /// This `R.string.infoPlist` struct is generated, and contains static references to 1 localization keys.
     struct infoPlist {
       /// en translation: RepoSearch
