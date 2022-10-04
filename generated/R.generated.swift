@@ -147,10 +147,12 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 4 colors.
+  /// This `R.color` struct is generated, and contains static references to 5 colors.
   struct color {
     /// Color `Background`.
     static let background = Rswift.ColorResource(bundle: R.hostingBundle, name: "Background")
+    /// Color `ButtonText`.
+    static let buttonText = Rswift.ColorResource(bundle: R.hostingBundle, name: "ButtonText")
     /// Color `CellText`.
     static let cellText = Rswift.ColorResource(bundle: R.hostingBundle, name: "CellText")
     /// Color `Cell`.
@@ -164,6 +166,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "ButtonText", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func buttonText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.buttonText, compatibleWith: traitCollection)
     }
     #endif
 
@@ -199,6 +210,14 @@ struct R: Rswift.Validatable {
     @available(watchOSApplicationExtension 4.0, *)
     static func background(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.background.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "ButtonText", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func buttonText(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.buttonText.name)
     }
     #endif
 
