@@ -26,4 +26,8 @@ extension SearchRepositoryTableViewController: DZNEmptyDataSetSource {
         return NSAttributedString(string: R.string.localizable.pleaseEnterTheNameOfTheRepositoryYouWishToSearch(), attributes: attributes)
     }
 
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView) -> UIColor? {
+        return R.color.background()
+    }
+
 }
