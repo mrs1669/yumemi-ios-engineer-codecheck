@@ -60,7 +60,7 @@ class SearchRepositoryTableViewController: UITableViewController {
     }
 
     private func configureNavigationItem () {
-        self.navigationItem.title
+        self.navigationItem.title = R.string.localizable.repositorySearch()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(licenceVavigationBarButtonPressed(_:)))
     }
 
