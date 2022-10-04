@@ -24,6 +24,7 @@
 		E140C86028EC26C40025328D /* DZNEmptyDataSet in Frameworks */ = {isa = PBXBuildFile; productRef = E140C85F28EC26C40025328D /* DZNEmptyDataSet */; };
 		E140C86228EC28160025328D /* DZNEmptyDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140C86128EC28160025328D /* DZNEmptyDataViewController.swift */; };
 		E140C86428EC2DC20025328D /* ImageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E140C86328EC2DC20025328D /* ImageAssets.xcassets */; };
+		E140C86728EC38D80025328D /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140C86628EC38D80025328D /* UIImage.swift */; };
 		E145865528E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E145865428E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard */; };
 		E1C852F328E6905A00F8B15F /* SearchRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C852F228E6905A00F8B15F /* SearchRepositoryModel.swift */; };
 		E1C852F528E6969800F8B15F /* SearchRepositoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */; };
@@ -126,6 +127,7 @@
 		E12CF0D328EBFA4F0031C342 /* Identifier.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Identifier.strings; sourceTree = "<group>"; };
 		E140C86128EC28160025328D /* DZNEmptyDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZNEmptyDataViewController.swift; sourceTree = "<group>"; };
 		E140C86328EC2DC20025328D /* ImageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageAssets.xcassets; sourceTree = "<group>"; };
+		E140C86628EC38D80025328D /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		E145865428E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositoryDetailViewController.storyboard; sourceTree = "<group>"; };
 		E1C852F228E6905A00F8B15F /* SearchRepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryModel.swift; sourceTree = "<group>"; };
 		E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryPresenter.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				E1D3AAB528E5517200A51E3F /* Entity */,
+				E140C86528EC38B10025328D /* Extension */,
 				E1C852F028E5B65800F8B15F /* SearchRepository */,
 				E1C852F128E5B68900F8B15F /* RepositoryDetail */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
@@ -277,6 +280,14 @@
 				E140C86328EC2DC20025328D /* ImageAssets.xcassets */,
 			);
 			path = Asstets;
+			sourceTree = "<group>";
+		};
+		E140C86528EC38B10025328D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E140C86628EC38D80025328D /* UIImage.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E1C852F028E5B65800F8B15F /* SearchRepository */ = {
@@ -625,6 +636,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFD945E3244DC5E80012785A /* SearchRepositoryTableViewController.swift in Sources */,
+				E140C86728EC38D80025328D /* UIImage.swift in Sources */,
 				E1C852F328E6905A00F8B15F /* SearchRepositoryModel.swift in Sources */,
 				E1C852F528E6969800F8B15F /* SearchRepositoryPresenter.swift in Sources */,
 				E1E8D8E328E97152000E5E98 /* R.generated.swift in Sources */,
