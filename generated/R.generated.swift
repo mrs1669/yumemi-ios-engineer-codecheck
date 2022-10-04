@@ -309,12 +309,16 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 2 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 3 localization keys.
     struct localizable {
       /// en translation: Licence
       ///
       /// Locales: en, zh-Hans, ja, ko
       static let licence = Rswift.StringResource(key: "Licence", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "ja", "ko"], comment: nil)
+      /// en translation: Repository Search
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static let repositorySearch = Rswift.StringResource(key: "Repository Search", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "ja", "ko"], comment: nil)
       /// en translation: You can search the repository by keyword!
       ///
       /// Locales: en, zh-Hans, ja, ko
@@ -333,6 +337,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("Licence", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Repository Search
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static func repositorySearch(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Repository Search", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Repository Search"
+        }
+
+        return NSLocalizedString("Repository Search", bundle: bundle, comment: "")
       }
 
       /// en translation: You can search the repository by keyword!
