@@ -15,6 +15,7 @@ extension Repository {
                                     repositoryName: "swift",
                                     fullName: "apple/swift",
                                     language: "C++",
+                                    repositoryURL: URL(string: "https://github.com/apple/swift")!,
                                     stargazersCount: 56_424,
                                     watchersCount: 56_424,
                                     forksCount: 9_055,
