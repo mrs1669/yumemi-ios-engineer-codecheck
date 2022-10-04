@@ -48,6 +48,7 @@ class RepositoryDetailViewController: UIViewController {
         repositoryNameLabel.adjustsFontSizeToFitWidth = true
         repositoryNameLabel.text = repository.repositoryName
         ownerNameLabel.text = repository.owner.ownerName
+        languageLabel.adjustsFontSizeToFitWidth = true
         if let language = repository.language {
             languageLabel.text = "Written in \(language)"
         } else {
@@ -60,6 +61,7 @@ class RepositoryDetailViewController: UIViewController {
     }
 
     private func configureButton() {
+        visitRepositoryButton.setTitle(R.string.localizable.visitThisRepository(), for: .normal)
         visitRepositoryButton.setTitleColor(R.color.mainTheme(), for: .normal)
         visitRepositoryButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         visitRepositoryButton.addTarget(self, action: #selector(pushVisitRepositoryButton), for: .touchUpInside)
