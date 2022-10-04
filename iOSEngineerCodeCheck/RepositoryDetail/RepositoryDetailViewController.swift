@@ -59,6 +59,11 @@ class RepositoryDetailViewController: UIViewController {
         visitRepositoryButton.setTitleColor(R.color.mainTheme(), for: .normal)
         visitRepositoryButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         visitRepositoryButton.addTarget(self, action: #selector(pushVisitRepositoryButton), for: .touchUpInside)
+        visitRepositoryButton.layer.masksToBounds = false
+        visitRepositoryButton.layer.cornerRadius  = 20
+        visitRepositoryButton.layer.shadowOffset = CGSize(width: 0, height: 5)
+        visitRepositoryButton.layer.shadowOpacity = 0.2
+        visitRepositoryButton.layer.shadowRadius = 8
     }
 
     @objc func pushVisitRepositoryButton(sender: UIButton) {
