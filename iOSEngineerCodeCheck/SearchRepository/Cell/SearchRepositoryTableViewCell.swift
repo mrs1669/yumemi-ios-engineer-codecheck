@@ -20,6 +20,7 @@ class SearchRepositoryTableViewCell: UITableViewCell {
         super.awakeFromNib()
         configureFloatingView()
         configureAvararImageView()
+        repositoryNameLabel.adjustsFontSizeToFitWidth = true
     }
 
     private func configureFloatingView() {
