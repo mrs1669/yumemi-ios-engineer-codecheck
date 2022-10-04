@@ -28,18 +28,26 @@
 ## Git運用ワークフロー
 - git flow
 
-# 追加機能
-- 多言語対応
+# アプリ概要
+
+## 動作イメージ
+![動作イメージ](README_Images/createApp.GIF)
+
+## 追加新機能
+### 多言語対応
 
 |日本語|英語|中国語|韓国語|
 |---|---|---|---|
 |![日本語](https://user-images.githubusercontent.com/40351476/193935323-46365b72-311a-4fa9-afbc-0010f4c34ab9.PNG)|![英語](https://user-images.githubusercontent.com/40351476/193935343-f8214a95-5a2f-4a8c-b838-00aca8f143ed.PNG)|![中国語(簡体字)](https://user-images.githubusercontent.com/40351476/193935363-7c8fbb71-669b-4c72-801b-8f0b2e37a2ff.PNG)|![韓国語](https://user-images.githubusercontent.com/40351476/193935372-a7cbd73e-17de-4466-a21d-b643dc3476a0.PNG)|
 
-- ダークモード対応
+### ダークモード対応
 
 |ライトモード|![ライトモード](https://user-images.githubusercontent.com/40351476/193935323-46365b72-311a-4fa9-afbc-0010f4c34ab9.PNG)|![ライトモード](https://user-images.githubusercontent.com/40351476/193937005-c6ebc431-b6d1-4482-bbbd-4a59444bec32.PNG)|![ライトモード](https://user-images.githubusercontent.com/40351476/193937009-20bce6ac-5688-4bc4-9d65-b0f3bdae0803.PNG)|
 |---|---|---|---|
 |ダークモード|![ダークモード](https://user-images.githubusercontent.com/40351476/193936986-478d0b28-c365-45da-9526-3f883a67a30a.PNG)|![ダークモード](https://user-images.githubusercontent.com/40351476/193936998-c7829f22-ebb1-4e0b-a6ff-be8e5c55f86a.PNG)|![ダークモード](https://user-images.githubusercontent.com/40351476/193937013-ee518da2-46f7-477a-aaca-03256c629f7a.PNG)|
+
+### 気になるリポジトリをGitHubアプリでチェックできる機能
+動作イメージ参照 → [ここ](#動作イメージ)
 
 ## 以下 課題概要
 
