@@ -9,7 +9,5 @@
 import DZNEmptyDataSet
 
 extension SearchRepositoryTableViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
-    func backgroundColor(forEmptyDataSet scrollView: UIScrollView) -> UIColor? {
-        return R.color.background()
-    }
+
 }
