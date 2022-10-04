@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  iOSEngineerCodeCheck
+
+  Created by 村石拓海 on 2022/10/04.
+  Copyright © 2022 YUMEMI Inc. All rights reserved.
+*/
+"You can search the repository by keyword!" = "You can search the repository by keyword!";
+"Licence" = "Licence";
+"Repository Search" = "Repository Search";
+"Repository not found" = "Repository not found";
+"Please enter the name of the repository you wish to search" = "Please enter the name of the repository you wish to search";
+"Visit This Repository!" = "Visit This Repository!";

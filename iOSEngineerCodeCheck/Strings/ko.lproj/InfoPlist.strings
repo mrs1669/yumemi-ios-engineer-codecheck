@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  iOSEngineerCodeCheck
+
+  Created by 村石拓海 on 2022/10/04.
+  Copyright © 2022 YUMEMI Inc. All rights reserved.
+*/
+// MARK: Application Name (Korean)
+"CFBundleDisplayName" = "리포지토리검색";

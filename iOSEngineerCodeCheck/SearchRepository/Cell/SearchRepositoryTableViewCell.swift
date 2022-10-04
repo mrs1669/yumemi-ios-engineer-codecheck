@@ -15,16 +15,16 @@ class SearchRepositoryTableViewCell: UITableViewCell {
     @IBOutlet private weak var ownerNameLabel: UILabel!
     @IBOutlet private weak var repositoryNameLabel: UILabel!
     @IBOutlet private weak var languageLabel: UILabel!
-    static let reuseIdentifier = "SearchRepositoryTableViewCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()
         configureFloatingView()
         configureAvararImageView()
+        repositoryNameLabel.adjustsFontSizeToFitWidth = true
     }
 
+    // MARK: - FloatingView
     private func configureFloatingView() {
-        floatingView.backgroundColor = .white
         floatingView.layer.masksToBounds = false
         floatingView.layer.cornerRadius  = 20
         floatingView.layer.shadowOffset = CGSize(width: 0, height: 5)
@@ -34,11 +34,13 @@ class SearchRepositoryTableViewCell: UITableViewCell {
         floatingView.layer.rasterizationScale = UIScreen.main.scale
     }
 
+    // MARK: - AvararImageView
     private func configureAvararImageView() {
         avatarImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
         avatarImageView.layer.cornerRadius = 20
     }
 
+    // MARK: - Cell
     func configureCell(repository: Repository) {
         ownerNameLabel.text = repository.owner.ownerName
         repositoryNameLabel.text = repository.repositoryName

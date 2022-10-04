@@ -1,6 +1,33 @@
 {
   "pins" : [
     {
+      "identity" : "dznemptydataset",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dzenbot/DZNEmptyDataSet",
+      "state" : {
+        "branch" : "master",
+        "revision" : "9bffa69a83a9fa58a14b3cf43cb6dd8a63774179"
+      }
+    },
+    {
+      "identity" : "licenselist",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cybozu/LicenseList.git",
+      "state" : {
+        "revision" : "341148a9245f254bc173b4530f30da0b487e7a89",
+        "version" : "0.1.6"
+      }
+    },
+    {
+      "identity" : "lottie-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/lottie-ios",
+      "state" : {
+        "revision" : "314537ec697719fa33a9d48210f4d06a463286d3",
+        "version" : "3.4.3"
+      }
+    },
+    {
       "identity" : "r.swift.library",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mac-cain13/R.swift.Library",

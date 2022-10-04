@@ -17,6 +17,7 @@ struct Repository: Codable {
     let repositoryName: String
     let fullName: String
     let language: String?
+    let repositoryURL: URL
     let stargazersCount: Int
     let watchersCount: Int
     let forksCount: Int
@@ -28,6 +29,7 @@ struct Repository: Codable {
         case repositoryName = "name"
         case fullName = "full_name"
         case language = "language"
+        case repositoryURL = "html_url"
         case stargazersCount = "stargazers_count"
         case watchersCount = "watchers_count"
         case forksCount = "forks_count"

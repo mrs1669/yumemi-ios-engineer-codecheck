@@ -147,10 +147,16 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 2 colors.
+  /// This `R.color` struct is generated, and contains static references to 5 colors.
   struct color {
     /// Color `Background`.
     static let background = Rswift.ColorResource(bundle: R.hostingBundle, name: "Background")
+    /// Color `ButtonText`.
+    static let buttonText = Rswift.ColorResource(bundle: R.hostingBundle, name: "ButtonText")
+    /// Color `CellText`.
+    static let cellText = Rswift.ColorResource(bundle: R.hostingBundle, name: "CellText")
+    /// Color `Cell`.
+    static let cell = Rswift.ColorResource(bundle: R.hostingBundle, name: "Cell")
     /// Color `MainTheme`.
     static let mainTheme = Rswift.ColorResource(bundle: R.hostingBundle, name: "MainTheme")
 
@@ -160,6 +166,33 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "ButtonText", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func buttonText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.buttonText, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "Cell", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func cell(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.cell, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "CellText", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func cellText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.cellText, compatibleWith: traitCollection)
     }
     #endif
 
@@ -181,10 +214,83 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
+    /// `UIColor(named: "ButtonText", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func buttonText(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.buttonText.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "Cell", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func cell(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.cell.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "CellText", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func cellText(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.cellText.name)
+    }
+    #endif
+
+    #if os(watchOS)
     /// `UIColor(named: "MainTheme", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
     static func mainTheme(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.mainTheme.name)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
+  /// This `R.file` struct is generated, and contains static references to 2 files.
+  struct file {
+    /// Resource file `GitHubAnimation.json`.
+    static let gitHubAnimationJson = Rswift.FileResource(bundle: R.hostingBundle, name: "GitHubAnimation", pathExtension: "json")
+    /// Resource file `license-list.plist`.
+    static let licenseListPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "license-list", pathExtension: "plist")
+
+    /// `bundle.url(forResource: "GitHubAnimation", withExtension: "json")`
+    static func gitHubAnimationJson(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.gitHubAnimationJson
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "license-list", withExtension: "plist")`
+    static func licenseListPlist(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.licenseListPlist
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.id` struct is generated, and contains static references to accessibility identifiers.
+  struct id {
+    struct searchRepositoryTableViewCell {
+      /// Accessibility identifier `ownerName`.
+      static let ownerName: String = "ownerName"
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.image` struct is generated, and contains static references to 1 images.
+  struct image {
+    /// Image `AppIcon`.
+    static let appIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "AppIcon")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "AppIcon", bundle: ..., traitCollection: ...)`
+    static func appIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.appIcon, compatibleWith: traitCollection)
     }
     #endif
 
@@ -237,6 +343,182 @@ struct R: Rswift.Validatable {
 
     static func searchRepositoryTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> SearchRepositoryTableViewCell? {
       return R.nib.searchRepositoryTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? SearchRepositoryTableViewCell
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.string` struct is generated, and contains static references to 4 localization tables.
+  struct string {
+    /// This `R.string.identifier` struct is generated, and contains static references to 1 localization keys.
+    struct identifier {
+      /// Value: SearchRepositoryTableViewCell
+      static let tableViewCellReuseIdentifier = Rswift.StringResource(key: "TableViewCellReuseIdentifier", tableName: "Identifier", bundle: R.hostingBundle, locales: [], comment: nil)
+
+      /// Value: SearchRepositoryTableViewCell
+      static func tableViewCellReuseIdentifier(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("TableViewCellReuseIdentifier", tableName: "Identifier", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Identifier", preferredLanguages: preferredLanguages) else {
+          return "TableViewCellReuseIdentifier"
+        }
+
+        return NSLocalizedString("TableViewCellReuseIdentifier", tableName: "Identifier", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
+    }
+
+    /// This `R.string.infoPlist` struct is generated, and contains static references to 1 localization keys.
+    struct infoPlist {
+      /// en translation: RepoSearch
+      ///
+      /// Locales: en, ja, zh-Hans, ko
+      static let cfBundleDisplayName = Rswift.StringResource(key: "CFBundleDisplayName", tableName: "InfoPlist", bundle: R.hostingBundle, locales: ["en", "ja", "zh-Hans", "ko"], comment: nil)
+
+      /// en translation: RepoSearch
+      ///
+      /// Locales: en, ja, zh-Hans, ko
+      static func cfBundleDisplayName(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("CFBundleDisplayName", tableName: "InfoPlist", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "InfoPlist", preferredLanguages: preferredLanguages) else {
+          return "CFBundleDisplayName"
+        }
+
+        return NSLocalizedString("CFBundleDisplayName", tableName: "InfoPlist", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
+    }
+
+    /// This `R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
+    struct launchScreen {
+      fileprivate init() {}
+    }
+
+    /// This `R.string.localizable` struct is generated, and contains static references to 6 localization keys.
+    struct localizable {
+      /// en translation: Licence
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static let licence = Rswift.StringResource(key: "Licence", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "ja", "ko"], comment: nil)
+      /// en translation: Please enter the name of the repository you wish to search
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static let pleaseEnterTheNameOfTheRepositoryYouWishToSearch = Rswift.StringResource(key: "Please enter the name of the repository you wish to search", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "ja", "ko"], comment: nil)
+      /// en translation: Repository Search
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static let repositorySearch = Rswift.StringResource(key: "Repository Search", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "ja", "ko"], comment: nil)
+      /// en translation: Repository not found
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static let repositoryNotFound = Rswift.StringResource(key: "Repository not found", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "ja", "ko"], comment: nil)
+      /// en translation: Visit This Repository!
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static let visitThisRepository = Rswift.StringResource(key: "Visit This Repository!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "ja", "ko"], comment: nil)
+      /// en translation: You can search the repository by keyword!
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static let youCanSearchTheRepositoryByKeyword = Rswift.StringResource(key: "You can search the repository by keyword!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "ja", "ko"], comment: nil)
+
+      /// en translation: Licence
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static func licence(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Licence", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Licence"
+        }
+
+        return NSLocalizedString("Licence", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Please enter the name of the repository you wish to search
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static func pleaseEnterTheNameOfTheRepositoryYouWishToSearch(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Please enter the name of the repository you wish to search", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Please enter the name of the repository you wish to search"
+        }
+
+        return NSLocalizedString("Please enter the name of the repository you wish to search", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Repository Search
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static func repositorySearch(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Repository Search", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Repository Search"
+        }
+
+        return NSLocalizedString("Repository Search", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Repository not found
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static func repositoryNotFound(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Repository not found", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Repository not found"
+        }
+
+        return NSLocalizedString("Repository not found", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Visit This Repository!
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static func visitThisRepository(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Visit This Repository!", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Visit This Repository!"
+        }
+
+        return NSLocalizedString("Visit This Repository!", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You can search the repository by keyword!
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static func youCanSearchTheRepositoryByKeyword(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("You can search the repository by keyword!", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "You can search the repository by keyword!"
+        }
+
+        return NSLocalizedString("You can search the repository by keyword!", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
     }
 
     fileprivate init() {}
@@ -318,6 +600,8 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "CellText", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'CellText' is used in storyboard 'RepositoryDetailViewController', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "MainTheme", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'MainTheme' is used in storyboard 'RepositoryDetailViewController', but couldn't be loaded.") }
         }
       }
 
