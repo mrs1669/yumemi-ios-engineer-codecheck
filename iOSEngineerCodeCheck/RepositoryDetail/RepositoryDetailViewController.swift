@@ -10,7 +10,7 @@ import UIKit
 
 class RepositoryDetailViewController: UIViewController {
 
-    @IBOutlet weak var repositoryDetailCardView: UIView!
+    @IBOutlet private weak var repositoryDetailCardView: UIView!
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var repositoryFullnameLabel: UILabel!
     @IBOutlet private weak var languageLabel: UILabel!
@@ -20,10 +20,24 @@ class RepositoryDetailViewController: UIViewController {
     @IBOutlet private weak var openIssueCountLabel: UILabel!
     var repository: Repository?
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureRepositoryDetailCardView()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLabel()
         getImage()
+    }
+
+    private func configureRepositoryDetailCardView() {
+        repositoryDetailCardView.layer.cornerRadius = 30
+        repositoryDetailCardView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner]
+        repositoryDetailCardView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        repositoryDetailCardView.layer.shadowColor = UIColor.black.cgColor
+        repositoryDetailCardView.layer.shadowOpacity = 0.3
+        repositoryDetailCardView.layer.shadowRadius = 10
     }
 
     private func configureLabel() {
