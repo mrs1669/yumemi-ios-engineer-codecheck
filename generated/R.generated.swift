@@ -147,10 +147,14 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 2 colors.
+  /// This `R.color` struct is generated, and contains static references to 4 colors.
   struct color {
     /// Color `Background`.
     static let background = Rswift.ColorResource(bundle: R.hostingBundle, name: "Background")
+    /// Color `CellText`.
+    static let cellText = Rswift.ColorResource(bundle: R.hostingBundle, name: "CellText")
+    /// Color `Cell`.
+    static let cell = Rswift.ColorResource(bundle: R.hostingBundle, name: "Cell")
     /// Color `MainTheme`.
     static let mainTheme = Rswift.ColorResource(bundle: R.hostingBundle, name: "MainTheme")
 
@@ -160,6 +164,24 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.background, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "Cell", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func cell(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.cell, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "CellText", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func cellText(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.cellText, compatibleWith: traitCollection)
     }
     #endif
 
@@ -177,6 +199,22 @@ struct R: Rswift.Validatable {
     @available(watchOSApplicationExtension 4.0, *)
     static func background(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.background.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "Cell", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func cell(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.cell.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "CellText", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func cellText(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.cellText.name)
     }
     #endif
 
