@@ -21,6 +21,7 @@
 		E114794A28EB9FFB00AE3B20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E114794C28EB9FFB00AE3B20 /* InfoPlist.strings */; };
 		E12CF0CD28EBF4570031C342 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E12CF0CF28EBF4570031C342 /* Localizable.strings */; };
 		E12CF0D428EBFA4F0031C342 /* Identifier.strings in Resources */ = {isa = PBXBuildFile; fileRef = E12CF0D328EBFA4F0031C342 /* Identifier.strings */; };
+		E13738A628ECC28400E16A80 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E13738A528ECC28400E16A80 /* Lottie */; };
 		E140C86028EC26C40025328D /* DZNEmptyDataSet in Frameworks */ = {isa = PBXBuildFile; productRef = E140C85F28EC26C40025328D /* DZNEmptyDataSet */; };
 		E140C86228EC28160025328D /* DZNEmptyDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140C86128EC28160025328D /* DZNEmptyDataViewController.swift */; };
 		E140C86428EC2DC20025328D /* ImageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E140C86328EC2DC20025328D /* ImageAssets.xcassets */; };
@@ -162,6 +163,7 @@
 				E114793E28EB79E600AE3B20 /* LicenseList in Frameworks */,
 				E1E8D8D828E95CB8000E5E98 /* Rswift in Frameworks */,
 				E140C86028EC26C40025328D /* DZNEmptyDataSet in Frameworks */,
+				E13738A628ECC28400E16A80 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +398,7 @@
 				E1E8D8D728E95CB8000E5E98 /* Rswift */,
 				E114793D28EB79E600AE3B20 /* LicenseList */,
 				E140C85F28EC26C40025328D /* DZNEmptyDataSet */,
+				E13738A528ECC28400E16A80 /* Lottie */,
 			);
 			productName = iOSEngineerCodeCheck;
 			productReference = BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */;
@@ -540,6 +543,7 @@
 				E1E8D8D628E95CB8000E5E98 /* XCRemoteSwiftPackageReference "R.swift" */,
 				E114793C28EB79E600AE3B20 /* XCRemoteSwiftPackageReference "LicenseList" */,
 				E140C85E28EC26C40025328D /* XCRemoteSwiftPackageReference "DZNEmptyDataSet" */,
+				E13738A428ECC28400E16A80 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = BFD945DC244DC5E80012785A /* Products */;
 			projectDirPath = "";
@@ -1231,6 +1235,14 @@
 				minimumVersion = 0.1.6;
 			};
 		};
+		E13738A428ECC28400E16A80 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		E140C85E28EC26C40025328D /* XCRemoteSwiftPackageReference "DZNEmptyDataSet" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dzenbot/DZNEmptyDataSet";
@@ -1254,6 +1266,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E114793C28EB79E600AE3B20 /* XCRemoteSwiftPackageReference "LicenseList" */;
 			productName = LicenseList;
+		};
+		E13738A528ECC28400E16A80 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E13738A428ECC28400E16A80 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 		E140C85F28EC26C40025328D /* DZNEmptyDataSet */ = {
 			isa = XCSwiftPackageProductDependency;
