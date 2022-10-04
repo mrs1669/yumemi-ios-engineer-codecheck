@@ -17,7 +17,7 @@ class RepositoryDetailViewController: UIViewController {
     @IBOutlet private weak var watchersCountLabel: UILabel!
     @IBOutlet private weak var forksCountLabel: UILabel!
     @IBOutlet private weak var openIssueCountLabel: UILabel!
-    var item: Repository?
+    var repository: Repository?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class RepositoryDetailViewController: UIViewController {
     }
 
     private func configureLabel() {
-        guard let repository = item else { return }
+        guard let repository = repository else { return }
         if let language = repository.language {
             languageLabel.text = "Written in \(language)"
         } else {
@@ -39,7 +39,7 @@ class RepositoryDetailViewController: UIViewController {
     }
 
     func getImage() {
-        guard let repository = item else { return }
+        guard let repository = repository else { return }
         repositoryFullnameLabel.adjustsFontSizeToFitWidth = true
         repositoryFullnameLabel.text = repository.fullName
         let avatarUrl = repository.owner.avatarUrl

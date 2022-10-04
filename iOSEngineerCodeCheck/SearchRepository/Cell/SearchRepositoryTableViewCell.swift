@@ -15,7 +15,6 @@ class SearchRepositoryTableViewCell: UITableViewCell {
     @IBOutlet private weak var ownerNameLabel: UILabel!
     @IBOutlet private weak var repositoryNameLabel: UILabel!
     @IBOutlet private weak var languageLabel: UILabel!
-    static let reuseIdentifier = "SearchRepositoryTableViewCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()

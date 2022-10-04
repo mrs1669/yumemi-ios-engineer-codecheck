@@ -113,12 +113,10 @@ struct R: Rswift.Validatable {
   #endif
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `LicenceViewController`.
-    static let licenceViewController = _R.storyboard.licenceViewController()
     /// Storyboard `RepositoryDetailViewController`.
     static let repositoryDetailViewController = _R.storyboard.repositoryDetailViewController()
     /// Storyboard `SearchRepositoryTableViewController`.
@@ -128,13 +126,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "LicenceViewController", bundle: ...)`
-    static func licenceViewController(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.licenceViewController)
     }
     #endif
 
@@ -265,8 +256,29 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.string` struct is generated, and contains static references to 2 localization tables.
+  /// This `R.string` struct is generated, and contains static references to 4 localization tables.
   struct string {
+    /// This `R.string.identifier` struct is generated, and contains static references to 1 localization keys.
+    struct identifier {
+      /// Value: SearchRepositoryTableViewCell
+      static let tableViewCellReuseIdentifier = Rswift.StringResource(key: "TableViewCellReuseIdentifier", tableName: "Identifier", bundle: R.hostingBundle, locales: [], comment: nil)
+
+      /// Value: SearchRepositoryTableViewCell
+      static func tableViewCellReuseIdentifier(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("TableViewCellReuseIdentifier", tableName: "Identifier", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Identifier", preferredLanguages: preferredLanguages) else {
+          return "TableViewCellReuseIdentifier"
+        }
+
+        return NSLocalizedString("TableViewCellReuseIdentifier", tableName: "Identifier", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
+    }
+
     /// This `R.string.infoPlist` struct is generated, and contains static references to 1 localization keys.
     struct infoPlist {
       /// en translation: RepoSearch
@@ -294,6 +306,69 @@ struct R: Rswift.Validatable {
 
     /// This `R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
     struct launchScreen {
+      fileprivate init() {}
+    }
+
+    /// This `R.string.localizable` struct is generated, and contains static references to 3 localization keys.
+    struct localizable {
+      /// en translation: Licence
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static let licence = Rswift.StringResource(key: "Licence", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "ja", "ko"], comment: nil)
+      /// en translation: Repository Search
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static let repositorySearch = Rswift.StringResource(key: "Repository Search", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "ja", "ko"], comment: nil)
+      /// en translation: You can search the repository by keyword!
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static let youCanSearchTheRepositoryByKeyword = Rswift.StringResource(key: "You can search the repository by keyword!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en", "zh-Hans", "ja", "ko"], comment: nil)
+
+      /// en translation: Licence
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static func licence(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Licence", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Licence"
+        }
+
+        return NSLocalizedString("Licence", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Repository Search
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static func repositorySearch(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Repository Search", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Repository Search"
+        }
+
+        return NSLocalizedString("Repository Search", bundle: bundle, comment: "")
+      }
+
+      /// en translation: You can search the repository by keyword!
+      ///
+      /// Locales: en, zh-Hans, ja, ko
+      static func youCanSearchTheRepositoryByKeyword(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("You can search the repository by keyword!", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "You can search the repository by keyword!"
+        }
+
+        return NSLocalizedString("You can search the repository by keyword!", bundle: bundle, comment: "")
+      }
+
       fileprivate init() {}
     }
 
@@ -344,9 +419,6 @@ struct _R: Rswift.Validatable {
       try launchScreen.validate()
       #endif
       #if os(iOS) || os(tvOS)
-      try licenceViewController.validate()
-      #endif
-      #if os(iOS) || os(tvOS)
       try repositoryDetailViewController.validate()
       #endif
       #if os(iOS) || os(tvOS)
@@ -360,22 +432,6 @@ struct _R: Rswift.Validatable {
 
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
-
-      static func validate() throws {
-        if #available(iOS 11.0, tvOS 11.0, *) {
-        }
-      }
-
-      fileprivate init() {}
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    struct licenceViewController: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = LicenceViewController
-
-      let bundle = R.hostingBundle
-      let name = "LicenceViewController"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {

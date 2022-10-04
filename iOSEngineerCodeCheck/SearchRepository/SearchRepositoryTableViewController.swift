@@ -29,9 +29,9 @@ class SearchRepositoryTableViewController: UITableViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Detail"{
+        if segue.identifier == R.segue.searchRepositoryTableViewController.detail.identifier {
             guard let repositoryDetailViewController = segue.destination as? RepositoryDetailViewController else { return }
-            repositoryDetailViewController.item = presenter.repositories[index]
+            repositoryDetailViewController.repository = presenter.repositories[index]
         }
     }
 
@@ -40,7 +40,7 @@ class SearchRepositoryTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchRepositoryTableViewCell.reuseIdentifier) as? SearchRepositoryTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: R.string.identifier.tableViewCellReuseIdentifier()) as? SearchRepositoryTableViewCell else { return UITableViewCell() }
         if let repository = presenter.repository(forRow: indexPath.row) {
             cell.configureCell(repository: repository)
         }
@@ -55,18 +55,19 @@ class SearchRepositoryTableViewController: UITableViewController {
 
     private func configureTableView () {
         tableView.keyboardDismissMode = .onDrag
-        tableView.register(UINib(resource: R.nib.searchRepositoryTableViewCell), forCellReuseIdentifier: SearchRepositoryTableViewCell.reuseIdentifier)
+        tableView.register(UINib(resource: R.nib.searchRepositoryTableViewCell), forCellReuseIdentifier: R.string.identifier.tableViewCellReuseIdentifier())
         tableView.rowHeight = 100
     }
 
     private func configureNavigationItem () {
+        self.navigationItem.title = R.string.localizable.repositorySearch()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(licenceVavigationBarButtonPressed(_:)))
     }
 
     @objc private func licenceVavigationBarButtonPressed(_ sender: UIBarButtonItem) {
         guard let licenceFileURL = Bundle.main.url(forResource: "license-list", withExtension: "plist") else { return }
         let licenceViewController = LicenseListViewController(fileURL: licenceFileURL)
-        licenceViewController.title = "LICENSE"
+        licenceViewController.title = R.string.localizable.licence()
         self.navigationController?.pushViewController(licenceViewController, animated: true)
     }
 }
@@ -85,7 +86,9 @@ extension SearchRepositoryTableViewController: UISearchBarDelegate {
     }
 
     private func configureSearchBar() {
-        repositorySearchBar.placeholder = "GitHubのリポジトリを検索できるよー"
+        repositorySearchBar.placeholder = R.string.localizable.youCanSearchTheRepositoryByKeyword()
+        repositorySearchBar.barTintColor = R.color.mainTheme()
+        repositorySearchBar.searchTextField.backgroundColor = .white
         repositorySearchBar.delegate = self
     }
 }
@@ -96,6 +99,6 @@ extension SearchRepositoryTableViewController: SearchRepositoryPresenterOutputPr
     }
 
     func segueToRepositoryDetailView(index: Int) {
-        performSegue(withIdentifier: "Detail", sender: self)
+        performSegue(withIdentifier: R.segue.searchRepositoryTableViewController.detail, sender: self)
     }
 }
