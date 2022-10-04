@@ -37,6 +37,7 @@ class RepositoryDetailViewController: UIViewController {
         addAnimationView()
     }
 
+    // MARK: - RepositoryDetailCardView
     private func configureRepositoryDetailCardView() {
         repositoryDetailCardView.layer.cornerRadius = 30
         repositoryDetailCardView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner]
@@ -46,6 +47,7 @@ class RepositoryDetailViewController: UIViewController {
         repositoryDetailCardView.layer.shadowRadius = 10
     }
 
+    // MARK: - UILabel
     private func configureLabel() {
         guard let repository = repository else { return }
         repositoryNameLabel.adjustsFontSizeToFitWidth = true
@@ -63,6 +65,7 @@ class RepositoryDetailViewController: UIViewController {
         openIssueCountLabel.text = "\(repository.openIssuesCount) open issues"
     }
 
+    // MARK: - TransitionGitHubApp
     private func configureButton() {
         visitRepositoryButton.setTitle(R.string.localizable.visitThisRepository(), for: .normal)
         visitRepositoryButton.setTitleColor(R.color.mainTheme(), for: .normal)
@@ -81,6 +84,7 @@ class RepositoryDetailViewController: UIViewController {
         }
     }
 
+    // MARK: - AnimationView
     private func addAnimationView() {
         animationView = AnimationView(name: "GitHubAnimation") //ここに先ほどダウンロードしたファイル名を記述（拡張子は必要なし）
         animationView.frame = CGRect(x: 30, y: view.frame.size.height - 150, width: 100, height: 100)
@@ -90,6 +94,7 @@ class RepositoryDetailViewController: UIViewController {
         view.addSubview(animationView)
     }
 
+    // MARK: - AvatarImage
     private func configureAvatarImage() {
         getImage()
         avatarImageView.layer.cornerRadius = 30

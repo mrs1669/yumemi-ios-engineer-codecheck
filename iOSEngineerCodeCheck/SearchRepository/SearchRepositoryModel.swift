@@ -18,7 +18,7 @@ final class SearchRepositoryModel: SearchRepositoryModelProtocol {
     private var requestUrlString: String!
     private var task: URLSessionTask?
 
-    // MARK: Fetch Repository
+    // MARK: - Fetch Repository
     func fetchRepositories(keyword: String, completion: @escaping (Result<[Repository], Error>) -> Void) {
         guard let encodeKeywordString = keyword.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return }
         requestUrlString = "https://api.github.com/search/repositories?q=\(encodeKeywordString)"
@@ -35,6 +35,7 @@ final class SearchRepositoryModel: SearchRepositoryModelProtocol {
         task?.resume()
     }
 
+    // MARK: - Cancel Task
     func taskCancel() {
         task?.cancel()
     }

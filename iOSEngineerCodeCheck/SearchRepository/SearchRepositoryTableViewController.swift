@@ -28,13 +28,15 @@ class SearchRepositoryTableViewController: UITableViewController {
         inject(presenter: presenter)
     }
 
+    // MARK: - Inject Methods
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == R.segue.searchRepositoryTableViewController.detail.identifier {
             guard let repositoryDetailViewController = segue.destination as? RepositoryDetailViewController else { return }
             repositoryDetailViewController.repository = presenter.repositories[index]
         }
     }
-
+    
+    // MARK: - TableView
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.repositories.count
     }
@@ -59,6 +61,7 @@ class SearchRepositoryTableViewController: UITableViewController {
         tableView.rowHeight = 100
     }
 
+    // MARK: - NavigationBarItem
     private func configureNavigationItem () {
         self.navigationItem.title = R.string.localizable.repositorySearch()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(licenceVavigationBarButtonPressed(_:)))
@@ -72,6 +75,7 @@ class SearchRepositoryTableViewController: UITableViewController {
     }
 }
 
+// MARK: - UISearchBarDelegate
 extension SearchRepositoryTableViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -94,6 +98,7 @@ extension SearchRepositoryTableViewController: UISearchBarDelegate {
     }
 }
 
+// MARK: - SearchRepositoryPresenterOutputProtocol
 extension SearchRepositoryTableViewController: SearchRepositoryPresenterOutputProtocol {
     func updateRepositories(_ repositories: [Repository]) {
         tableView.reloadData()
