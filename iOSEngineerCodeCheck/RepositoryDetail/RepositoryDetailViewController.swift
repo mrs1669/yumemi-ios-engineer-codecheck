@@ -57,6 +57,7 @@ class RepositoryDetailViewController: UIViewController {
 
     private func configureButton() {
         visitRepositoryButton.setTitleColor(R.color.mainTheme(), for: .normal)
+        visitRepositoryButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         visitRepositoryButton.addTarget(self, action: #selector(pushVisitRepositoryButton), for: .touchUpInside)
     }
 
