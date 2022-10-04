@@ -258,8 +258,24 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 4 localization tables.
   struct string {
-    /// This `R.string.identifier` struct is generated, and contains static references to 0 localization keys.
+    /// This `R.string.identifier` struct is generated, and contains static references to 1 localization keys.
     struct identifier {
+      /// Value: SearchRepositoryTableViewCell
+      static let tableViewCellReuseIdentifier = Rswift.StringResource(key: "TableViewCellReuseIdentifier", tableName: "Identifier", bundle: R.hostingBundle, locales: [], comment: nil)
+
+      /// Value: SearchRepositoryTableViewCell
+      static func tableViewCellReuseIdentifier(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("TableViewCellReuseIdentifier", tableName: "Identifier", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Identifier", preferredLanguages: preferredLanguages) else {
+          return "TableViewCellReuseIdentifier"
+        }
+
+        return NSLocalizedString("TableViewCellReuseIdentifier", tableName: "Identifier", bundle: bundle, comment: "")
+      }
+
       fileprivate init() {}
     }
 
