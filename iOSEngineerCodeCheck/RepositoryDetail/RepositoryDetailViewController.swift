@@ -69,7 +69,7 @@ class RepositoryDetailViewController: UIViewController {
 
     private func configureAvatarImage() {
         getImage()
-        ≈.layer.cornerRadius = 30
+        avatarImageView.layer.cornerRadius = 30
         avatarImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
 
