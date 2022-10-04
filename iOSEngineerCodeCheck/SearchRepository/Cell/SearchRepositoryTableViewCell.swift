@@ -23,6 +23,7 @@ class SearchRepositoryTableViewCell: UITableViewCell {
         repositoryNameLabel.adjustsFontSizeToFitWidth = true
     }
 
+    // MARK: - FloatingView
     private func configureFloatingView() {
         floatingView.layer.masksToBounds = false
         floatingView.layer.cornerRadius  = 20
@@ -33,11 +34,13 @@ class SearchRepositoryTableViewCell: UITableViewCell {
         floatingView.layer.rasterizationScale = UIScreen.main.scale
     }
 
+    // MARK: - AvararImageView
     private func configureAvararImageView() {
         avatarImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
         avatarImageView.layer.cornerRadius = 20
     }
 
+    // MARK: - Cell
     func configureCell(repository: Repository) {
         ownerNameLabel.text = repository.owner.ownerName
         repositoryNameLabel.text = repository.repositoryName

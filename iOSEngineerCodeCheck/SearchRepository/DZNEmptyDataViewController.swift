@@ -8,6 +8,7 @@
 
 import DZNEmptyDataSet
 
+// View displayed when TableViewCell is empty
 extension SearchRepositoryTableViewController: DZNEmptyDataSetSource {
 
     func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
