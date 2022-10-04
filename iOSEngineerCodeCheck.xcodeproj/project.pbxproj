@@ -17,8 +17,6 @@
 		BFD94601244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */; };
 		E114793828EA8E2E00AE3B20 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E114793728EA8E2E00AE3B20 /* ColorAssets.xcassets */; };
 		E114793E28EB79E600AE3B20 /* LicenseList in Frameworks */ = {isa = PBXBuildFile; productRef = E114793D28EB79E600AE3B20 /* LicenseList */; };
-		E114794128EB8B8A00AE3B20 /* LicenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E114794028EB8B8A00AE3B20 /* LicenceViewController.swift */; };
-		E114794328EB8BA000AE3B20 /* LicenceViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E114794228EB8BA000AE3B20 /* LicenceViewController.storyboard */; };
 		E114794528EB8E0200AE3B20 /* license-list.plist in Resources */ = {isa = PBXBuildFile; fileRef = E114794428EB8E0200AE3B20 /* license-list.plist */; };
 		E114794A28EB9FFB00AE3B20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E114794C28EB9FFB00AE3B20 /* InfoPlist.strings */; };
 		E145865528E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E145865428E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard */; };
@@ -108,8 +106,6 @@
 		BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSEngineerCodeCheckUITests.swift; sourceTree = "<group>"; };
 		BFD94602244DC5EC0012785A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E114793728EA8E2E00AE3B20 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
-		E114794028EB8B8A00AE3B20 /* LicenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenceViewController.swift; sourceTree = "<group>"; };
-		E114794228EB8BA000AE3B20 /* LicenceViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LicenceViewController.storyboard; sourceTree = "<group>"; };
 		E114794428EB8E0200AE3B20 /* license-list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "license-list.plist"; sourceTree = "<group>"; };
 		E114794B28EB9FFB00AE3B20 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E114794D28EBA06000AE3B20 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -221,7 +217,6 @@
 				E1D3AAB528E5517200A51E3F /* Entity */,
 				E1C852F028E5B65800F8B15F /* SearchRepository */,
 				E1C852F128E5B68900F8B15F /* RepositoryDetail */,
-				E114793F28EB8B1000AE3B20 /* Licence */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
 				E1E8D8E228E97152000E5E98 /* R.generated.swift */,
@@ -250,15 +245,6 @@
 				BFD94602244DC5EC0012785A /* Info.plist */,
 			);
 			path = iOSEngineerCodeCheckUITests;
-			sourceTree = "<group>";
-		};
-		E114793F28EB8B1000AE3B20 /* Licence */ = {
-			isa = PBXGroup;
-			children = (
-				E114794028EB8B8A00AE3B20 /* LicenceViewController.swift */,
-				E114794228EB8BA000AE3B20 /* LicenceViewController.storyboard */,
-			);
-			path = Licence;
 			sourceTree = "<group>";
 		};
 		E114794728EB9FB400AE3B20 /* Strings */ = {
@@ -533,7 +519,6 @@
 				E114794528EB8E0200AE3B20 /* license-list.plist in Resources */,
 				E1E8D8E828E992C2000E5E98 /* SearchRepositoryTableViewCell.xib in Resources */,
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
-				E114794328EB8BA000AE3B20 /* LicenceViewController.storyboard in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
 				E1C852F728E6C94F00F8B15F /* SearchRepositoryTableViewController.storyboard in Resources */,
 				E114793828EA8E2E00AE3B20 /* ColorAssets.xcassets in Resources */,
@@ -611,7 +596,6 @@
 			files = (
 				BFD945E3244DC5E80012785A /* SearchRepositoryTableViewController.swift in Sources */,
 				E1C852F328E6905A00F8B15F /* SearchRepositoryModel.swift in Sources */,
-				E114794128EB8B8A00AE3B20 /* LicenceViewController.swift in Sources */,
 				E1C852F528E6969800F8B15F /* SearchRepositoryPresenter.swift in Sources */,
 				E1E8D8E328E97152000E5E98 /* R.generated.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */,
