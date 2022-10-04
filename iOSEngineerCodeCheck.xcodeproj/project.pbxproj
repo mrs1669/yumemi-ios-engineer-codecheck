@@ -22,6 +22,7 @@
 		E12CF0CD28EBF4570031C342 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E12CF0CF28EBF4570031C342 /* Localizable.strings */; };
 		E12CF0D428EBFA4F0031C342 /* Identifier.strings in Resources */ = {isa = PBXBuildFile; fileRef = E12CF0D328EBFA4F0031C342 /* Identifier.strings */; };
 		E13738A628ECC28400E16A80 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = E13738A528ECC28400E16A80 /* Lottie */; };
+		E13738A828ECC4D000E16A80 /* GitHubAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = E13738A728ECC4D000E16A80 /* GitHubAnimation.json */; };
 		E140C86028EC26C40025328D /* DZNEmptyDataSet in Frameworks */ = {isa = PBXBuildFile; productRef = E140C85F28EC26C40025328D /* DZNEmptyDataSet */; };
 		E140C86228EC28160025328D /* DZNEmptyDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140C86128EC28160025328D /* DZNEmptyDataViewController.swift */; };
 		E140C86428EC2DC20025328D /* ImageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E140C86328EC2DC20025328D /* ImageAssets.xcassets */; };
@@ -128,6 +129,7 @@
 		E12CF0D128EBF45C0031C342 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E12CF0D228EBF45D0031C342 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E12CF0D328EBFA4F0031C342 /* Identifier.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Identifier.strings; sourceTree = "<group>"; };
+		E13738A728ECC4D000E16A80 /* GitHubAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = GitHubAnimation.json; path = ../../../../Downloads/GitHubAnimation.json; sourceTree = "<group>"; };
 		E140C86128EC28160025328D /* DZNEmptyDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZNEmptyDataViewController.swift; sourceTree = "<group>"; };
 		E140C86328EC2DC20025328D /* ImageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageAssets.xcassets; sourceTree = "<group>"; };
 		E140C86628EC38D80025328D /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
 				E1E8D8E228E97152000E5E98 /* R.generated.swift */,
+				E13738A728ECC4D000E16A80 /* GitHubAnimation.json */,
 				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
 				E12CF0D528EC17E90031C342 /* Asstets */,
 				E114794728EB9FB400AE3B20 /* Strings */,
@@ -571,6 +574,7 @@
 				E12CF0CD28EBF4570031C342 /* Localizable.strings in Resources */,
 				E12CF0D428EBFA4F0031C342 /* Identifier.strings in Resources */,
 				E1C852F728E6C94F00F8B15F /* SearchRepositoryTableViewController.storyboard in Resources */,
+				E13738A828ECC4D000E16A80 /* GitHubAnimation.json in Resources */,
 				E140C86428EC2DC20025328D /* ImageAssets.xcassets in Resources */,
 				E114793828EA8E2E00AE3B20 /* ColorAssets.xcassets in Resources */,
 				E114794A28EB9FFB00AE3B20 /* InfoPlist.strings in Resources */,

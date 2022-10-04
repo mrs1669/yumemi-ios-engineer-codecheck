@@ -6,6 +6,7 @@
 //  Copyright © 2020 YUMEMI Inc. All rights reserved.
 //
 
+import Lottie
 import UIKit
 
 class RepositoryDetailViewController: UIViewController {
@@ -20,6 +21,7 @@ class RepositoryDetailViewController: UIViewController {
     @IBOutlet private weak var watchersCountLabel: UILabel!
     @IBOutlet private weak var forksCountLabel: UILabel!
     @IBOutlet private weak var openIssueCountLabel: UILabel!
+    private var animationView = AnimationView()
     var repository: Repository?
 
     override func viewWillAppear(_ animated: Bool) {
@@ -32,6 +34,7 @@ class RepositoryDetailViewController: UIViewController {
         configureLabel()
         configureButton()
         configureAvatarImage()
+        addAnimationView()
     }
 
     private func configureRepositoryDetailCardView() {
@@ -76,6 +79,15 @@ class RepositoryDetailViewController: UIViewController {
         if let repositoryURL = repository?.repositoryURL {
             UIApplication.shared.open(repositoryURL)
         }
+    }
+
+    private func addAnimationView() {
+        animationView = AnimationView(name: "GitHubAnimation") //ここに先ほどダウンロードしたファイル名を記述（拡張子は必要なし）
+        animationView.frame = CGRect(x: 30, y: view.frame.size.height - 150, width: 100, height: 100)
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.play()
+        view.addSubview(animationView)
     }
 
     private func configureAvatarImage() {
