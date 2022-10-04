@@ -19,6 +19,7 @@
 		E114793E28EB79E600AE3B20 /* LicenseList in Frameworks */ = {isa = PBXBuildFile; productRef = E114793D28EB79E600AE3B20 /* LicenseList */; };
 		E114794528EB8E0200AE3B20 /* license-list.plist in Resources */ = {isa = PBXBuildFile; fileRef = E114794428EB8E0200AE3B20 /* license-list.plist */; };
 		E114794A28EB9FFB00AE3B20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E114794C28EB9FFB00AE3B20 /* InfoPlist.strings */; };
+		E12CF0CD28EBF4570031C342 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E12CF0CF28EBF4570031C342 /* Localizable.strings */; };
 		E145865528E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E145865428E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard */; };
 		E1C852F328E6905A00F8B15F /* SearchRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C852F228E6905A00F8B15F /* SearchRepositoryModel.swift */; };
 		E1C852F528E6969800F8B15F /* SearchRepositoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */; };
@@ -114,6 +115,10 @@
 		E114795028EBA0F100AE3B20 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E114795128EBA0FE00AE3B20 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E114795228EBA0FE00AE3B20 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E12CF0CE28EBF4570031C342 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E12CF0D028EBF45B0031C342 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E12CF0D128EBF45C0031C342 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E12CF0D228EBF45D0031C342 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E145865428E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositoryDetailViewController.storyboard; sourceTree = "<group>"; };
 		E1C852F228E6905A00F8B15F /* SearchRepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryModel.swift; sourceTree = "<group>"; };
 		E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryPresenter.swift; sourceTree = "<group>"; };
@@ -250,6 +255,7 @@
 		E114794728EB9FB400AE3B20 /* Strings */ = {
 			isa = PBXGroup;
 			children = (
+				E12CF0CF28EBF4570031C342 /* Localizable.strings */,
 				E114794C28EB9FFB00AE3B20 /* InfoPlist.strings */,
 			);
 			path = Strings;
@@ -520,6 +526,7 @@
 				E1E8D8E828E992C2000E5E98 /* SearchRepositoryTableViewCell.xib in Resources */,
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
+				E12CF0CD28EBF4570031C342 /* Localizable.strings in Resources */,
 				E1C852F728E6C94F00F8B15F /* SearchRepositoryTableViewController.storyboard in Resources */,
 				E114793828EA8E2E00AE3B20 /* ColorAssets.xcassets in Resources */,
 				E114794A28EB9FFB00AE3B20 /* InfoPlist.strings in Resources */,
@@ -699,6 +706,17 @@
 				E114795228EBA0FE00AE3B20 /* ko */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E12CF0CF28EBF4570031C342 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E12CF0CE28EBF4570031C342 /* en */,
+				E12CF0D028EBF45B0031C342 /* zh-Hans */,
+				E12CF0D128EBF45C0031C342 /* ja */,
+				E12CF0D228EBF45D0031C342 /* ko */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
