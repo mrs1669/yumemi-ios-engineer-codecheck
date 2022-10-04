@@ -13,7 +13,8 @@ class RepositoryDetailViewController: UIViewController {
     @IBOutlet private weak var repositoryDetailCardView: UIView!
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var visitRepositoryButton: UIButton!
-    @IBOutlet private weak var repositoryFullnameLabel: UILabel!
+    @IBOutlet private weak var repositoryNameLabel: UILabel!
+    @IBOutlet private weak var ownerNameLabel: UILabel!
     @IBOutlet private weak var languageLabel: UILabel!
     @IBOutlet private weak var starsCountLabel: UILabel!
     @IBOutlet private weak var watchersCountLabel: UILabel!
@@ -44,10 +45,13 @@ class RepositoryDetailViewController: UIViewController {
 
     private func configureLabel() {
         guard let repository = repository else { return }
+        repositoryNameLabel.adjustsFontSizeToFitWidth = true
+        repositoryNameLabel.text = repository.repositoryName
+        ownerNameLabel.text = repository.owner.ownerName
         if let language = repository.language {
             languageLabel.text = "Written in \(language)"
         } else {
-            languageLabel.text = "言語が含まれていません"
+            languageLabel.text = "language not included."
         }
         starsCountLabel.text = "\(repository.stargazersCount) stars"
         watchersCountLabel.text = "\(repository.watchersCount) watchers"
@@ -80,8 +84,6 @@ class RepositoryDetailViewController: UIViewController {
 
     func getImage() {
         guard let repository = repository else { return }
-        repositoryFullnameLabel.adjustsFontSizeToFitWidth = true
-        repositoryFullnameLabel.text = repository.fullName
         let avatarUrl = repository.owner.avatarUrl
         URLSession.shared.dataTask(with: avatarUrl) { [weak self] (data, _, _) in
             guard let data = data else { return }
