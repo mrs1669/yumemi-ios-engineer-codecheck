@@ -30,7 +30,7 @@ class RepositoryDetailViewController: UIViewController {
         super.viewDidLoad()
         configureLabel()
         configureButton()
-        getImage()
+        configureAvatarImage()
     }
 
     private func configureRepositoryDetailCardView() {
@@ -65,6 +65,12 @@ class RepositoryDetailViewController: UIViewController {
         if let repositoryURL = repository?.repositoryURL {
             UIApplication.shared.open(repositoryURL)
         }
+    }
+
+    private func configureAvatarImage() {
+        getImage()
+        ≈.layer.cornerRadius = 30
+        avatarImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
 
     func getImage() {
