@@ -21,6 +21,10 @@
 		E114794A28EB9FFB00AE3B20 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E114794C28EB9FFB00AE3B20 /* InfoPlist.strings */; };
 		E12CF0CD28EBF4570031C342 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E12CF0CF28EBF4570031C342 /* Localizable.strings */; };
 		E12CF0D428EBFA4F0031C342 /* Identifier.strings in Resources */ = {isa = PBXBuildFile; fileRef = E12CF0D328EBFA4F0031C342 /* Identifier.strings */; };
+		E140C86028EC26C40025328D /* DZNEmptyDataSet in Frameworks */ = {isa = PBXBuildFile; productRef = E140C85F28EC26C40025328D /* DZNEmptyDataSet */; };
+		E140C86228EC28160025328D /* DZNEmptyDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140C86128EC28160025328D /* DZNEmptyDataViewController.swift */; };
+		E140C86428EC2DC20025328D /* ImageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E140C86328EC2DC20025328D /* ImageAssets.xcassets */; };
+		E140C86728EC38D80025328D /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140C86628EC38D80025328D /* UIImage.swift */; };
 		E145865528E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E145865428E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard */; };
 		E1C852F328E6905A00F8B15F /* SearchRepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C852F228E6905A00F8B15F /* SearchRepositoryModel.swift */; };
 		E1C852F528E6969800F8B15F /* SearchRepositoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */; };
@@ -121,6 +125,9 @@
 		E12CF0D128EBF45C0031C342 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E12CF0D228EBF45D0031C342 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E12CF0D328EBFA4F0031C342 /* Identifier.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Identifier.strings; sourceTree = "<group>"; };
+		E140C86128EC28160025328D /* DZNEmptyDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DZNEmptyDataViewController.swift; sourceTree = "<group>"; };
+		E140C86328EC2DC20025328D /* ImageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageAssets.xcassets; sourceTree = "<group>"; };
+		E140C86628EC38D80025328D /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		E145865428E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositoryDetailViewController.storyboard; sourceTree = "<group>"; };
 		E1C852F228E6905A00F8B15F /* SearchRepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryModel.swift; sourceTree = "<group>"; };
 		E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryPresenter.swift; sourceTree = "<group>"; };
@@ -150,6 +157,7 @@
 			files = (
 				E114793E28EB79E600AE3B20 /* LicenseList in Frameworks */,
 				E1E8D8D828E95CB8000E5E98 /* Rswift in Frameworks */,
+				E140C86028EC26C40025328D /* DZNEmptyDataSet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				E1D3AAB528E5517200A51E3F /* Entity */,
+				E140C86528EC38B10025328D /* Extension */,
 				E1C852F028E5B65800F8B15F /* SearchRepository */,
 				E1C852F128E5B68900F8B15F /* RepositoryDetail */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
@@ -268,8 +277,17 @@
 			children = (
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
 				E114793728EA8E2E00AE3B20 /* ColorAssets.xcassets */,
+				E140C86328EC2DC20025328D /* ImageAssets.xcassets */,
 			);
 			path = Asstets;
+			sourceTree = "<group>";
+		};
+		E140C86528EC38B10025328D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E140C86628EC38D80025328D /* UIImage.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E1C852F028E5B65800F8B15F /* SearchRepository */ = {
@@ -278,6 +296,7 @@
 				E1C852F228E6905A00F8B15F /* SearchRepositoryModel.swift */,
 				E1C852F428E6969800F8B15F /* SearchRepositoryPresenter.swift */,
 				BFD945E2244DC5E80012785A /* SearchRepositoryTableViewController.swift */,
+				E140C86128EC28160025328D /* DZNEmptyDataViewController.swift */,
 				E1C852F628E6C94F00F8B15F /* SearchRepositoryTableViewController.storyboard */,
 				E1E8D8E428E9915D000E5E98 /* Cell */,
 			);
@@ -370,6 +389,7 @@
 			packageProductDependencies = (
 				E1E8D8D728E95CB8000E5E98 /* Rswift */,
 				E114793D28EB79E600AE3B20 /* LicenseList */,
+				E140C85F28EC26C40025328D /* DZNEmptyDataSet */,
 			);
 			productName = iOSEngineerCodeCheck;
 			productReference = BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */;
@@ -513,6 +533,7 @@
 			packageReferences = (
 				E1E8D8D628E95CB8000E5E98 /* XCRemoteSwiftPackageReference "R.swift" */,
 				E114793C28EB79E600AE3B20 /* XCRemoteSwiftPackageReference "LicenseList" */,
+				E140C85E28EC26C40025328D /* XCRemoteSwiftPackageReference "DZNEmptyDataSet" */,
 			);
 			productRefGroup = BFD945DC244DC5E80012785A /* Products */;
 			projectDirPath = "";
@@ -540,6 +561,7 @@
 				E12CF0CD28EBF4570031C342 /* Localizable.strings in Resources */,
 				E12CF0D428EBFA4F0031C342 /* Identifier.strings in Resources */,
 				E1C852F728E6C94F00F8B15F /* SearchRepositoryTableViewController.storyboard in Resources */,
+				E140C86428EC2DC20025328D /* ImageAssets.xcassets in Resources */,
 				E114793828EA8E2E00AE3B20 /* ColorAssets.xcassets in Resources */,
 				E114794A28EB9FFB00AE3B20 /* InfoPlist.strings in Resources */,
 				E145865528E6D5F700D1ED0E /* RepositoryDetailViewController.storyboard in Resources */,
@@ -614,6 +636,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFD945E3244DC5E80012785A /* SearchRepositoryTableViewController.swift in Sources */,
+				E140C86728EC38D80025328D /* UIImage.swift in Sources */,
 				E1C852F328E6905A00F8B15F /* SearchRepositoryModel.swift in Sources */,
 				E1C852F528E6969800F8B15F /* SearchRepositoryPresenter.swift in Sources */,
 				E1E8D8E328E97152000E5E98 /* R.generated.swift in Sources */,
@@ -621,6 +644,7 @@
 				E1D3AAB728E5526F00A51E3F /* SearchRepository.swift in Sources */,
 				E1E8D8E628E991C9000E5E98 /* SearchRepositoryTableViewCell.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
+				E140C86228EC28160025328D /* DZNEmptyDataViewController.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1199,6 +1223,14 @@
 				minimumVersion = 0.1.6;
 			};
 		};
+		E140C85E28EC26C40025328D /* XCRemoteSwiftPackageReference "DZNEmptyDataSet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dzenbot/DZNEmptyDataSet";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		E1E8D8D628E95CB8000E5E98 /* XCRemoteSwiftPackageReference "R.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
@@ -1214,6 +1246,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E114793C28EB79E600AE3B20 /* XCRemoteSwiftPackageReference "LicenseList" */;
 			productName = LicenseList;
+		};
+		E140C85F28EC26C40025328D /* DZNEmptyDataSet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E140C85E28EC26C40025328D /* XCRemoteSwiftPackageReference "DZNEmptyDataSet" */;
+			productName = DZNEmptyDataSet;
 		};
 		E1E8D8D728E95CB8000E5E98 /* Rswift */ = {
 			isa = XCSwiftPackageProductDependency;
