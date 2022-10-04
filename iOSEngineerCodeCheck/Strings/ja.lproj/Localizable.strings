@@ -8,3 +8,6 @@
 "You can search the repository by keyword!" = "キーワードでリポジトリを検索できます!";
 "Licence" = "ライセンス";
 "Repository Search" = "リポジトリ検索";
+"Repository not found" = "リポジトリが見つかりませんでした";
+"Please enter the name of the repository you wish to search" = "検索したいリポジトリ名を入力してください";
+"If you have already entered one, please change your Keyword!" = "すでに入力している場合は検索ワードを変更してください!";
