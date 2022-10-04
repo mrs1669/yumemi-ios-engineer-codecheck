@@ -27,15 +27,15 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3W-ms-tfL">
-                                <rect key="frame" x="90" y="5" width="271" height="21"/>
+                                <rect key="frame" x="90" y="54" width="271" height="21"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ownerName"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="CellText"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repository Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VR3-UA-uAw">
-                                <rect key="frame" x="90" y="29.666666666666664" width="271" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="90" y="13.666666666666666" width="271" height="28.666666666666671"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" name="CellText"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -48,16 +48,16 @@
                         </subviews>
                         <color key="backgroundColor" name="Cell"/>
                         <constraints>
+                            <constraint firstItem="w3W-ms-tfL" firstAttribute="bottom" secondItem="hNi-d8-K7E" secondAttribute="bottom" constant="-5" id="2Nf-t8-4Hs"/>
                             <constraint firstItem="w3W-ms-tfL" firstAttribute="leading" secondItem="9VR-I5-KUi" secondAttribute="trailing" constant="10" id="FmK-F7-9I0"/>
                             <constraint firstAttribute="height" constant="80" id="H4X-au-0uh"/>
-                            <constraint firstItem="VR3-UA-uAw" firstAttribute="centerY" secondItem="hNi-d8-K7E" secondAttribute="centerY" id="KPs-Jt-8zB"/>
+                            <constraint firstItem="VR3-UA-uAw" firstAttribute="centerY" secondItem="hNi-d8-K7E" secondAttribute="centerY" multiplier="0.7" id="KPs-Jt-8zB"/>
                             <constraint firstAttribute="trailing" secondItem="VR3-UA-uAw" secondAttribute="trailing" constant="10" id="Lm1-1K-0i5"/>
                             <constraint firstAttribute="bottom" secondItem="9VR-I5-KUi" secondAttribute="bottom" id="MlB-l6-BlP"/>
                             <constraint firstAttribute="bottom" secondItem="Pwd-wf-bfd" secondAttribute="bottom" constant="10" id="O68-ba-3ei"/>
                             <constraint firstAttribute="trailing" secondItem="Pwd-wf-bfd" secondAttribute="trailing" constant="10" id="Q1k-3n-RXh"/>
                             <constraint firstItem="VR3-UA-uAw" firstAttribute="leading" secondItem="9VR-I5-KUi" secondAttribute="trailing" constant="10" id="RoT-gF-idz"/>
                             <constraint firstItem="9VR-I5-KUi" firstAttribute="top" secondItem="hNi-d8-K7E" secondAttribute="top" id="a3j-6d-8ES"/>
-                            <constraint firstItem="w3W-ms-tfL" firstAttribute="top" secondItem="hNi-d8-K7E" secondAttribute="top" constant="5" id="drd-jy-DPE"/>
                             <constraint firstItem="9VR-I5-KUi" firstAttribute="leading" secondItem="hNi-d8-K7E" secondAttribute="leading" id="mdy-SG-YhR"/>
                             <constraint firstAttribute="trailing" secondItem="w3W-ms-tfL" secondAttribute="trailing" constant="10" id="zAF-7E-lYR"/>
                             <constraint firstItem="Pwd-wf-bfd" firstAttribute="leading" secondItem="9VR-I5-KUi" secondAttribute="trailing" constant="10" id="zzW-7q-esb"/>
