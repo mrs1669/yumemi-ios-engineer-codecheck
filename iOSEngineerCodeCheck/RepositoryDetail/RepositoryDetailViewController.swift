@@ -47,7 +47,7 @@ class RepositoryDetailViewController: UIViewController {
         guard let repository = repository else { return }
         repositoryNameLabel.adjustsFontSizeToFitWidth = true
         repositoryNameLabel.text = repository.repositoryName
-        ownerNameLabel.text = repository.owner.ownerName
+        ownerNameLabel.text = "by \(repository.owner.ownerName)"
         languageLabel.adjustsFontSizeToFitWidth = true
         if let language = repository.language {
             languageLabel.text = "Written in \(language)"
