@@ -10,6 +10,7 @@ import UIKit
 
 class RepositoryDetailViewController: UIViewController {
 
+    @IBOutlet weak var repositoryDetailCardView: UIView!
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var repositoryFullnameLabel: UILabel!
     @IBOutlet private weak var languageLabel: UILabel!
