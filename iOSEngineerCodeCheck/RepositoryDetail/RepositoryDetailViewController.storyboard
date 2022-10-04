@@ -127,6 +127,7 @@
                         <outlet property="repositoryDetailCardView" destination="vw5-1t-ob6" id="tUI-UM-Q8B"/>
                         <outlet property="repositoryFullnameLabel" destination="wzY-ow-NLf" id="W2U-f2-evb"/>
                         <outlet property="starsCountLabel" destination="hFi-uQ-FGQ" id="PsA-bs-Mpf"/>
+                        <outlet property="visitRepositoryButton" destination="7ag-PD-9km" id="nxh-wW-brq"/>
                         <outlet property="watchersCountLabel" destination="S96-uj-cig" id="g6I-17-K1k"/>
                     </connections>
                 </viewController>

@@ -12,6 +12,7 @@ class RepositoryDetailViewController: UIViewController {
 
     @IBOutlet private weak var repositoryDetailCardView: UIView!
     @IBOutlet private weak var avatarImageView: UIImageView!
+    @IBOutlet private weak var visitRepositoryButton: UIButton!
     @IBOutlet private weak var repositoryFullnameLabel: UILabel!
     @IBOutlet private weak var languageLabel: UILabel!
     @IBOutlet private weak var starsCountLabel: UILabel!
@@ -28,6 +29,7 @@ class RepositoryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLabel()
+        configureButton()
         getImage()
     }
 
@@ -51,6 +53,15 @@ class RepositoryDetailViewController: UIViewController {
         watchersCountLabel.text = "\(repository.watchersCount) watchers"
         forksCountLabel.text = "\(repository.forksCount) forks"
         openIssueCountLabel.text = "\(repository.openIssuesCount) open issues"
+    }
+
+    private func configureButton() {
+        visitRepositoryButton.setTitleColor(R.color.mainTheme(), for: .normal)
+        visitRepositoryButton.addTarget(self, action: #selector(pushVisitRepositoryButton), for: .touchUpInside)
+    }
+
+    @objc func pushVisitRepositoryButton(sender: UIButton) {
+        print("pushed.")
     }
 
     func getImage() {
