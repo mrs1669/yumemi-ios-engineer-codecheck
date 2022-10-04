@@ -66,7 +66,7 @@ class SearchRepositoryTableViewController: UITableViewController {
     @objc private func licenceVavigationBarButtonPressed(_ sender: UIBarButtonItem) {
         guard let licenceFileURL = Bundle.main.url(forResource: "license-list", withExtension: "plist") else { return }
         let licenceViewController = LicenseListViewController(fileURL: licenceFileURL)
-        licenceViewController.title = "LICENSE"
+        licenceViewController.title = R.string.localizable.licence()
         self.navigationController?.pushViewController(licenceViewController, animated: true)
     }
 }
