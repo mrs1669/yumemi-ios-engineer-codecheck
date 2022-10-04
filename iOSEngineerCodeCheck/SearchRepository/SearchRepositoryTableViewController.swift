@@ -29,7 +29,7 @@ class SearchRepositoryTableViewController: UITableViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Detail"{
+        if segue.identifier == R.segue.searchRepositoryTableViewController.detail.identifier {
             guard let repositoryDetailViewController = segue.destination as? RepositoryDetailViewController else { return }
             repositoryDetailViewController.item = presenter.repositories[index]
         }
