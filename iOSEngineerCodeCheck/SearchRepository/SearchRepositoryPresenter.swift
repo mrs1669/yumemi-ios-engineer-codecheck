@@ -6,6 +6,8 @@
 //  Copyright © 2022 YUMEMI Inc. All rights reserved.
 //
 
+// hogehoge
+
 import Foundation
 
 protocol SearchRepositoryPresenterInputProtocol {
